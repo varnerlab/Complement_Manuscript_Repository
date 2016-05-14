@@ -1,0 +1,241 @@
+\documentclass[12pt]{article}
+% Load packages
+\usepackage{url}  % Formatting web addresses  
+\usepackage{ifthen}  % Conditional 
+\usepackage{multicol}   %Columns
+\usepackage[utf8]{inputenc} %unicode support
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[margin=0.1pt,font=footnotesize,labelfont=bf]{caption}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{colortbl}
+%\usepackage{palatino,lettrine}
+%\usepackage{times}
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+\usepackage[wide]{sidecap}
+\usepackage[round,comma,sort&compress]{natbib}
+\usepackage{supertabular}
+\usepackage{multirow}
+
+\urlstyle{rm}
+
+% set the size of the system -
+% set the size of the system -
+% Set the size
+\textwidth = 6.50 in
+\textheight = 9.5 in
+\oddsidemargin =  0.0 in
+\evensidemargin = 0.0 in
+\topmargin = -0.50 in
+\headheight = 0.0 in
+\headsep = 0.25 in
+%\parskip = 0.15in
+%\linespread{1.75}
+\doublespace
+
+\bibliographystyle{plos2009}
+
+\makeatletter
+\renewcommand\subsection{\@startsection
+	{subsection}{2}{0mm}
+	{-0.05in}
+	{-0.5\baselineskip}
+	{\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection
+	{subsubsection}{2}{0mm}
+	{-0.05in}
+	{-0.5\baselineskip}
+	{\normalfont\normalsize\itshape}}	
+\renewcommand\paragraph{\@startsection
+	{paragraph}{2}{0mm}
+	{-0.05in}
+	{-0.5\baselineskip}
+	{\normalfont\normalsize\itshape}}
+\makeatother
+
+%Review style settings
+%\newenvironment{bmcformat}{\begin{raggedright}\baselineskip20pt\sloppy\setboolean{publ}{false}}{\end{raggedright}\baselineskip20pt\sloppy}
+
+%Publication style settings
+
+% Single space'd bib -
+\setlength\bibsep{0pt}
+
+\renewcommand{\rmdefault}{phv}\renewcommand{\sfdefault}{phv}
+
+% Change the number format in the ref list -
+\renewcommand{\bibnumfmt}[1]{#1.}
+
+% Change Figure to Fig.
+\renewcommand{\figurename}{Fig.}
+
+% Begin ...
+\begin{document}
+\begin{titlepage}
+{\par\centering\textbf{\large Analysis of the Human Alternative Complement Pathway Architecture Identified Globally Fragile and Robust Components.}}
+\vspace{0.05in}
+{\par \centering Adithya Sagar and Jeffrey D. Varner$^{*}$}
+\vspace{0.05in}
+{\par \centering School of Chemical and Biomolecular Engineering}
+{\par \centering Cornell University, Ithaca NY 14853}
+\vspace{0.1in}
+{\par \centering \textbf{Running Title:}~Analysis of the alternative complement cascade}
+\vspace{0.1in}
+{\par \centering \textbf{To be submitted:}~PLoS~ONE}
+\vspace{0.5in}
+{\par \centering $^{*}$Corresponding author:}
+{\par \centering Jeffrey D. Varner,}
+{\par \centering Associate Professor, School of Chemical and Biomolecular Engineering,}
+{\par \centering 244 Olin Hall, Cornell University, Ithaca NY, 14853} 
+{\par \centering Email: jdv27@cornell.edu} 
+{\par \centering Phone: (607) 255 - 4258}
+{\par \centering Fax: (607) 255 - 9166}
+\end{titlepage}
+\date{}
+\thispagestyle{empty}
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Abstract}
+
+
+
+{\noindent \textbf{Keywords:}~Complement activation, Systems~biology}
+
+\pagebreak
+
+\setcounter{page}{1}
+\section*{Introduction}
+Complement is the central subsystem of innate immunity activated as part of host defense.
+Complement destroys invading microorganisms and eliminates immune complexes \cite{WALPORT1}.
+Complement can also be activated during trauma and is correlated with negative clinical outcomes [REFME].
+Complement, discovered more than a century ago [REFME], consists of more than 30 plasma and cell surface proteins and is organized into three pathways, 
+the classical, lectin binding and alternative pathways \cite{WALPORT1}.
+In this study, we explored only the alternative activation pathway. 
+The alternative pathway is considered to be the primary amplification mechanism for complement activation [REFME].
+The alternative pathway consists of complement proteins numbered C3-C9, plasma factors B,~D,~H and I and several regulatory proteins restraining activation. 
+C3 undergoes spontaneous hydrolysis in plasma to form a reactive protein intermediate C3(H$_2$O). 
+C3(H$_2$O) is almost immediately inactivated by the regulatory proteins Factor H and I, however, before inactivation C3(H$_2$O) can form a complex with Factor B thereby protecting itself against Factor H/I mediated inactivation. The C3(H$_2$O)-Factor B complex is cleaved by Factor D to form the fluid phase C3-convertase, denoted as C3Bb. C3Bb cleaves a 9-kDa fragment from the amino terminus of the $\alpha-$chain of free C3 to form two fragments, C3b and C3a. The C3b fragment tags foreign surfaces for destruction by the Membrane Attack
+Complex (MAC). Surface bound C3b binds circulating Factor B, forming a complex which is cleaved by Factor D to produce the surface C3-convertase, denoted by C3bBb.
+Fluid-phase and surface  C3-converatase amplifies the complement response; C3Bb and C3bBb cleave C3 to form C3b and C3a. Binding of
+an addition C3b by C3bBb yields the C5-converatase, denoted as C3bBbC3b. The C5-convertase cleaves circulating C5 to form C5a and C5b fragments; C5b anchors itself on
+hydrophobic regions of the invading surface. C5b binding is the first step in the formation of the MAC; surface bound C5b sequentially binds C6 and C7 forming the
+C5b67 complex. C8 binds C5b67 via the $\beta-$chain of C5b. Binding of C8 triggers the polymerization of C9 proteins and the insertion of the poly-C9 structure
+into the membrane of the invading pathogen. Insertion of the poly-C9 structure forms a pore that disrupts membrane integrity resulting in an influx of ions
+and water into the cell leading to cell death and lysis \cite{WALPORT2}. 
+
+In this study, we developed and analyzed a mechanistic mathematical model of the alternative complement pathway. 
+The objective of our analysis was to better understand the fragility and robustness of the components making up C3-converatase amplification loop.
+The central computational challenge was the identification of model parameters.      
+
+\section*{Results}
+
+\subsection*{Identification of an ensemble of alternative complement models.} 
+We assembled a canonical model of the molecular architecture of the alternative complement pathway (Fig. Z and given in detail in Table Z) from primary literature.
+The model, which described 53 molecular species interconnected by 104 interactions, was encoded as a system of nonlinear ordinary differential equations.
+The rate of each of the 104 interactions contained in the model was modeled using elementary mass action kinetics; thus, each rate equation had a single rate constant.
+A master set of model parameters (rate constants and initial conditions) was taken from literature, 
+or adjusted to make model simulations \emph{qualitatively} consistent with observations. 
+The master parameter set was used to generate synthetic data from which we identified a low-correlation ensemble of model parameters using Particle Swarm Optimization (PSO). 
+
+
+First-order sensitivity coefficients were calculated using the ODE15s routine of Matlab (The Mathworks, Natick MA)
+over a family of random parameter sets ($N=100$) constructed by perturbing each nominal parameter by up $\pm${50}\%. The ODE15s solutions
+were used as high-order approximations of the correct senstivity solutiuon. Overall State Sensitivity Coefficients (OSSC) calculated using the ODE15s solutions were compared 
+with sensitvity coefficients calculated using four additional methods over the same random parameter family (see Methods); Low-order Foward Finite Difference, FFD; 
+low-order Backward Difference Formulation, BDF; high-order Interpolating Collocation, Collocation and a high-order Approximate Spectral Expansion, ASE. 
+Complement mechanisms were rank-ordered based upon their OSSC values generated by each method. The Spearman Rank Correlation was used to quantify the similarity 
+between each of the rank-ordered lists and the ordering produced by the ODE15s method. Fixed-step methods produced results that were not consistent with
+ODE15s and required several iterations to correctly identify the proper perurbation size. The conclusions drawn from fixed-step methods were also found to be sensitive to model
+stiffness; both the classification of mechanisms as fragile and robust and the identifiablity of model parameters were effected by method choice.  
+
+\section*{Discussion}
+
+\clearpage
+
+\section*{Materials and Methods}
+\subsection*{Formulation and solution of model equations.}
+Mass balance equations were written around each protein or protein complex in the complement model yielding the set of nonlinear ordinary differential equations (vector-form):
+\begin{equation}\label{eq-compact-form}
+\frac{d\mathbf{x}}{dt}=\mathbf{S}\mathbf{r}\left(\mathbf{x},\mathbf{k}\right)\qquad\mathbf{x}\left(t_{o}\right)=\mathbf{x}_{o}
+\end{equation}where $\mathbf{x}$ denotes the abundance vector (54$\times$1),
+and $\mathbf{r}\left(\mathbf{x},\mathbf{k}\right)$ denotes the vector of reaction rates (104$\times$1).
+The matrix $\mathbf{S}$, which denotes the stoichiometric matrix (53$\times$104), describes the biological connectivity of the model. 
+Each row in $\mathbf{S}$ describes a particular protein or protein complex while each column describes the stoichiometry associated with a specific interaction in the network. 
+The $(i,j)$ element of $\mathbf{S}$, denoted by $\sigma_{ij}$, describes how protein $i$ is connected to rate process $j$. 
+If $\sigma_{ij}<0$, then protein $i$ is consumed in $r_{j}$, conversely, if $\sigma_{ij}>0$ protein $i$ is produced by $r_{j}$ and if $\sigma_{ij}=0$ 
+there is no connection between protein $i$ and rate process $j$.
+We have assumed mass action kinetics for each interaction in Table [RXNTABLE]. 
+For the general reaction $q$:
+\begin{equation}
+\sum_{j\in\left\{\mathbf{R}_{q}\right\}}\sigma_{jq}x_{j}\rightarrow\sum_{k\in\left\{\mathbf{P}_{q}\right\}}\sigma_{kq}x_{k}
+\end{equation}is given by:
+\begin{equation}\label{eq-mass-action}
+r_{q}\left(\mathbf{x},k_{q}\right)=k_{q}\prod_{j\in\left\{\mathbf{R}_{q}\right\}}x_{j}^{-\sigma_{jq}}
+\end{equation}where $\left\{\mathbf{R}_{q}\right\}$ denotes the set of reactants for reaction $q$, $\left\{\mathbf{P}_{q}\right\}$
+denotes the product set for reaction $q$, $k_{q}$ denotes the rate constant governing the qth reaction 
+and $\sigma_{jq},\sigma_{kq}$ denote stoichiometric coefficients (elements of the matrix $\mathbf{S}$). 
+We have treated every rate as non-negative; all reversible reactions were split into two irreversible reaction steps. 
+Thus, every element of the reaction rate vector $\mathbf{r}\left(\mathbf{x},\mathbf{k}\right)$ takes the form shown in Eq. \eqref{eq-mass-action}.
+
+\subsection*{Sensitivity and robustness analysis of the complement model population.}
+Sensitivity coefficients were calculated over the model ensemble (N = 500). 
+First-order sensitivity coefficients at time $t_{q}$:  
+\begin{equation}\label{eqn_sen}
+s_{ij}\left(t_{q}\right)=\frac{\partial{x_{i}}}{\partial{k_{j}}}\Biggr|_{t_{q}}
+\end{equation}
+were computed by solving the kinetic-sensitivity equations \cite{dickinson1976sensitivity}:
+\begin{equation}\label{eqn_extended}
+\begin{pmatrix}
+d{\mathbf{x}}/dt\\
+d{\mathbf{s}}_{j}/dt
+\end{pmatrix}=
+\begin{bmatrix}
+\mathbf{S}\cdot\mathbf{r}\left(\mathbf{x},\mathbf{k}\right) \\
+\mathbf{A}\left(t\right)\mathbf{s}_{j}+\mathbf{b}_{j}\left(t\right)
+\end{bmatrix}\qquad j=1,2,\hdots,P
+\end{equation}
+subject to the initial condition $\textbf{s}_{j}(t_{0}) = \textbf{0}$.
+The quantity $j$ denotes the parameter index, $P$ denotes the number of parameters in the model, $\mathbf{A}$ denotes the Jacobian matrix, and $\mathbf{b}_j$ denotes the $j$th column of the matrix of first-derivatives of the mass balances with respect to the parameters.
+Sensitivity coefficients were calculated by repeatedly solving the extended kinetic-sensitivity system for forty parameters sets selected from the final 400 member ensemble. 
+These sets were chosen to be comparable to the final 400 member ensemble on the basis of parametric coefficient of variation (CV); the sets selected for sensitivity analysis had a 
+mean CV of 0.85 $\pm$ 0.5 and a mean correlation of approximately 0.6. Thus, there were diverse and uncorrelated.
+The Jacobian $\mathbf{A}$ and the $\mathbf{b}_{j}$ vector were calculated at each time step using their analytical expressions generated by UNIVERSAL.
+
+The resulting sensitivity coefficients were scaled and time-averaged (Trapezoid rule):
+\begin{equation}\label{eqn_INsen}
+	\mathcal{N}_{ij} \equiv \frac{1}{T}\int^{T}_{0} dt \cdot |s_{ij}(t)|
+\end{equation}
+where $T$ denotes the final simulation time.
+The time-averaged sensitivity coefficients were then organized into an array for each ensemble member:
+\begin{equation}
+	\mathcal{N}^{\left(\epsilon\right)} = 
+	\begin{pmatrix}
+		\mathcal{N}_{11}^{\left(\epsilon\right)} & \mathcal{N}_{12}^{\left(\epsilon\right)} & \hdots & \mathcal{N}_{1j}^{\left(\epsilon\right)} & \hdots & \mathcal{N}_{1P}^{\left(\epsilon\right)} \\
+		\mathcal{N}_{21}^{\left(\epsilon\right)} & \mathcal{N}_{22}^{\left(\epsilon\right)} & \hdots & \mathcal{N}_{2j}^{\left(\epsilon\right)} & \hdots & \mathcal{N}_{2P}^{\left(\epsilon\right)} \\
+		\vdots & \vdots & & \vdots & & \vdots \\
+		\mathcal{N}_{M1}^{\left(\epsilon\right)} & \mathcal{N}_{M2}^{\left(\epsilon\right)} & \hdots & \mathcal{N}_{Mj}^{\left(\epsilon\right)} & \hdots & \mathcal{N}_{MP}^{\left(\epsilon\right)} \\
+	\end{pmatrix}\qquad\epsilon = 1,2,\hdots,N_{\epsilon}
+\end{equation}
+where $\epsilon$ denotes the index of the ensemble member, $P$ denotes the number of parameters, 
+$N_{\epsilon}$ denotes the number of ensemble samples and $M$ denotes the number of model species.
+To estimate the relative fragility or robustness of species and reactions in the network, we decomposed the $\mathcal{N}^{\left(\epsilon\right)}$ matrix 
+using Singular Value Decomposition (SVD):
+\begin{equation}
+	\mathcal{N}^{\left(\epsilon\right)} = \mathbf{U}^{\left(\epsilon\right)}\Sigma^{\left(\epsilon\right)}\mathbf{V}^{T,{\left(\epsilon\right)}}
+\end{equation}
+Coefficients of the left (right) singular vectors corresponding to largest $\theta\leq{15}$ singular values of $\mathcal{N}^{\left(\epsilon\right)}$ 
+were rank-ordered to estimate important species (reaction) combinations. Only coefficients with magnitude greater than a threshold ($\delta$ = 0.001) were considered. 
+The fraction of the $\theta$ vectors in which a reaction or species index occurred was used to determine its importance (sensitivity ranking). 
+The sensitivity ranking was compared between different conditions to understand how control in the network shifted as a function of perturbation or time.
+
+\section*{Acknowledgement}
+
+
+
+\bibliography{Paper}
+\end{document}

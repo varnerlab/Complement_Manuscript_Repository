@@ -210,12 +210,28 @@ This study was supported by an award from [FILL ME IN].
 %\end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./Figures/ComplementSystemSchematic_v1.pdf}
-\caption{The biochemical reactions of the complement system.
-}\label{fig1-schematic}
+\includegraphics[width=1.0\textwidth]{./Figures/ComplementSystemSchematic_v2.pdf}
+\caption{Simplified schematic representation of the human complement system. The complement cascade is activated through any one, or more, of the three pathways: classical, lectin, and alternate pathway. The classical pathway is activated by the complex formation of $C1q$, $C1r$, and $C1s$ by the recogniztion of antibody:antigen complexes. Similarly, the lecin pathway is initiation by binding mannan-binding lectin to mannose on pathogen surfaces. Lastly, the alternative pathway is activated when a complement component is spontaneously bound to the surface of the pathogen of virus. The activation from the three pathways creates a cascades of reactions that forms the proteases, $C3$ Convertase that cleaves $C3$ into $C3a$, and $C3b$, the main effector molecule of the complement system. $C3b$ can find to a $C3$ convertase and form a $C5$ convertase that cleaves $C5$ into $C5a$, and $C5b$ that undergoes a series of reactions to form the membrane attach complex ($MAC$).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{./Figures/Figure2_Fit.pdf}
+\caption{Reduced order complement model training simulation for lectin and alternative pathway in presence of zymosan. Reduced order complement model parameters were estimated using dynamically dimensioned search (DDS) [Tolson and Shoemaker,2007,WRR] using the availability of zymosan as a function of lectin pathway initiation.  Only parameters that govern the behavior of alternative pathway were allowed to vary when zymosan was not present. Our model training was conducted in a hierarchal fashion where the alternate parameters were trained and then used and fixed in estimating the lectin parameters. The red line shows the best-fit parameter, the black lines denotes the simulated mean value of $C3a$ or $C5a$ for a 50 parameter set ensemble. The shaded region denotes the distribution of $C3a$ and $C5a$ of the ensemble.}
 \end{figure}
 
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{./Figures/Figure3_Predictions_2.pdf}
+\caption{Reduced order complement model predictions of lectin and alternative pathway in presence of zymosan. (A-F) Simulation of complement dynamics in the presence of zymosan were conducted for a range of trigger values ($0.1$, $0.01$, and $0.001$ grams of zymosan). The time-course profiles of $C3a$ and $C5a$ under three different zymosan concentrations were simulated using 50 ensembles of trained parameter sets against experimental data of Shaw et al [REF].  The red curve represents the best fit parameter, grey shaded region denotes the prediction results from 50 ensembles of parameter sets, and the black curve is the mean of the ensemble. All complement protein and factor initial concentrations coincided with human serum levels unless otherwise noted.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{./Figures/Figure4_Sensitivity_Analysis_v2.pdf}
+\caption{Sensitivity Analysis}
+\end{figure}
 
 \clearpage
 
