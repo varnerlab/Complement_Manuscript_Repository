@@ -95,7 +95,7 @@
 % Begin ...
 \begin{document}
 \begin{titlepage}
-{\par\centering\textbf{\Large {Dynamic Modeling of Human Complement System using Reduced Ordered Models}}}
+{\par\centering\textbf{\Large {Dynamic modeling of human complement}}}
 \vspace{0.05in}
 {\par \centering \large{Adithya Sagar, Wei Dai$^{\#}$, Mason Minot$^{\#}$, and Jeffrey D. Varner$^{*}$}}
 \vspace{0.10in}
@@ -107,6 +107,7 @@
 {\par \centering \textbf{To be submitted:}~\emph{???????}}
 \vspace{0.5in}
 {\par \centering $^{\#}$ Denotes equal contribution}
+\vspace{0.1in}
 {\par \centering $^{*}$Corresponding author:}
 {\par \centering Jeffrey D. Varner,}
 {\par \centering Professor, School of Chemical and Biomolecular Engineering,}
@@ -149,7 +150,7 @@ Complement is a central part of innate immunity and plays a very significant rol
 
 Given the complexity and importance of complement, developing mathematical models of complement are crucial to understanding its dynamics. Complement models have typically been formulated as linear or non-linear Ordinary Differential Equation (ODE) systems. Hirayama  et al. (ref) used a system of linear ODEs to model the classical pathway of complement. Korotaevskiy and co-workers (ref) built a theoretical model of complement using a system of non-linear ODEs that included classical, lectin and alternate pathways. However both these studies involve no validation studies with experimental data. Liu et al used analyzed the formation of classical and lectin C3 convertases and the regulatory role of C4BP using a system of 45 non-linear ODEs with 85 parameters.  Recently, Zewde and co-workers built a detailed mechanistic model of alternative complement activation was built using 107 ODEs and 74 kinetic parameters (Ref). This model delineated the response of complement on a host cell and a foreign antigen. However, these previous models were largely based upon mechanistic knowledge.  However given the complexity of complement and its interactions with other networks like coagulation, autonomous nervous system, adaptive immunity it is unfeasible and computationally expensive to build such large mechanistic models. In addition is much more difficult to experimentally interrogate the response of various complement proteins under different conditions. This also presents with the problem of estimation of a large number of parameters with little or no experimental data. Thus there exists a need to reduce the mechanistic complexity while capturing dynamics of complement accurately.
 
-In this study, we formulated a hybrid modeling of the human complement system. [FILL ME IN].
+In this study, we formulated a model of the human complement system. [FILL ME IN].
 
 \clearpage
 
@@ -203,82 +204,35 @@ Typically, reaction $j$ is a non-linear function of biochemical species abundanc
 The quantity $\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$.
 If $\sigma_{ij}>0$, species $i$ is produced by reaction $j$.
 Conversely, if $\sigma_{ij}<0$, species $i$ is consumed by reaction $j$, while $\sigma_{ij} = 0$ indicates species $i$ is not connected with reaction $j$.
-The system material balances were subject to the initial conditions $\mathbf{x}\left(t_{o}\right) = \mathbf{x}_{o}$, which were specified by the experimental setup and human serum complement protein levels.
+Species balances were subject to the initial conditions $\mathbf{x}\left(t_{o}\right) = \mathbf{x}_{o}$.
 
-Each reaction rate was written as either the product of two terms, a kinetic term ($\bar{r}_{j}$) and a control term ($f_{j}$), or $\bar{r}_{j}$ for the case $f_{j}$ = 1:
-\begin{equation}\label{eqn:rate-factor}
-	r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right) = \bar{r}_{j}f_{j}
-\end{equation}
-
-Each control term, $f_{j}\left(\mathcal{Z}\right)$ took the form:
+The reaction rate was written as the product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$), $r_{j}\left(\mathbf{x},\mathbf{k}\right) = \bar{r}_{j}v_{j}$.
+In this study, we used either saturation or mass action kinetics.
+The control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
+For each rate, we used a rule-based approach to select from competing control factors.
+If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
+$v_{j} = \mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
+where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a regulatory transfer function quantifying the influence of factor $i$ on rate $j$.
+The function $\mathcal{I}_{j}\left(\cdot\right)$ is an integration rule which maps the output of regulatory transfer functions into a control
+variable. Each regulatory transfer function took the form:
 \begin{equation}\label{eqn:control-factor}
-	f_{j}\left(\mathcal{Z}_{j},\alpha_{j}\right) = \frac{\mathcal{Z}_{j}^{\eta}}{\mathcal{Z}_{j}^{\eta} + \alpha_{j}^{\eta}}
-\end{equation}where $\mathcal{Z}_{j}$ denotes the abundance of the $j$ factor (e.g., initiator abundance),
-$\alpha_{j}$ denotes the species gain parameter, and $\eta$ a cooperativity parameter (similar to a Hill coefficient).
+	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right) = k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
+\end{equation}where $\mathcal{Z}_{i}$ denotes the abundance factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
+In this study, we used $\mathcal{I}_{j}\in\left\{\max,\min\right\}$ \cite{pr3010138}. If a process has no modifying factors, $v_{j} = 1$.
 
-
-We used saturation kinetics to model the lectin pathway activation and C3 and C5 convertase activity reaction terms $\bar{r}_{j}$:
+We used saturation kinetics to model the lectin pathway activation and C3 and C5 convertase activity $\bar{r}_{j}$:
 \begin{equation}\label{eqn:rate-saturation}
 	\bar{r}_{j} = k_{j}^{max}\epsilon_{i}\left(\frac{x_{s}^{\eta}}{K_{js}^{\eta} + x_{s}^{\eta}}\right)
 \end{equation}
-where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$, $\eta$ denotes a cooperativity parameter (similar to a Hill coefficient),
-and $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
-
-We used mass action kinetics to model the protein conversion reactions within the network $\bar{r}_{j}$:
+where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$, $\eta$ denotes a cooperativity parameter (similar to a Hill coefficient), and $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$. On the other hand,
+we used mass action kinetics to model the protein conversion reactions within the network $\bar{r}_{j}$:
 \begin{equation}\label{eqn:rate-action}
 	\bar{r}_{j} = k_{j}^{max}\epsilon_{i}\prod_{s\in{m_{j}^{-}}}x_{s}
 \end{equation}
-where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$. The product in\linebreak Equation \eqref{eqn:rate-action} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
+where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$. The product in Eqn \eqref{eqn:rate-action} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
 
-Applying the general framework to the reduced coagulation network resulted in 18 ordinary differential equations, 12 rate equations, and two control equations:
-\begin{eqnarray}
-	\frac{dx_{1}}{dt} & =& - r_{init,c4}f_{init,c4} \\ 								%C4
-	\frac{dx_{2}}{dt} &=& - r_{init,c2}f_{init,c2} \\  								%C2
-	\frac{dx_{3}}{dt} &=&  r_{init,c4}f_{init,c4} \\ 								%C4a
-	\frac{dx_{4}}{dt} &=& r_{init,c4}f_{init,c4} - r_{cp,c3c,form} \\ 					%C4b
-	\frac{dx_{5}}{dt} & = & r_{init,c2}f_{init,c2} - r_{cp,c3c,form} \\ 					%C2a
-	\frac{dx_{6}}{dt} &=& r_{init,c2}f_{init,c2} \\ 								%C2b
-	\frac{dx_{7}}{dt} &=& r_{c3,basal} - r_{cp,c3c,c3b} - r_{ap,c3c,c3b}\\ 				%C3
-	\frac{dx_{8}}{dt} &=& r_{c3,basal}  + r_{cp,c3c,c3b} + r_{ap,c3c,c3b}  - k_{deg,c3a}*C3a \\		%C3a
-	\frac{dx_{9}}{dt} &=& r_{c3,basal}  + r_{cp,c3c,c3b} + r_{ap,c3c,c3b}  -  r_{ap,c3c,form} \\		%C3b
-	\frac{dx_{10}}{dt} &=& r_{cp,c3c,form} - r_{cp,c5c,form} -  r_{cp,c3c,c4bp,inhib} \\			%CP C3C
-	\frac{dx_{11}}{dt} &=& r_{ap,c3c,form} - r_{ap,c5c,form} -  r_{ap,c3c,factorH,inhib} \\			%AP C3C
-	\frac{dx_{12}}{dt} &=& r_{cp,c5c,form} - r_{cp,c5c,c4bp,inhib} \\							%CP C5C
-	\frac{dx_{13}}{dt} &=& r_{cp,c5c,form}  \\											%AP C5C
-	\frac{dx_{14}}{dt} &=& - r_{cp,c5c,c5b} - r_{ap,c5c,c5b} \\								%C5
-	\frac{dx_{15}}{dt} &=&  r_{cp,c5c,c5b} + r_{ap,c5c,c5b} - k_{deg,c5a} \\					%C5a
-	\frac{dx_{16}}{dt} &=& r_{cp,c5c,c5b} + r_{ap,c5c,c5b} \\								%C5b
-	\frac{dx_{17}}{dt} &=& - r_{cp,c3c,c4bp,inhib} - r_{cp,c5c,c4bp,inhib} \\  				         %C4BP
-	\frac{dx_{18}}{dt} &=& - r_{ap,c3c,factorH,inhib} \\									%Factor H
-\end{eqnarray}
-where \begin{multline}
-f{x} = f(Zymosan,C2,C2a,C2b,C4,C4a,C4b,C3,C3a,C3b,CP C3C Convertase,... \\
-           AP C3 Convertase,CP C5 Convertase,AP C5 Convertase,C5,C5a,... \\
-           ... C5b,C4BP,Factor H)^{T}
-\end{multline}
 
-The various rate and control equations are given by:
-\begin{eqnarray}
-	r_{init,c4} &=& \frac{k_{init,c4}*C4}{K_{init,c4,s} + C4} \\
-	r_{init,c2} &=& \frac{k_{init,c2}*C2}{K_{init,c2,s} + C2} \\
-	f_{init,c4} &=& \frac{Zymo^{\eta_{zymo,c4}}}{Zymo^{\eta_{zymo,c4}} + alpha_{c2}^{\eta_{zymo,c4}}} \\
-	f_{init,c2} &=& \frac{Zymo^{\eta_{zymo,c2}}}{Zymo^{\eta_{zymo,c2}} + alpha_{c4}^{\eta_{zymo,c2}}} \\
-	r_{c3,basal} &=& k_{c3b,basal}*C3 \\
-	r_{cp,c3c,c3b} &=& \frac{k_{cp,c3c}*CP,C3C*C3^{\eta_{cp,c3c}}}{K_{cp,c3c,s}^{\eta_{cp,c3c}} + C3^{\eta_{cp,c3c}}}  \\
-	r_{ap,c3c,c3b} &=& \frac{k_{ap,c3c}*AP,C3C*C3}{K_{ap,c3c,s} + C3} \\
-	r_{cp,c3c,form} &=& k_{cp,c3c,form}*C4b*C2a \\
-	r_{ap,c3c,form} &=& k_{ap,c3c,form}*C4b*C2a \\
-	r_{cp,c3c,c4bp,inhib} &=& k_{cp,c3c,inhib}*CP,C3C*C4b*C4BP \\
-	r_{ap,c3c,factorH,inhib} &=& k_{ap,c3c,inhib}*AP,C3C*FactorH \\
-	r_{cp,c5c,form} &=& k_{cp,c5c,form}*CP,C3C*C3b \\
-	r_{ap,c5c,form} &=& k_{ap,c5c,form}*AP,C3C*C3b \\
-	 r_{cp,c5c,c5b} &=& \frac{k_{cp,c5c}*CP,C5C*C5^{\eta_{cp,c5c}}}{K_{cp,c5c,s}^{\eta_{cp,c5c}} + C5^{\eta_{cp,c5c}}} \\
-	 r_{ap,c5c,c5b} &=& \frac{k_{ap,c5c}*AP,C5C*C5}{K_{ap,c5c,s} + C5} \\
-	 r_{cp,c5c,c4bp,inhib} &=& k_{cp,c5,inhib}*CP,C5C*C4BP
-\end{eqnarray}
-
-\subsection{Estimation of Model Parameters From Experimental Data - \textbf{Needs to be completed}}
-
+\subsection*{Estimation of an ensemble of model parameters.}
 Model parameters were estimated by minimizing the difference between simulations and experimental C3a and C5a measurements (squared residual):
 \begin{equation}\label{eqn:objective-function}
 	\min_{\mathbf{k}} \sum_{\tau=1}^{\mathcal{T}}\sum_{j=1}^{\mathcal{S}}\left(\frac{\hat{x}_{j}\left(\tau\right) - x_{j}\left(\tau,\mathbf{k}\right)}{\omega_{j}\left(\tau\right)}\right)^{2}
@@ -303,7 +257,7 @@ All plots were made using the Matplotlib module of Python \citep{Matplotlib}.
 %Experimental data,simulation code,parameter ensembles and initial conditions for each experimental simulation can be viewed and downloaded from https://github.com/jeffreyvarner/HybridCoagulationModel\_v1.
 
 
-\subsection{Global Sensitivity Analysis of Model Performance}
+\subsection*{Global sensitivity analysis of model performance}
 We conducted a global sensitivity analysis, using the variance-based method of Sobol, to estimate which parameters controlled the performance of the reduced order model \citep{SOBOL_METHOD}. We computed the total sensitivity index of each parameter relative to four performance objectives, each objective was based on the sum of squared errors between model and experimental data for C3a alternate, C5a alternate, C3a lectin, and C5a lectin simulations.
 We established the sampling bounds for each parameter from the minimum and maximum value of that parameter in the parameter set ensemble.
 We used the sampling method of Saltelli \textit{et al.} \citep{Saltelli:2010} to compute a family of $N\left(2d+2\right)$ parameter sets which obeyed our parameter ranges,
@@ -355,18 +309,6 @@ This study was supported by an award from [FILL ME IN].
 \caption{Sobol's sensitivity analysis of the reduced order complement model with respect to the modeling parameters.  Sensitivity analysis was conducted on the four cases we used to train our model: (A) C3a at 0 zymosan, (B) C5a 0 zymosan, (C) C3a 1 g zymosan, and (D) C5a $1$ g zymosan. The bars denote total sensitivity index which includes local contribution of each parameter and global sensitivity of significant pairwise interactions. The error bars are the 95 percent confidence interval. $k$ represents association rate, $km$ denote Michaelis-Menten saturation constants, and $alpha$ and $n$ refers to the exponentials of the control functions.}\label{fig-SA}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure3_Predictions_2.pdf}
-\caption{Reduced order complement model predictions of lectin and alternative pathway in presence of zymosan. (A-F) Simulation of complement dynamics in the presence of zymosan were conducted for a range of trigger values ($0.1$, $0.01$, and $0.001$ g zymosan). The time-course profiles of $C3a$ and $C5a$ under three different zymosan concentrations were simulated using 50 ensembles of trained parameter sets against experimental data of Shaw et al [REF].  The red curve represents the best fit parameter, grey shaded region denotes the prediction results from 50 ensembles of parameter sets, and the black curve is the mean of the ensemble. All complement protein and factor initial concentrations coincided with human serum levels unless otherwise noted.}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure4_Sensitivity_Analysis_v2.pdf}
-\caption{Sensitivity Analysis}
-\end{figure}
-
 \clearpage
 
 % Supplemental figures -
@@ -381,6 +323,56 @@ This study was supported by an award from [FILL ME IN].
 \setcounter{table}{0}
 \setcounter{figure}{0}
 \setcounter{page}{1}
+
+
+\section*{Supplemental materials.}
+\subsubsection*{Model equations.}
+Applying the general framework to the reduced coagulation network resulted in 18 ordinary differential equations, 12 rate equations, and two control equations:
+\begin{eqnarray}
+	\frac{dx_{1}}{dt} & =& - r_{init,c4}f_{init,c4} \\ 								%C4
+	\frac{dx_{2}}{dt} &=& - r_{init,c2}f_{init,c2} \\  								%C2
+	\frac{dx_{3}}{dt} &=&  r_{init,c4}f_{init,c4} \\ 								%C4a
+	\frac{dx_{4}}{dt} &=& r_{init,c4}f_{init,c4} - r_{cp,c3c,form} \\ 					%C4b
+	\frac{dx_{5}}{dt} & = & r_{init,c2}f_{init,c2} - r_{cp,c3c,form} \\ 					%C2a
+	\frac{dx_{6}}{dt} &=& r_{init,c2}f_{init,c2} \\ 								%C2b
+	\frac{dx_{7}}{dt} &=& r_{c3,basal} - r_{cp,c3c,c3b} - r_{ap,c3c,c3b}\\ 				%C3
+	\frac{dx_{8}}{dt} &=& r_{c3,basal}  + r_{cp,c3c,c3b} + r_{ap,c3c,c3b}  - k_{deg,c3a}*C3a \\		%C3a
+	\frac{dx_{9}}{dt} &=& r_{c3,basal}  + r_{cp,c3c,c3b} + r_{ap,c3c,c3b}  -  r_{ap,c3c,form} \\		%C3b
+	\frac{dx_{10}}{dt} &=& r_{cp,c3c,form} - r_{cp,c5c,form} -  r_{cp,c3c,c4bp,inhib} \\			%CP C3C
+	\frac{dx_{11}}{dt} &=& r_{ap,c3c,form} - r_{ap,c5c,form} -  r_{ap,c3c,factorH,inhib} \\			%AP C3C
+	\frac{dx_{12}}{dt} &=& r_{cp,c5c,form} - r_{cp,c5c,c4bp,inhib} \\							%CP C5C
+	\frac{dx_{13}}{dt} &=& r_{cp,c5c,form}  \\											%AP C5C
+	\frac{dx_{14}}{dt} &=& - r_{cp,c5c,c5b} - r_{ap,c5c,c5b} \\								%C5
+	\frac{dx_{15}}{dt} &=&  r_{cp,c5c,c5b} + r_{ap,c5c,c5b} - k_{deg,c5a} \\					%C5a
+	\frac{dx_{16}}{dt} &=& r_{cp,c5c,c5b} + r_{ap,c5c,c5b} \\								%C5b
+	\frac{dx_{17}}{dt} &=& - r_{cp,c3c,c4bp,inhib} - r_{cp,c5c,c4bp,inhib} \\  				         %C4BP
+	\frac{dx_{18}}{dt} &=& - r_{ap,c3c,factorH,inhib} \\									%Factor H
+\end{eqnarray}
+where \begin{multline}
+f{x} = f(Zymosan,C2,C2a,C2b,C4,C4a,C4b,C3,C3a,C3b,CP C3C Convertase,... \\
+           AP C3 Convertase,CP C5 Convertase,AP C5 Convertase,C5,C5a,... \\
+           ... C5b,C4BP,Factor H)^{T}
+\end{multline}
+
+The various rate and control equations are given by:
+\begin{eqnarray}
+	r_{init,c4} &=& \frac{k_{init,c4}*C4}{K_{init,c4,s} + C4} \\
+	r_{init,c2} &=& \frac{k_{init,c2}*C2}{K_{init,c2,s} + C2} \\
+	f_{init,c4} &=& \frac{Zymo^{\eta_{zymo,c4}}}{Zymo^{\eta_{zymo,c4}} + alpha_{c2}^{\eta_{zymo,c4}}} \\
+	f_{init,c2} &=& \frac{Zymo^{\eta_{zymo,c2}}}{Zymo^{\eta_{zymo,c2}} + alpha_{c4}^{\eta_{zymo,c2}}} \\
+	r_{c3,basal} &=& k_{c3b,basal}*C3 \\
+	r_{cp,c3c,c3b} &=& \frac{k_{cp,c3c}*CP,C3C*C3^{\eta_{cp,c3c}}}{K_{cp,c3c,s}^{\eta_{cp,c3c}} + C3^{\eta_{cp,c3c}}}  \\
+	r_{ap,c3c,c3b} &=& \frac{k_{ap,c3c}*AP,C3C*C3}{K_{ap,c3c,s} + C3} \\
+	r_{cp,c3c,form} &=& k_{cp,c3c,form}*C4b*C2a \\
+	r_{ap,c3c,form} &=& k_{ap,c3c,form}*C4b*C2a \\
+	r_{cp,c3c,c4bp,inhib} &=& k_{cp,c3c,inhib}*CP,C3C*C4b*C4BP \\
+	r_{ap,c3c,factorH,inhib} &=& k_{ap,c3c,inhib}*AP,C3C*FactorH \\
+	r_{cp,c5c,form} &=& k_{cp,c5c,form}*CP,C3C*C3b \\
+	r_{ap,c5c,form} &=& k_{ap,c5c,form}*AP,C3C*C3b \\
+	 r_{cp,c5c,c5b} &=& \frac{k_{cp,c5c}*CP,C5C*C5^{\eta_{cp,c5c}}}{K_{cp,c5c,s}^{\eta_{cp,c5c}} + C5^{\eta_{cp,c5c}}} \\
+	 r_{ap,c5c,c5b} &=& \frac{k_{ap,c5c}*AP,C5C*C5}{K_{ap,c5c,s} + C5} \\
+	 r_{cp,c5c,c4bp,inhib} &=& k_{cp,c5,inhib}*CP,C5C*C4BP
+\end{eqnarray}
 
 
 % Supplemental figures go here ...
