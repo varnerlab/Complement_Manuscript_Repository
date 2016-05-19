@@ -213,19 +213,10 @@ If $\sigma_{ij}>0$, species $i$ is produced by reaction $j$.
 Conversely, if $\sigma_{ij}<0$, species $i$ is consumed by reaction $j$, while $\sigma_{ij} = 0$ indicates species $i$ is not connected with reaction $j$.
 Species balances were subject to the initial conditions $\mathbf{x}\left(t_{o}\right) = \mathbf{x}_{o}$.
 
-The reaction rate was written as the product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$), $r_{j}\left(\mathbf{x},\mathbf{k}\right) = \bar{r}_{j}v_{j}$.
-In this study, we used either saturation or mass action kinetics.
-The control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
-For each rate, we used a rule-based approach to select from competing control factors.
-If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
-$v_{j} = \mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
-where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a regulatory transfer function quantifying the influence of factor $i$ on rate $j$.
-The function $\mathcal{I}_{j}\left(\cdot\right)$ is an integration rule which maps the output of regulatory transfer functions into a control
-variable. Each regulatory transfer function took the form:
+The reaction rates controlling formation C4a, C4b, C2a and C2b were written as a product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$) such that $r_{j}\left(\mathbf{x},\mathbf{k}\right) = \bar{r}_{j}v_{j}$. The kinetic term for these rates was modeled using saturation kinetics.  The control term $0\leq v_{j}\leq 1$ for these reaction rates was modeled using regulatory transfer functions which took the form:
 \begin{equation}\label{eqn:control-factor}
 	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right) = k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
 \end{equation}where $\mathcal{Z}_{i}$ denotes the abundance factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
-In this study, we used $\mathcal{I}_{j}\in\left\{\max,\min\right\}$ \cite{pr3010138}. If a process has no modifying factors, $v_{j} = 1$.
 
 We used saturation kinetics to model the lectin pathway activation and C3 and C5 convertase activity $\bar{r}_{j}$:
 \begin{equation}\label{eqn:rate-saturation}
@@ -234,7 +225,7 @@ We used saturation kinetics to model the lectin pathway activation and C3 and C5
 where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$, $\eta$ denotes a cooperativity parameter (similar to a Hill coefficient), and $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$. On the other hand,
 we used mass action kinetics to model the protein conversion reactions within the network $\bar{r}_{j}$:
 \begin{equation}\label{eqn:rate-action}
-	\bar{r}_{j} = k_{j}^{max}\epsilon_{i}\prod_{s\in{m_{j}^{-}}}x_{s}
+	\bar{r}_{j} = k_{j}^{max}\prod_{s\in{m_{j}^{-}}}x_{s}
 \end{equation}
 where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$. The product in Eqn \eqref{eqn:rate-action} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
 
@@ -245,30 +236,48 @@ Model parameters were estimated by minimizing the difference between simulations
 	\min_{\mathbf{k}} \sum_{\tau=1}^{\mathcal{T}}\sum_{j=1}^{\mathcal{S}}\left(\frac{\hat{x}_{j}\left(\tau\right) - x_{j}\left(\tau,\mathbf{k}\right)}{\omega_{j}\left(\tau\right)}\right)^{2}
 \end{equation}where $\hat{x}_{j}\left(\tau\right)$ denotes the measured value of species $j$ at time $\tau$, $x_{j}\left(\tau,\mathbf{k}\right)$ denotes the simulated
 value for species $j$ at time $\tau$, and $\omega_{j}\left(\tau\right)$ denotes the experimental measurement variance for species $j$ at time $\tau$. The outer summation is with respect to
-time, while the inner summation is with respect to state. We minimized the model residual using Particle swarm optimization (PSO) \citep{PSO}.
-PSO uses a \textit{swarming} metaheuristic to explore parameter spaces.
-A strength of PSO is its ability to find the global minimum, even in the presence of potentially many local minima, by communicating the local
-error landscape experienced by each particle collectively to the swarm. Thus, PSO acts both as a local and a global search algorithm.
-For each iteration, particles in the swarm compute their local error by evaluating the model equations using their specific parameter vector realization.
-From each of these local points, a globally best error is identified. Both the local and global error
-are then used to update the parameter estimates of each particle using the rules:
-\begin{eqnarray}
-	\mathbf{\Delta}_{i} &=&\theta_{1}\mathbf{\Delta}_{i} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{k}_{i}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G} - \mathbf{k}_{i}\right) \\
-	\mathbf{k}_{i} &=& \mathbf{k}_{i} + \mathbf{\Delta}_{i}
-\end{eqnarray}where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ are adjustable parameters, $\mathcal{L}_{i}$ denotes the local best solution found by particle $i$, and
-$\mathcal{G}$ denotes the best solution found over the entire population of particles. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
-parameters \linebreak($\mathcal{K}\times{1}$). In thus study, we used $\left(\theta_{1},\theta_{2},\theta_{3}\right) = \left(1.0, 0.05564, 0.02886\right)$. The quality of parameter
-estimates was measured using goodness of fit (model residual). The particle swarm optimization routine was implemented in the Python programming language.
-All plots were made using the Matplotlib module of Python \citep{Matplotlib}.
-%The optimization and plotting code can be downloaded from http://www.varnerlab.org.
-%Experimental data,simulation code,parameter ensembles and initial conditions for each experimental simulation can be viewed and downloaded from https://github.com/jeffreyvarner/HybridCoagulationModel\_v1.
+time, while the inner summation is with respect to state. 
 
+We minimized the model residual using Dynamic Optimization with Particle Swarms (DOPS). DOPS is a novel metaheuristic that combines multi swarm particle swarm optimization (PSO) with a greedy global optimization algorithm called dynamically dimensioned search (DDS). DOPS is much faster than conventional global optimizers and has the ability to find near optimal solutions for high dimensional systems within a relatively few function evaluations. It uses an adaptive switching strategy based on error convergence rates to switch from swarms search to DDS search. This enables it to find quickly, globally optimal or close to globally optimal solutions even in the presence of many local minima. In the swarm search, for each iteration the particles compute error within each sub-swarm by evaluating the model equations using their specific parameter vector realization. From each of these points within a sub-swarm a local best is identified. This along with the particle best within the sub-swarm $\mathcal{S}_{k}$ is used to update the parameter estimate for each particle using the following rules:
+
+\begin{equation}\label{eqn:update-rule}
+	%\mathbf{z}_{i,j} = \theta_{1,j-1}\mathbf{z}_{i,j-1} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{z}_{i,j-1}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G}_{k} - \mathbf{z}_{i,j-1}\right)
+	{z}_{i,j} = \theta_{1,j-1}{z}_{i,j-1} + \theta_{2}{r}_{1}\left(\mathcal{L}_{i} - {z}_{i,j-1}\right) + \theta_{3}{r}_{2}\left(\mathcal{G}_{k} - {z}_{i,j-1}\right)
+\end{equation}
+where ${z}_{i,j}$ is the parameter vector, $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters, $\mathcal{L}_{i}$ denotes the best solution found by particle $i$ within sub-swarm
+$\mathcal{S}_{k}$ for function evaluations $1\rightarrow j-1$, and
+$\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
+The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
+At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k}$, over the k sub-swarms was used to initialize the DDS phase.
+For the DDS phase, the best parameter estimate was updated using the rule:
+\begin{equation}
+  \mathcal{G}_{new}({J})=\begin{cases}
+    \mathcal{G}(\mathbf{J})+\mathbf{r}_{normal}(\mathbf{J})\sigma(\mathbf{J}), & \text{if $\mathcal{G}_{new}(\mathbf{J})<\mathcal{G}(\mathbf{J})$}.\\
+    \mathcal{G}(\mathbf{J}), & \text{otherwise}.
+  \end{cases}
+\end{equation}
+where $\mathbf{J}$ is a vector representing the subset of dimensions that are being perturbed, $\mathbf{r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$,
+and $\sigma$ denotes the perturbation amplitude:
+\begin{equation}
+	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
+\end{equation}
+
+where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
+At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ for our model which we use for plotting best fits against the experimental data. We perturb this parameter vector to generate an ensemble of parameter vectors. The quality of parameter estimates was measured using goodness of fit (model residual).  The DOPS routine was implemented in the MATLAB programming language.
+
+%From each of these local points, a globally best error is identified. Both the local and global error
+%are then used to update the parameter estimates of each particle using the rules:
+%\begin{eqnarray}
+%	\mathbf{\Delta}_{i} &=&\theta_{1}\mathbf{\Delta}_{i} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{k}_{i}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G} - \mathbf{k}_{i}\right) \\
+%	\mathbf{k}_{i} &=& \mathbf{k}_{i} + \mathbf{\Delta}_{i}
+%\end{eqnarray}where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ are adjustable parameters, $\mathcal{L}_{i}$ denotes the local best solution found by particle $i$, and
+%$\mathcal{G}$ denotes the best solution found over the entire population of particles. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
+%parameters \linebreak($\mathcal{K}\times{1}$). In thus study, we used $\left(\theta_{1},\theta_{2},\theta_{3}\right) = \left(1.0, 0.05564, 0.02886\right)$. 
 
 \subsection*{Global sensitivity analysis of model performance}
-We conducted a global sensitivity analysis, using the variance-based method of Sobol, to estimate which parameters controlled the performance of the reduced order model \citep{SOBOL_METHOD}. We computed the total sensitivity index of each parameter relative to four performance objectives, each objective was based on the sum of squared errors between model and experimental data for C3a alternate, C5a alternate, C3a lectin, and C5a lectin simulations.
-We established the sampling bounds for each parameter from the minimum and maximum value of that parameter in the parameter set ensemble.
+We conducted a global sensitivity analysis, using the variance-based method of Sobol, to estimate which parameters controlled the performance of the reduced order model \citep{SOBOL_METHOD}. We computed the total sensitivity index of each parameter relative to four performance objectives, each objective was based on the sum of squared errors between model and experimental data for C3a alternate, C5a alternate, C3a lectin, and C5a lectin simulations. We established the sampling bounds for each parameter from the minimum and maximum value of that parameter in the parameter set ensemble.
 We used the sampling method of Saltelli \textit{et al.} \citep{Saltelli:2010} to compute a family of $N\left(2d+2\right)$ parameter sets which obeyed our parameter ranges,
-where $N$ was the number of trials, and $d$ was the number of parameters in the model. In our case, $N$ = 200 and $d$ = 42, so the total sensitivity indices were computed from
+where $N$ was the number of trials, and $d$ was the number of parameters in the model. In our case, $N$ = 200 and $d$ = 28, so the total sensitivity indices were computed from
 11,600 model evaluations. The variance-based sensitivity analysis was conducted using the SALib module encoded in the Python programming language \citep{SALIB}.
 
 \clearpage
