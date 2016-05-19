@@ -20,6 +20,38 @@ Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
 \newblock Journal of immunological methods 427: 13--18.
 \bibAnnoteFile{morad2015time}
 
+\bibitem{walker1995complement}
+Walker D, Yasuhara O, Patston P, McGeer E, McGeer P (1995) Complement c1
+  inhibitor is produced by brain tissue and is cleaved in alzheimer disease.
+\newblock Brain research 675: 75--82.
+\bibAnnoteFile{walker1995complement}
+
+\bibitem{blom2001structural}
+Blom AM, Kask L, Dahlb{\"a}ck B (2001) Structural requirements for the
+  complement regulatory activities of c4bp.
+\newblock Journal of Biological Chemistry 276: 27136--27144.
+\bibAnnoteFile{blom2001structural}
+
+\bibitem{riley2004cd46}
+Riley-Vargas RC, Gill DB, Kemper C, Liszewski MK, Atkinson JP (2004) Cd46:
+  expanding beyond complement regulation.
+\newblock Trends in immunology 25: 496--503.
+\bibAnnoteFile{riley2004cd46}
+
+\bibitem{lukacik2004complement}
+Lukacik P, Roversi P, White J, Esser D, Smith G, et~al. (2004) Complement
+  regulation at the molecular level: the structure of decay-accelerating
+  factor.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 101: 1279--1284.
+\bibAnnoteFile{lukacik2004complement}
+
+\bibitem{liszewski1995control}
+Liszewski MK, Farries TC, Lublin DM, Rooney IA, Atkinson JP (1995) Control of
+  the complement system.
+\newblock Advances in immunology 61: 201--283.
+\bibAnnoteFile{liszewski1995control}
+
 \bibitem{SALIB}
 Herman J.
 \newblock Salib: Sensitivity analysis library in python (numpy). contains
