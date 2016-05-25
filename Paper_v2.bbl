@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,12 +13,27 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{morad2015time}
-Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
-  quantifies the coupling between the upper and terminal complement pathways in
-  vitro.
-\newblock Journal of immunological methods 427: 13--18.
-\bibAnnoteFile{morad2015time}
+\bibitem{walport2001complement}
+Walport MJ (2001) Complement. first of two parts.
+\newblock The New England journal of medicine .
+\bibAnnoteFile{walport2001complement}
+
+\bibitem{sarma2011complement}
+Sarma JV, Ward PA (2011) The complement system.
+\newblock Cell and tissue research 343: 227--235.
+\bibAnnoteFile{sarma2011complement}
+
+\bibitem{pangburn1984alternative}
+Pangburn MK, M{\"u}ller-Eberhard HJ (1984) The alternative pathway of
+  complement.
+\newblock Springer seminars in immunopathology .
+\bibAnnoteFile{pangburn1984alternative}
+
+\bibitem{ricklin2010complement}
+Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
+  for immune surveillance and homeostasis.
+\newblock Nature immunology 11: 785--797.
+\bibAnnoteFile{ricklin2010complement}
 
 \bibitem{walker1995complement}
 Walker D, Yasuhara O, Patston P, McGeer E, McGeer P (1995) Complement c1
@@ -51,6 +66,84 @@ Liszewski MK, Farries TC, Lublin DM, Rooney IA, Atkinson JP (1995) Control of
   the complement system.
 \newblock Advances in immunology 61: 201--283.
 \bibAnnoteFile{liszewski1995control}
+
+\bibitem{ricklin2007complement}
+Ricklin D, Lambris JD (2007) Complement-targeted therapeutics.
+\newblock Nature biotechnology .
+\bibAnnoteFile{ricklin2007complement}
+
+\bibitem{rittirsch2008harmful}
+Rittirsch D, Flierl MA, Ward PA (2008) Harmful molecular mechanisms in sepsis.
+\newblock Nature Reviews Immunology 8: 776--787.
+\bibAnnoteFile{rittirsch2008harmful}
+
+\bibitem{ricklin2013complement}
+Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
+  pathophysiological mechanisms.
+\newblock The Journal of Immunology 190: 3831--3838.
+\bibAnnoteFile{ricklin2013complement}
+
+\bibitem{hirayama1996linear}
+Hirayama H, Yoshii K, Ojima H, Kawai N, Gotoh S, et~al. (1996) Linear systems
+  analysis of activating processes of complement system as a defense mechanism.
+\newblock Biosystems 39: 173--185.
+\bibAnnoteFile{hirayama1996linear}
+
+\bibitem{korotaevskiy2009non}
+Korotaevskiy AA, Hanin LG, Khanin MA (2009) Non-linear dynamics of the
+  complement system activation.
+\newblock Mathematical biosciences .
+\bibAnnoteFile{korotaevskiy2009non}
+
+\bibitem{liu2011computational}
+Liu B, Zhang J, Tan PY, Hsu D, Blom AM, et~al. (2011) A computational and
+  experimental study of the regulatory mechanisms of the complement system.
+\newblock PLoS Comput Biol .
+\bibAnnoteFile{liu2011computational}
+
+\bibitem{zewde2016quantitative}
+Zewde N, Gorham~Jr RD, Dorado A, Morikis D (2016) Quantitative modeling of the
+  alternative pathway of the complement system.
+\newblock PloS one .
+\bibAnnoteFile{zewde2016quantitative}
+
+\bibitem{morad2015time}
+Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
+  quantifies the coupling between the upper and terminal complement pathways in
+  vitro.
+\newblock Journal of immunological methods 427: 13--18.
+\bibAnnoteFile{morad2015time}
+
+\bibitem{sagar2015dynamic}
+Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
+  using reduced order effective kinetic models.
+\newblock Processes .
+\bibAnnoteFile{sagar2015dynamic}
+
+\bibitem{morgan2015complement}
+Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
+  and degenerative diseases.
+\newblock Nature Reviews Drug Discovery .
+\bibAnnoteFile{morgan2015complement}
+
+\bibitem{wayman2015dynamic}
+Wayman JA, Sagar A, Varner JD (2015) Dynamic modeling of cell-free biochemical
+  networks using effective kinetic models.
+\newblock Processes .
+\bibAnnoteFile{wayman2015dynamic}
+
+\bibitem{SOBOL_METHOD}
+Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and
+  their monte carlo estimates.
+\newblock Mathematics and Computers in Simulation 55: 271 - 280.
+\bibAnnoteFile{SOBOL_METHOD}
+
+\bibitem{saltelli2010variance}
+Saltelli A, Annoni P, Azzini I, Campolongo F, Ratto M, et~al. (2010) Variance
+  based sensitivity analysis of model output. design and estimator for the
+  total sensitivity index.
+\newblock Computer Physics Communications .
+\bibAnnoteFile{saltelli2010variance}
 
 \bibitem{SALIB}
 Herman J.
