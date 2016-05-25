@@ -13,27 +13,43 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{walport2001complement}
-Walport MJ (2001) Complement. first of two parts.
-\newblock The New England journal of medicine .
-\bibAnnoteFile{walport2001complement}
+\bibitem{ricklin2010complement}
+Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
+  for immune surveillance and homeostasis.
+\newblock Nature immunology 11: 785--797.
+\bibAnnoteFile{ricklin2010complement}
+
+\bibitem{ricklin2007complement}
+Ricklin D, Lambris JD (2007) Complement-targeted therapeutics.
+\newblock Nature biotechnology .
+\bibAnnoteFile{ricklin2007complement}
+
+\bibitem{rittirsch2008harmful}
+Rittirsch D, Flierl MA, Ward PA (2008) Harmful molecular mechanisms in sepsis.
+\newblock Nature Reviews Immunology 8: 776--787.
+\bibAnnoteFile{rittirsch2008harmful}
 
 \bibitem{sarma2011complement}
 Sarma JV, Ward PA (2011) The complement system.
 \newblock Cell and tissue research 343: 227--235.
 \bibAnnoteFile{sarma2011complement}
 
+\bibitem{ricklin2013complement}
+Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
+  pathophysiological mechanisms.
+\newblock The Journal of Immunology 190: 3831--3838.
+\bibAnnoteFile{ricklin2013complement}
+
+\bibitem{walport2001complement}
+Walport MJ (2001) Complement. first of two parts.
+\newblock The New England journal of medicine .
+\bibAnnoteFile{walport2001complement}
+
 \bibitem{pangburn1984alternative}
 Pangburn MK, M{\"u}ller-Eberhard HJ (1984) The alternative pathway of
   complement.
 \newblock Springer seminars in immunopathology .
 \bibAnnoteFile{pangburn1984alternative}
-
-\bibitem{ricklin2010complement}
-Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
-  for immune surveillance and homeostasis.
-\newblock Nature immunology 11: 785--797.
-\bibAnnoteFile{ricklin2010complement}
 
 \bibitem{walker1995complement}
 Walker D, Yasuhara O, Patston P, McGeer E, McGeer P (1995) Complement c1
@@ -66,22 +82,6 @@ Liszewski MK, Farries TC, Lublin DM, Rooney IA, Atkinson JP (1995) Control of
   the complement system.
 \newblock Advances in immunology 61: 201--283.
 \bibAnnoteFile{liszewski1995control}
-
-\bibitem{ricklin2007complement}
-Ricklin D, Lambris JD (2007) Complement-targeted therapeutics.
-\newblock Nature biotechnology .
-\bibAnnoteFile{ricklin2007complement}
-
-\bibitem{rittirsch2008harmful}
-Rittirsch D, Flierl MA, Ward PA (2008) Harmful molecular mechanisms in sepsis.
-\newblock Nature Reviews Immunology 8: 776--787.
-\bibAnnoteFile{rittirsch2008harmful}
-
-\bibitem{ricklin2013complement}
-Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
-  pathophysiological mechanisms.
-\newblock The Journal of Immunology 190: 3831--3838.
-\bibAnnoteFile{ricklin2013complement}
 
 \bibitem{hirayama1996linear}
 Hirayama H, Yoshii K, Ojima H, Kawai N, Gotoh S, et~al. (1996) Linear systems
