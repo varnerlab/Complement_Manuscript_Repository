@@ -229,7 +229,7 @@ After validation, we performed a global sensitivity analysis on the model ensemb
 
 \section*{Results}
 
-\subsection*{Formulation of the reduced order complement model.}
+\subsection*{Reduced order complement network.}
 The reduced order complement model described the alternate and lectin pathways (Fig. \ref{fig-schematic}).
 A trigger event initiated the lectin pathway, which activated the cleavage of C2 and C4 into C2a, C2b, C4a and C4b respectively.
 Classical Pathway (CP) C3 convertase (C4aC2b) then catalyzed the cleavage of C3 into C3a and C3b.
@@ -249,22 +249,29 @@ The residual between model simulations and experimental measurements was minimiz
 starting from an initial random parameter guess.
 Knowing the parameters of the lectin pathway did not affect the dynamics of the alternate pathway,
 we used a hierarchal approach that estimated the alternative and lectin pathway parameters separately.
-For the alternative pathway, we used the C3a and C5a measurements of Morad and coworkers \cite{morad2015time} in the absence of zymosan, and only allowed the alternative parameters to vary (Fig. \ref{fig-fit} A and B).
+The reduced order complement model captured the behavior of the alternative and lectin pathways (Fig. \ref{fig-fit}).
+For the alternative pathway, we used the C3a and C5a measurements in the absence of zymosan, and only allowed the alternative parameters to vary (Fig. \ref{fig-fit}A and B).
 The putative alternate parameters were then fixed, and the lectin parameters were estimated.
-Lectin parameters were estimated from C3a and C5a measurmemts in the presence of 1g zymosan (Fig. \ref{fig-fit} C and D).
-The reduced complement model captured the behavior of the alternative and lectin pathways (Fig. \ref{fig-fit}).
-Taken together, the reduced order approach reproduced a panel of lectin pathway initiation data sets in the neighborhood of physiological factor and inhibitor concentrations.
+Lectin parameters were estimated from C3a and C5a measurmemts in the presence of 1g zymosan (Fig. \ref{fig-fit}C and D).
+Taken together, the reduced order model reproduced a panel of lectin pathway initiation data sets in the neighborhood of physiological factor and inhibitor concentrations.
 However, it was unclear whether the reduced order model could predict new data, without updating the model parameters.
-
+To address this question, we fixed the model parameters and simulated data not used for model training.
 
 %However, we failed to fully capture the curvature of C5a alternative measureme (Fig. \ref{fig-fit}).
 %The decreasing slope of the experimental measurements may be an indication of the decreasing cofactors that are required for the spontaneous hydrolysis in the alternative pathway, which we neglected.
 
-We tested the predictive power of the reduced order human complement model with validation data sets not used during model training. Six validation data sets were used, three for C3a and C5a respectively at different zymosan concentrations. All kinetic and control parameters were
-fixed for the validation simulations. The reduced order model predicted the C3a and C5a time-course profiles at a qualitative level (Fig. \ref{fig-prediction}). For the prediction of the C3a at the three different inducer concentrations, our model was able to accurately capture the dynamic behaviors at a qualitative level, including the time the concentration of C3a plateaus. For the prediction for C5a, our model was able to capture the behavior at a quantitative level for all three inducer concentrations. However, the our model was not able to capture the concave down curvature for the cases of $0.001~g$ and $0.01~g$ inducer. We believe some of the shortcomings of the prediction may be attributed by our reduced complexity in the modeling of C4B interactions in our system. C4BP interaction was modeled as irreversible mass action kinetics, in reality the binding of C4BP onto other complement components are reversible. Due to this discrepancy in between our model and the experimental results, we believe that the interaction and the reversibility of the C4BP is a key player in creating a threshold where C5a is resistant to minor changes in inducer concentration even though C3a is sensitive.
+We tested the predictive power of the reduced order complement model with data sets not used during model training (Fig. \ref{fig-prediction}).
+Six validation data sets were used, three for C3a and C5a respectively at different zymosan concentrations.
+All model parameters were fixed for the validation simulations.
+The ensemble of reduced order models qualitatively predicted C3a and C5a dynamics as a function of inducer abundance.
+For the prediction of the C3a at the three different inducer concentrations, the model captured dynamics C3a formation.
+The model also captured the behavior of C5a formation at all three inducer concentrations.
+However, the model did not capture the concave down curvature for 0.001~g and 0.01~g zymosan.
+We believe some of the shortcomings of the prediction may be attributed to our reduced complexity in the modeling of C4B interactions in our system.
+C4BP interaction were modeled as irreversible mass action kinetics; however, the binding of C4BP with other complement components is likely reversible.
+Due to this discrepancy in between our model and the experimental results, we believe that the interaction and the reversibility of the C4BP is a key player in creating a threshold where C5a is resistant to minor changes in inducer concentration even though C3a is sensitive.
 
-
-\subsection*{Global Sensitivity analysis of the reduced order complement model}
+\subsection*{Global sensitivity analysis of the reduced order complement model}
 We conducted a Sobol's sensitivity analysis to estimate which parameters controlled the performance of the reduced order model. We calculated the sensitivity of the change in C3a and C5a profiles using the residuals between simulation and experimentally measured data for the cases of 0 and 1g zymosan (Fig. \ref{fig-SA}).
 For the cases in absence of zymosan where only the alternative pathway is active, we observed that only a few variables are responsible for the system response. For C3a alternate, the sensitivity analysis found that $k_{c3b~basal}$ and $k_{degradationC3a}$ are the only sensitive parameters. This gives us new insight in which of the parameters play a role in complement activation. Even though AP~C3~convertase is also responsible in the conversion of C3 and the production of C3a, the kinetic parameters that govern the equation was not sensitive at all. This elucidated that the activation of alternative pathway is more heavily governed by the spontaneous hydrolysis of C3 rather than the activity of AP~C3~Convertase. Surprisingly, closely examining the sensitive parameters that control C5a, in addition to the expected kinetic and control parameters related to the formation of AP~C5~Convertase, we observed that $k_C3~Convertase2$, the was previously not sensitive to C3a, to be sensitive in the formation of C5a. The AP~C3~Convertase is a substrate required for the formation of AP~C5~Convertase and the formation of C3b. The change in activity of AP C3 Convertase  will not drastically change the C3a dynamics, but will effect AP~C5a~Convertase formation and C5a formation.
 The our reduced order human complement model in combination with Sobol's sensitivity analysis was able to unravel important indirect parameter interaction.
