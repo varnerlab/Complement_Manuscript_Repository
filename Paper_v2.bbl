@@ -114,6 +114,33 @@ Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
 \newblock Journal of immunological methods 427: 13--18.
 \bibAnnoteFile{morad2015time}
 
+\bibitem{Luan:2007aa}
+Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
+  a human cascade are consistent with current therapeutic strategies.
+\newblock PLoS Comput Biol 3: e142.
+\bibAnnoteFile{Luan:2007aa}
+
+\bibitem{Nayak:2008aa}
+Nayak S, Salim S, Luan D, Zai M, Varner JD (2008) A test of highly optimized
+  tolerance reveals fragile cell-cycle mechanisms are molecular targets in
+  clinical cancer trials.
+\newblock PLoS One 3: e2016.
+\bibAnnoteFile{Nayak:2008aa}
+
+\bibitem{Tasseff:2010aa}
+Tasseff R, Nayak S, Salim S, Kaushik P, Rizvi N, et~al. (2010) Analysis of the
+  molecular networks in androgen dependent and independent prostate cancer
+  revealed fragile and robust subsystems.
+\newblock PLoS One 5: e8864.
+\bibAnnoteFile{Tasseff:2010aa}
+
+\bibitem{Rice:2016aa}
+Rice NT, Szlam F, Varner JD, Bernstein PS, Szlam AD, et~al. (2016) Differential
+  contributions of intrinsic and extrinsic pathways to thrombin generation in
+  adult, maternal and cord plasma samples.
+\newblock PLoS One 11: e0154127.
+\bibAnnoteFile{Rice:2016aa}
+
 \bibitem{morgan2015complement}
 Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
   and degenerative diseases.
