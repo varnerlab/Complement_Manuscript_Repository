@@ -405,35 +405,47 @@ Alternatively, we could also perform sensitivity analysis on the C3a prediction 
 
 \clearpage
 
+%The reaction rates controlling  such that $r_{j}\left(\mathbf{x},\mathbf{k}\right) = \bar{r}_{j}v_{j}$.
+
 \section*{Materials and Methods}
-We used ordinary differential equations (ODEs) to model the time evolution of proteins ($x_{i}$) in our reduced order complement model:
+We used ordinary differential equations (ODEs) to model the time evolution of complement proteins ($x_{i}$) in the reduced order model:
 \begin{equation}
 	\frac{dx_{i}}{dt}  =  \sum_{j = 1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)\qquad{i=1,2,\hdots,\mathcal{M}}\\
 \end{equation}
-where $\mathcal{R}$ denotes the number of reactions, $\mathcal{M}$ denotes the number of protein species in the model.
+where $\mathcal{R}$ denotes the number of reactions and $\mathcal{M}$ denotes the number of protein species in the model.
 The quantity $r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)$ denotes the rate of reaction $j$.
-Typically, reaction $j$ is a non-linear function of biochemical species abundance, as well as unknown kinetic parameters $\mathbf{k}$ ($\mathcal{K}\times{1}$).
+Typically, reaction $j$ is a non-linear function of biochemical and enzyme species abundance, as well as unknown model parameters $\mathbf{k}$ ($\mathcal{K}\times{1}$).
 The quantity $\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$.
 If $\sigma_{ij}>0$, species $i$ is produced by reaction $j$.
 Conversely, if $\sigma_{ij}<0$, species $i$ is consumed by reaction $j$, while $\sigma_{ij} = 0$ indicates species $i$ is not connected with reaction $j$.
 Species balances were subject to the initial conditions $\mathbf{x}\left(t_{o}\right) = \mathbf{x}_{o}$.
 
-The reaction rates controlling formation C4a, C4b, C2a and C2b were written as a product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$) such that $r_{j}\left(\mathbf{x},\mathbf{k}\right) = \bar{r}_{j}v_{j}$. The kinetic term for these rates was modeled using saturation kinetics.  The control term $0\leq v_{j}\leq 1$ for these reaction rates was modeled using regulatory transfer functions which took the form:
-\begin{equation}\label{eqn:control-factor}
-	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right) = k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
-\end{equation}where $\mathcal{Z}_{i}$ denotes the abundance factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
-
-We used saturation kinetics to model the lectin pathway activation and C3 and C5 convertase activity $\bar{r}_{j}$:
+Rate processes were written as the product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$) in the complement model.
+The kinetic term for the formation of C4a, C4b, C2a and C2b, lectin pathway activation, and C3 and C5 convertase activity was given by:
 \begin{equation}\label{eqn:rate-saturation}
 	\bar{r}_{j} = k_{j}^{max}\epsilon_{i}\left(\frac{x_{s}^{\eta}}{K_{js}^{\eta} + x_{s}^{\eta}}\right)
 \end{equation}
-where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$, $\eta$ denotes a cooperativity parameter (similar to a Hill coefficient), and $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$. On the other hand,
-we used mass action kinetics to model the protein conversion reactions within the network $\bar{r}_{j}$:
+where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the abundance of the enzyme catalyzing reaction $j$,
+$\eta$ denotes a cooperativity parameter, and $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
+We used mass action kinetics to model protein-protein binding interactions within the network:
 \begin{equation}\label{eqn:rate-action}
-	\bar{r}_{j} = k_{j}^{max}\prod_{s\in{m_{j}^{-}}}x_{s}
+	\bar{r}_{j} = k_{j}^{max}\prod_{s\in{m_{j}^{-}}}x_{s}^{-\sigma_{sj}}
 \end{equation}
-where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the enzyme abundance which catalyzes reaction $j$. The product in Eqn \eqref{eqn:rate-action} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
-
+where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\sigma_{sj}$ denotes the stoichiometric coefficient for species $s$ in reaction $j$,
+and $s\in{m_{j}}$ denotes the set of \textit{reactants} for reaction $j$.
+The control terms $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
+For each rate, we used a rule-based approach to select from competing control factors.
+If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
+$v_{j}=\mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
+where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a regulatory transfer function quantifying the influence of factor $i$ on rate $j$.
+The function $\mathcal{I}_{j}\left(\cdot\right)$ is an integration rule which maps the output of regulatory transfer functions into a control
+variable. Each regulatory transfer function took the form:
+\begin{equation}\label{eqn:control-factor}
+	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right)=k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
+\end{equation}where $\mathcal{Z}_{i}$ denotes the abundance of factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
+In this study, we used $\mathcal{I}_{j}\in\left\{mean\right\}$ \cite{pr3010178}. If a process has no modifying factors, $v_{j}=1$.
+The model equations implemented in MATLAB and solved using the \texttt{ODE15s} routine (The Mathworks, Natick MA).
+The complement model code and parameter ensemble can be downloaded from http://www.varnerlab.org.
 
 \subsection*{Estimation of an ensemble of model parameters.}
 Model parameters were estimated by minimizing the difference between simulations and experimental C3a and C5a measurements (squared residual):
@@ -466,7 +478,6 @@ and $\sigma$ denotes the perturbation amplitude:
 \begin{equation}
 	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
 \end{equation}
-
 where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
 At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ for our model which we use for plotting best fits against the experimental data. We perturb this parameter vector to generate an ensemble of parameter vectors. The quality of parameter estimates was measured using goodness of fit (model residual).  The DOPS routine was implemented in the MATLAB programming language.
 

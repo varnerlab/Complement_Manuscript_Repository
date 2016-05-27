@@ -147,6 +147,12 @@ Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
 \newblock Nature Reviews Drug Discovery .
 \bibAnnoteFile{morgan2015complement}
 
+\bibitem{pr3010178}
+Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
+  using reduced order effective kinetic models.
+\newblock Processes 3: 178.
+\bibAnnoteFile{pr3010178}
+
 \bibitem{SOBOL_METHOD}
 Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and
   their monte carlo estimates.
