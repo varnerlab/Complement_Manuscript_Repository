@@ -114,23 +114,11 @@ Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
 \newblock Journal of immunological methods 427: 13--18.
 \bibAnnoteFile{morad2015time}
 
-\bibitem{sagar2015dynamic}
-Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
-  using reduced order effective kinetic models.
-\newblock Processes .
-\bibAnnoteFile{sagar2015dynamic}
-
 \bibitem{morgan2015complement}
 Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
   and degenerative diseases.
 \newblock Nature Reviews Drug Discovery .
 \bibAnnoteFile{morgan2015complement}
-
-\bibitem{wayman2015dynamic}
-Wayman JA, Sagar A, Varner JD (2015) Dynamic modeling of cell-free biochemical
-  networks using effective kinetic models.
-\newblock Processes .
-\bibAnnoteFile{wayman2015dynamic}
 
 \bibitem{SOBOL_METHOD}
 Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and
