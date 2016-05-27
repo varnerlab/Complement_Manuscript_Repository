@@ -293,7 +293,7 @@ The sensitivity analysis yielded the expected results for the lectin pathway (Fi
 One key difference observed between the sensitivity of C3a an C5a parameters, was their respective degradation constants.
 The rate constant governing C3a degradation was sensitive, while the degradation constant for C5a was not.
 This difference was likely attributable to the magnitude of the degradation parameters and the respective concentration of C3a and C5a.
-Taken together, global sensitivity analysis of the reduced order complement model identified important indirect parameter interactions that could have therapeutic significance.
+Taken together, global sensitivity analysis identified important indirect parameter interactions that could have therapeutic significance.
 
 \clearpage
 
@@ -309,9 +309,35 @@ Thus, the model was an order of magnitude smaller and included more pathways tha
 We used this framework to simulate the dynamics of C3a and C5a formation in the lectin and alternative pathways.
 We estimated an ensemble of model parameters from \textit{in~vitro} time series measurements of C3a and C5a abundance.
 Subsequently, we validated the model on unseen C3a and C5a measurements that were not used for model training.
-Given its small size, the hybrid approach produced a surprisingly predictive human complement model.
+Given its small size, the hybrid approach produced a surprisingly predictive complement model.
 After validation, we performed a global sensitivity analysis on the model ensemble to estimate which parameters were critical to model performance under different experimental conditions.
-The global sensitivity analysis of the reduced order complement model unravelled important indirect parameter interactions that could have therapeutic significance.
+The global sensitivity analysis identified important indirect parameter interactions that could have therapeutic significance.
+Using a simple and versatile modeling approach, we developed a reduced order complement model is computationally inexpensive, and versatile so it could easily be incorporated into pre-existing or new pharmacokinetic models. Furthermore this approach model has the potential to create individualized treatment plans for patients with complement deficiency.
+
+Despite its importance, there has been a paucity of validated mathematical models of complement pathway activation.
+To our knowledge, this study is one of the first complement models that combined multiple initiation pathways with experimental validation of important complement products like C5a.
+However, there have been several theoretical models of components of the cascade in the literature.
+Liu and co-workers modeled the formation of C3a through the classical pathway using 45 non-linear ODEs  \cite{liu2011computational}.
+In contrast, in this study we modeled lectin mediated C3a formation using only five ODEs.
+Though we did not model all the initiation interactions in detail, especially the cross-talk between the lectin and classical pathways,
+we successfully captured C3a dynamics with respect to different concentrations of lectin initiators.
+The model also captured the dynamics of C3a and C5a formed from the alternate pathway using only seven ODEs.
+The reduced order model predictions of C5a were qualitatively similar to the theoretical complement model of Zewde et al which involved over 100 ODEs \cite{zewde2016quantitative}.
+However, we found that the quantity of C3a produced in the alternate pathway was nearly 1000 times the quantity of C5a produced.
+Though this was in agreement with the experimental data \cite{morad2015time},
+it differed from the theoretical predictions made by Zewde et al. who showed C3a was ${10^8}$ times the C5a concentration \cite{zewde2016quantitative}.
+In our model, the time profile of C5a generation from the lectin pathway changed with respect to the quantity of zymosan (the lectin pathway initiator).
+The lag phase for generation was inversely proportional to the initiator concentration.
+Korotaevskiy et al. showed a similar trend using a theoretical model of complement, albeit for much shorter time scales \cite{korotaevskiy2009non}.
+Taken together, the reduced order complement model performed similarly to existing large mechanistic models, despite being significantly smaller.
+
+% complement in immune response has been well known since long, there
+% The lag phase in the initiation of C5a is followed by an acceleration in the production of C5a.
+%  Similarly, our model was able to capture C3a formation from the alternate pathway that showed the same qualitative trends as Zewde et al \cite{zewde2016quantitative}.
+% It is possible that the experimental system has trace amounts of C5a which leads to this difference.
+% Zewde et al. \cite{zewde2016quantitative} show a similar time profile for C5a generated in the alternate pathway as well.
+
+
 
 The performance of the reduced order complement model was impressive given its limited size.
 However, there are several questions that should be explored further.
@@ -324,6 +350,11 @@ Time course measurements of MAC abundance (and MAC formation dynamics) are also 
 Next, we should address the under-prediction of C3a. We believe the C3a under-prediction can be attributed to how we modeled C4BP interactions.
 C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes;
 however, the binding of C4BP with complement proteins is likely reversible and C4BP-bound convertases may have residual activity.
+We also did not capture the maximum concentration of C3a at low initiator levels.
+One possible reasons for this could the C2-by pass pathway, which was not included in the model.
+This pathway further accelerates C3a production without the involvement of a C3 convertase.
+Currently the C3a in the model is generated only through the activity of a C3 convertase.
+Incorporating this additional step within the reduced order modeling framework would be a future direction that we need to consider.
 We should test alternative model structures which include reversible C4BP binding, and partially active convertases.
 Alternatively, we could also perform sensitivity analysis on the C3a prediction residual to determine which parameters controlled the C3a prediction.
 
@@ -340,7 +371,6 @@ The discussion has three (sometimes four) paragraphs:
 
 	\item{\textbf{Second~paragraph}: Contrast the key findings of the study with other computational/experimental studies}
 
-Though the role of complement in immune response has been well known since long, there has been a paucity of mathematical models of complement. To our knowledge this is the first model of complement that combines different pathways of initiation and validates the dynamics of downstream proteins like C5a using experimental data. Liu and co-workers modeled formation of C3a through the classical pathway using 45 non-linear ODEs  \cite{liu2011computational}. The hybrid modeling framework, however, allowed us to model the lectin mediated formation of C3a using only 5 ODEs.  Though we do not model all the interactions of initiation in detail, especially the cross-talk between lectin and classical pathways like Liu et al. \cite{liu2011computational} we successfully captured C3a dynamics with respect to different concentrations of lectin initiators. The model was also surprisingly accurate in capturing the quantitative dynamics of C3a and C5a formed from the alternate pathway with only 7 ODEs. The lag phase in the initiation of C5a is followed by an acceleration in the production of C5a. This is also qualitatively similar to the predicted C5a time profiles using a theoretical model of complement with 107 equations \cite{zewde2016quantitative}. Similarly, our model was able to capture C3a formation from the alternate pathway that showed the same qualitative trends as Zewde et al \cite{zewde2016quantitative}. We also observe in our model simulation that the quantity of C3a produced in the alternate pathway is nearly 1000 times the quantity of  C5a produced. Though this is in agreement with the experimental data  \cite{morad2015time}, it differs from the theoretical predictions by Zewde et al.\cite{zewde2016quantitative} who show that C3a is ${10^8}$ times the C5a concentration. It is possible that the experimental system has trace amounts of C5a which leads to this difference. In our model the time profile of C5a generation from the lectin pathway changes with respect to the quantity of zymosan (the lectin pathway initiator). We see that the lag phase for generation progressively decreases with increasing concentration of the initiator. Korotaevskiy et al. \cite{korotaevskiy2009non} show a similar lag phase followed by an accelerated production of C5a using a theoretical model of complement for much smaller time scales. Zewde et al. \cite{zewde2016quantitative} show a similar time profile for C5a generated in the alternate pathway as well. We do observe a similar trend in our model. However given the different time scale in our study we do not observe a very prominent lag phase. Our model also captures the maximum concentrations of C5a with different initiators and in the alternate pathway. However we do not capture the maximum concentration of C3a with low initiator levels though we capture the overall trend which includes the initiation and amplification phases. One of the possible reasons for this could be the non-inclusion of C2-by pass pathway which further accelerates production of C3a without the involvement of a C3 convertase. Currently the C3a in the model is generated only through the activity of a C3 convertase. Incorporating this additional step within the reduced order modeling framework would be a future direction that we need to consider. Taken together we surprisingly do very well in capturing the dynamics of key complement proteins and observe similar trends as in large mechanistic models.
 
 %%% We talk about complement therapeutics here in relation with sensitivity analysis
 

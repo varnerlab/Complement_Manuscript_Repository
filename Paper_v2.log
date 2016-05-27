@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 MAY 2016 09:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 MAY 2016 10:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,12 +887,12 @@ duced or-der com-ple-ment model de-scribed
 
 ] [6] [7] [8] [9
 
-] [10] [11] [12] [13] [14
+] [10] [11] [12] [13
 
-] [15] [16] [17] [18
+] [14] [15] [16] [17
 
-]
-(./Paper_v2.bbl [19
+] (./Paper_v2.bbl
+[18
 
 ]
 Underfull \hbox (badness 4940) in paragraph at lines 137--142
@@ -906,36 +906,36 @@ Underfull \hbox (badness 3623) in paragraph at lines 137--142
 . avail-able on-line:
  []
 
-) [20] <./figs/Fig1_Schematic_v2.pdf, id=87, 1626.075pt x 1748.5325pt>
+) [19] <./figs/Fig1_Schematic_v2.pdf, id=84, 1626.075pt x 1748.5325pt>
 File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 462.
+Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 492.
 (pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 463.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 493.
 
 
-LaTeX Warning: Float too large for page by 50.68376pt on input line 464.
+LaTeX Warning: Float too large for page by 50.68376pt on input line 494.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure2_Fit.pdf, id=88, 1293.83376pt x 1088.065pt>
+<./figs/Figure2_Fit.pdf, id=85, 1293.83376pt x 1088.065pt>
 File: ./figs/Figure2_Fit.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fit.pdf>
-Package pdftex.def Info: ./figs/Figure2_Fit.pdf used on input line 468.
+Package pdftex.def Info: ./figs/Figure2_Fit.pdf used on input line 498.
 (pdftex.def)             Requested size: 469.75502pt x 395.0402pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure3_Predictions_2.pdf, id=89, 1293.83376pt x 1128.215pt>
+<./figs/Figure3_Predictions_2.pdf, id=86, 1293.83376pt x 1128.215pt>
 File: ./figs/Figure3_Predictions_2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_Predictions_2.pdf>
-Package pdftex.def Info: ./figs/Figure3_Predictions_2.pdf used on input line 47
+Package pdftex.def Info: ./figs/Figure3_Predictions_2.pdf used on input line 50
 4.
 (pdftex.def)             Requested size: 469.75502pt x 409.61734pt.
 
@@ -943,19 +943,19 @@ Package pdftex.def Info: ./figs/Figure3_Predictions_2.pdf used on input line 47
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./figs/Figure4_Sensitivity_Analysis_may25.pdf, id=90, 1749.53625pt x 1047.915p
+<./figs/Figure4_Sensitivity_Analysis_may25.pdf, id=87, 1749.53625pt x 1047.915p
 t>
 File: ./figs/Figure4_Sensitivity_Analysis_may25.pdf Graphic file (type pdf)
  <use ./figs/Figure4_Sensitivity_Analysis_may25.pdf>
 Package pdftex.def Info: ./figs/Figure4_Sensitivity_Analysis_may25.pdf used on 
-input line 481.
+input line 511.
 (pdftex.def)             Requested size: 469.75502pt x 281.35783pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21 <./figs/Fig1_Schematic_v2.pdf>] [22 <./figs/Figure2_Fit.pdf>] [23 <./figs/F
-igure3_Predictions_2.pdf>] [24 <./figs/Figure4_Sensitivity_Analysis_may25.pdf>]
+[20 <./figs/Fig1_Schematic_v2.pdf>] [21 <./figs/Figure2_Fit.pdf>] [22 <./figs/F
+igure3_Predictions_2.pdf>] [23 <./figs/Figure4_Sensitivity_Analysis_may25.pdf>]
 [1
 
 
@@ -971,7 +971,7 @@ Here is how much of TeX's memory you used:
  10753 multiletter control sequences out of 15000+600000
  29448 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,41p,3498b,1029s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,41p,3488b,1029s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -990,10 +990,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v2.pdf (28 pages, 3011201 bytes).
+Output written on Paper_v2.pdf (27 pages, 3010601 bytes).
 PDF statistics:
- 3811 PDF objects out of 4296 (max. 8388607)
- 2521 compressed objects within 26 object streams
+ 3808 PDF objects out of 4296 (max. 8388607)
+ 2519 compressed objects within 26 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
