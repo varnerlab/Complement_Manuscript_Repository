@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JUN 2016 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JUN 2016 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -884,7 +884,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 124.
  [1] [1] [2] [3]
 [4]
-Overfull \hbox (5.75125pt too wide) in paragraph at lines 233--244
+Overfull \hbox (5.75125pt too wide) in paragraph at lines 232--243
  \OT1/phv/b/n/12 Re-duced or-der com-ple-ment net-work. \OT1/phv/m/n/12 The re-
 duced or-der com-ple-ment model de-scribed
  []
@@ -893,7 +893,7 @@ duced or-der com-ple-ment model de-scribed
 
 ] [6]
 
-LaTeX Warning: Reference `fig-ROBUSTNESS' on page 7 undefined on input line 296
+LaTeX Warning: Reference `fig-ROBUSTNESS' on page 7 undefined on input line 294
 .
 
 [7] [8] [9] [10
@@ -921,13 +921,13 @@ Underfull \hbox (badness 3623) in paragraph at lines 271--276
 File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 541.
+Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 539.
 (pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 542.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 540.
 
 
-LaTeX Warning: Float too large for page by 50.68376pt on input line 543.
+LaTeX Warning: Float too large for page by 50.68376pt on input line 541.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -936,7 +936,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure2_Fits_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fits_final.pdf>
-Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 549.
+Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 547.
 (pdftex.def)             Requested size: 469.75502pt x 392.7755pt.
 
 
@@ -947,7 +947,7 @@ File: ./figs/Figure3_predictions_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_predictions_final.pdf>
 Package pdftex.def Info: ./figs/Figure3_predictions_final.pdf used on input lin
-e 555.
+e 553.
 (pdftex.def)             Requested size: 469.75502pt x 437.24211pt.
 
 
@@ -957,7 +957,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure4_SEN.pdf Graphic file (type pdf)
 
 <use ./figs/Figure4_SEN.pdf>
-Package pdftex.def Info: ./figs/Figure4_SEN.pdf used on input line 568.
+Package pdftex.def Info: ./figs/Figure4_SEN.pdf used on input line 566.
 (pdftex.def)             Requested size: 469.75502pt x 476.68512pt.
 
 
@@ -968,7 +968,7 @@ File: ./figs/Figure5_RobustnessAnalysis.pdf Graphic file (type pdf)
 
 <use ./figs/Figure5_RobustnessAnalysis.pdf>
 Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis.pdf used on input li
-ne 574.
+ne 572.
 (pdftex.def)             Requested size: 469.75502pt x 162.514pt.
 
 
@@ -978,11 +978,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure6_target.pdf Graphic file (type pdf)
 
 <use ./figs/Figure6_target.pdf>
-Package pdftex.def Info: ./figs/Figure6_target.pdf used on input line 581.
+Package pdftex.def Info: ./figs/Figure6_target.pdf used on input line 579.
 (pdftex.def)             Requested size: 469.75502pt x 605.2957pt.
 
 
-LaTeX Warning: Float too large for page by 78.86569pt on input line 584.
+LaTeX Warning: Float too large for page by 78.86569pt on input line 582.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
