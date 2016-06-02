@@ -13,6 +13,11 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{sarma2011complement}
+Sarma JV, Ward PA (2011) The complement system.
+\newblock Cell and tissue research 343: 227--235.
+\bibAnnoteFile{sarma2011complement}
+
 \bibitem{ricklin2010complement}
 Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
   for immune surveillance and homeostasis.
@@ -21,18 +26,13 @@ Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
 
 \bibitem{ricklin2007complement}
 Ricklin D, Lambris JD (2007) Complement-targeted therapeutics.
-\newblock Nature biotechnology .
+\newblock Nature biotechnology 25: 1265-1275.
 \bibAnnoteFile{ricklin2007complement}
 
 \bibitem{rittirsch2008harmful}
 Rittirsch D, Flierl MA, Ward PA (2008) Harmful molecular mechanisms in sepsis.
 \newblock Nature Reviews Immunology 8: 776--787.
 \bibAnnoteFile{rittirsch2008harmful}
-
-\bibitem{sarma2011complement}
-Sarma JV, Ward PA (2011) The complement system.
-\newblock Cell and tissue research 343: 227--235.
-\bibAnnoteFile{sarma2011complement}
 
 \bibitem{ricklin2013complement}
 Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
@@ -42,7 +42,7 @@ Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
 
 \bibitem{walport2001complement}
 Walport MJ (2001) Complement. first of two parts.
-\newblock The New England journal of medicine .
+\newblock The New England journal of medicine 344: 1058--1066.
 \bibAnnoteFile{walport2001complement}
 
 \bibitem{pangburn1984alternative}
@@ -83,6 +83,19 @@ Liszewski MK, Farries TC, Lublin DM, Rooney IA, Atkinson JP (1995) Control of
 \newblock Advances in immunology 61: 201--283.
 \bibAnnoteFile{liszewski1995control}
 
+\bibitem{chauhan2006presence}
+Chauhan A, Moore T (2006) Presence of plasma complement regulatory proteins
+  clusterin (apo j) and vitronectin (s40) on circulating immune complexes
+  (cic).
+\newblock Clinical \& Experimental Immunology 145: 398--406.
+\bibAnnoteFile{chauhan2006presence}
+
+\bibitem{zewde2016quantitative}
+Zewde N, Gorham~Jr RD, Dorado A, Morikis D (2016) Quantitative modeling of the
+  alternative pathway of the complement system.
+\newblock PloS one 11: e0152337.
+\bibAnnoteFile{zewde2016quantitative}
+
 \bibitem{hirayama1996linear}
 Hirayama H, Yoshii K, Ojima H, Kawai N, Gotoh S, et~al. (1996) Linear systems
   analysis of activating processes of complement system as a defense mechanism.
@@ -92,20 +105,14 @@ Hirayama H, Yoshii K, Ojima H, Kawai N, Gotoh S, et~al. (1996) Linear systems
 \bibitem{korotaevskiy2009non}
 Korotaevskiy AA, Hanin LG, Khanin MA (2009) Non-linear dynamics of the
   complement system activation.
-\newblock Mathematical biosciences .
+\newblock Mathematical biosciences 222: 127--143.
 \bibAnnoteFile{korotaevskiy2009non}
 
 \bibitem{liu2011computational}
 Liu B, Zhang J, Tan PY, Hsu D, Blom AM, et~al. (2011) A computational and
   experimental study of the regulatory mechanisms of the complement system.
-\newblock PLoS Comput Biol .
+\newblock PLoS Comput Biol 7: e1001059.
 \bibAnnoteFile{liu2011computational}
-
-\bibitem{zewde2016quantitative}
-Zewde N, Gorham~Jr RD, Dorado A, Morikis D (2016) Quantitative modeling of the
-  alternative pathway of the complement system.
-\newblock PloS one .
-\bibAnnoteFile{zewde2016quantitative}
 
 \bibitem{morad2015time}
 Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
@@ -113,6 +120,12 @@ Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
   vitro.
 \newblock Journal of immunological methods 427: 13--18.
 \bibAnnoteFile{morad2015time}
+
+\bibitem{morgan2015complement}
+Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
+  and degenerative diseases.
+\newblock Nature Reviews Drug Discovery 14: 857-877.
+\bibAnnoteFile{morgan2015complement}
 
 \bibitem{Luan:2007aa}
 Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
@@ -141,11 +154,99 @@ Rice NT, Szlam F, Varner JD, Bernstein PS, Szlam AD, et~al. (2016) Differential
 \newblock PLoS One 11: e0154127.
 \bibAnnoteFile{Rice:2016aa}
 
-\bibitem{morgan2015complement}
-Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
-  and degenerative diseases.
-\newblock Nature Reviews Drug Discovery .
-\bibAnnoteFile{morgan2015complement}
+\bibitem{heja2012monospecific}
+H{\'e}ja D, Harmat V, Fodor K, Wilmanns M, Dob{\'o} J, et~al. (2012)
+  Monospecific inhibitors show that both mannan-binding lectin-associated
+  serine protease-1 (masp-1) and-2 are essential for lectin pathway activation
+  and reveal structural plasticity of masp-2.
+\newblock Journal of Biological Chemistry : 20290--20300.
+\bibAnnoteFile{heja2012monospecific}
+
+\bibitem{roguska2014generation}
+Roguska M, Splawski I, Diefenbach-Streiber B, Dolan E, Etemad-Gilbertson B,
+  et~al. (2014) Generation and characterization of lfg316, a fully-human
+  anti-c5 antibody for the treatment of age-related macular degeneration.
+\newblock Investigative Ophthalmology \& Visual Science : 3433--3433.
+\bibAnnoteFile{roguska2014generation}
+
+\bibitem{melis2015complement}
+Melis JP, Strumane K, Ruuls SR, Beurskens FJ, Schuurman J, et~al. (2015)
+  Complement in therapy and disease: Regulating the complement system with
+  antibody-based therapeutics.
+\newblock Molecular immunology : 117--130.
+\bibAnnoteFile{melis2015complement}
+
+\bibitem{weston2014clinical}
+Weston-Davies WH, Nunn MA, Pinto FO, Mackie IJ, Richards SJ, et~al. (2014)
+  Clinical and immunological characterisation of coversin, a novel small
+  protein inhibitor of complement c5 with potential as a therapeutic agent in
+  pnh and other complement mediated disorders.
+\newblock Blood : 4280--4280.
+\bibAnnoteFile{weston2014clinical}
+
+\bibitem{epstein2007complement}
+Epstein D, Kurz JC (2007).
+\newblock Complement binding aptamers and anti-c5 agents useful in the
+  treatment of ocular disorders.
+\newblock US Patent App. 12/224,708.
+\bibAnnoteFile{epstein2007complement}
+
+\bibitem{borodovsky2014aln}
+Borodovsky A, Yucius K, Sprague A, Banda NK, Holers VM, et~al. (2014) Aln-cc5,
+  an investigational rnai therapeutic targeting c5 for complement inhibition.
+\newblock Complement : 40.
+\bibAnnoteFile{borodovsky2014aln}
+
+\bibitem{sissons1977metabolism}
+Sissons J, Liebowitch J, Amos N, Peters D (1977) Metabolism of the fifth
+  component of complement, and its relation to metabolism of the third
+  component, in patients with complement activation.
+\newblock Journal of Clinical Investigation : 704.
+\bibAnnoteFile{sissons1977metabolism}
+
+\bibitem{swaak1982determination}
+Swaak A, Hannema A, Vogelaar C, Boom F, van Es L, et~al. (1982) Determination
+  of the half-life of c3 in patients and its relation to the presence of
+  c3-breakdown products and/or circulating immune complexes.
+\newblock Rheumatology international : 161--166.
+\bibAnnoteFile{swaak1982determination}
+
+\bibitem{noris2014dynamics}
+Noris M, Galbusera M, Gastoldi S, Macor P, Banterla F, et~al. (2014) Dynamics
+  of complement activation in ahus and how to monitor eculizumab therapy.
+\newblock Blood : 1715--1726.
+\bibAnnoteFile{noris2014dynamics}
+
+\bibitem{schwaeble2011methods}
+Schwaeble HW, Stover CM, Tedford CE, Parent JB, Fujita T (2011).
+\newblock Methods for treating conditions associated with masp-2 dependent
+  complement activation.
+\newblock US Patent 7,919,094.
+\bibAnnoteFile{schwaeble2011methods}
+
+\bibitem{katschke2012inhibiting}
+Katschke KJ, Wu P, Ganesan R, Kelley RF, Mathieu MA, et~al. (2012) Inhibiting
+  alternative pathway complement activation by targeting the factor d exosite.
+\newblock Journal of Biological Chemistry : 12886--12892.
+\bibAnnoteFile{katschke2012inhibiting}
+
+\bibitem{hu2013therapeutic}
+Hu X, Holers VM, Thurman JM, Schoeb TR, Ramos TN, et~al. (2013) Therapeutic
+  inhibition of the alternative complement pathway attenuates chronic eae.
+\newblock Molecular immunology : 302--308.
+\bibAnnoteFile{hu2013therapeutic}
+
+\bibitem{bansal2014humanized}
+Bansal R (2014).
+\newblock Humanized and chimeric anti-properdin antibodies.
+\newblock US Patent 8,664,362.
+\bibAnnoteFile{bansal2014humanized}
+
+\bibitem{vogel2004recombinant}
+Vogel CW, Fritzinger DC, Hew BE, Thorne M, Bammert H (2004) Recombinant cobra
+  venom factor.
+\newblock Molecular immunology : 191--199.
+\bibAnnoteFile{vogel2004recombinant}
 
 \bibitem{pr3010178}
 Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
@@ -163,7 +264,7 @@ Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and
 Saltelli A, Annoni P, Azzini I, Campolongo F, Ratto M, et~al. (2010) Variance
   based sensitivity analysis of model output. design and estimator for the
   total sensitivity index.
-\newblock Computer Physics Communications .
+\newblock Computer Physics Communications 181: 259--270.
 \bibAnnoteFile{saltelli2010variance}
 
 \bibitem{SALIB}
