@@ -274,4 +274,10 @@ Herman J.
   https://github.com/jdherman/salib.
 \bibAnnoteFile{SALIB}
 
+\bibitem{Tasseff:2011aa}
+Tasseff R, Nayak S, Song SO, Yen A, Varner JD (2011) Modeling and analysis of
+  retinoic acid induced differentiation of uncommitted precursor cells.
+\newblock Integr Biol (Camb) 3: 578-91.
+\bibAnnoteFile{Tasseff:2011aa}
+
 \end{thebibliography}
