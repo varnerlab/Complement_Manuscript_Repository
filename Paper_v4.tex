@@ -271,14 +271,14 @@ We also failed to capture the concave down curvature for the 0.001~g and 0.01~g 
 The decreasing slope of the C5a measurements may indicate decreasing cofactors abundance, or missing biology which we have not explicitly accounted for in the reduced order approach.
 However, despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the dynamic time scale of C3a formation,
 and the correct order of magnitude for the concentration of C5a for three inducer levels.
-Next, we used global sensitivity analysis to determine which parameters controlled the performance of the complement model.
+Next, we used global sensitivity and robustness analysis to determine which parameters and species controlled the performance of the complement model.
 
 %This gives us new insight in which of the parameters play a role in complement activation. Even though AP~C3~convertase is also responsible in the conversion of C3 and the production of C3a, the kinetic parameters that govern the equation was not sensitive at all. This elucidated that the activation of
 
 %
 \subsection*{Global analysis of the reduced order complement model}
 We conducted sensitivity analysis to estimate which parameters controlled the performance of the reduced order complement model.
-We calculated the sensitivity of the C3a and C5a residuals with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA} (A-D)).
+We calculated the sensitivity of the C3a and C5a residuals with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA}A - D).
 In the absence of zymosan (where only the alternative pathway is active), $k_{f,C3b}$ (formation of C3b) and $k_{d,C3a}$ (degradation rate constant governing C3a)
 were largely responsible for the system response. Interestingly, $k_{c,C3}$ (the rate constant governing AP C3-convertase activity) was not sensitive in the absence of zymosan.
 Thus, the behavior of the alternative pathway was more heavily influenced by the spontaneous hydrolysis of C3, rather than AP C3-convertase activity.
@@ -289,9 +289,13 @@ The sensitivity analysis yielded the expected results for the lectin pathway tha
 One key difference observed between the sensitivity of C3a and C5a parameters, was their respective degradation constants.
 The rate constant governing C3a degradation was sensitive, while the degradation constant for C5a was not.
 This difference was likely attributable to the magnitude of the degradation parameters and the respective concentrations of C3a and C5a.
-Taken together, sensitivity analysis identified important indirect parameter interactions that could have therapeutic significance.
+Thus, sensitivity analysis identified important indirect parameter interactions that could have therapeutic significance.
+However, sensitivity coefficients are a local measure of how small changes in a parameter value effects a performance objective, for example
+the abundance of C5a. To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody we performed
+robustness analysis. Robustness coefficients quantify the response of a marker to a structural or operational perturbation to the network architecture,
+in this case a decrease in the initial abundance of C3 and C5.
 
-We subsequently did a robustness analysis to interrogate the effects of perturbing initial concentrations of C3 and C5 on the levels of C3a and C5a (Fig \ref{fig-robustness-analysis}).
+We subsequently did a robustness analysis to interrogate the effects of perturbing initial concentrations of C3 and C5 on the levels of C3a and C5a (Fig. \ref{fig-robustness-analysis}).
 We calculated robustness indices for C3a and C5a using the ratio of their area under the curves (AUCs) in the perturbed and unperturbed states for each of the 50 parameter vectors. We perturbed the initial concentration of C3, C5 and a combination of both by decreasing their concentrations by 50 \% and 90\%. We calculated corresponding robustness indices for C3a and C5a with no initiator (alternate pathway activation) and maximum initiator of lectin pathway (1g of zymosan).  A robustness index of one indicated no effect due to the perturbation whereas an index of zero indicated a strong effect of the perturbation. In both cases (50 \% and 90\% knockdown) we see that C3a and C5a levels are strongly influenced by initial concentrations of C3 and C5 in the presence of lectin pathway initiator. The C3a generated from the alternate pathway also follows the same pattern where it is influenced by the initial concentration of C3. However we observe an interesting trend with respect to C5a generated in the alternate pathway. The amount of C5a decreases with decrease in C3 concentration. This suggests that the C3b that is generated in the alternate pathway is primarily involved in the formation of AP C5-convertase (and is a rate limiting step). This is in agreement with our sensitivity analysis where were we see that the AP C3-convertase primarily can affect the dynamics of C5a formation. At the same time, in the lectin initiated pathway, the robustness of C5a levels to initial C3 concentration in both cases (robustness index of 1 or almost 1 in the 90\%) indicates that small concentrations of C3 and C5 convertases can catalyze the downstream formation of C5a. Thus the formation of C5a in presence of an initiator remains unaffected until C3 reaches a very low concentration. These results agree with the current push for complement therapeutics targeting C3 and C5. Conversely, the significance of the convertases identified by the sensitivity analysis indicate that they may also be effective targets for therapeutic intervention, however, these results require experimental validation before any definitive conclusions can be reached.
 The combination of robustness analysis and sensitivity analysis, taken together, indicate specific mechanisms that can be targeted for therapeutic interventions.
 
@@ -526,12 +530,24 @@ Robustness coefficients denoted by $\alpha\left(i,j,t_{o},t_{f}\right)$ are defi
 Here $t_o$ and $t_f$ denote the initial and final simulation time respectively, while $i$ and $j$ denote the indices for the marker and the perturbation respectively.
 A value of $\alpha\left(i,j,t_{o},t_{f}\right)>1$, indicates increased marker abundance, while $\alpha\left(i,j,t_{o},t_{f}\right)<1$ indicates decreased marker abundance following perturbation $j$. If $\alpha\left(i,j,t_{o},t_{f}\right)\sim{1}$ the $j$th perturbation does not influence the abundance of marker $i$.
 
-\clearpage
-
 %Need to talk more about biochemical benefits and importance for of biochemical problems
 
+\clearpage
+
+\section*{Competing interests}
+The authors declare that they have no competing interests.
+
+\section*{Author's contributions}
+J.V directed the study. A.S developed the reduced order complement model.
+W.D and M.M analyzed model simulations and generated figures for the manuscript.
+The manuscript was prepared and edited for publication by A.S., W.D. M.M and J.V.
+
 \section*{Acknowledgements}
-This study was supported by an award from [FILL ME IN].
+We gratefully acknowledge the suggestions from the anonymous reviewers to improve this manuscript.
+
+\section*{Funding}
+This study was supported by an award from the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376) to J.V. for the support of A.S.
+
 \clearpage
 
 
@@ -582,7 +598,7 @@ This study was supported by an award from [FILL ME IN].
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis_v2.pdf}
 \caption{Robustness analysis of the reduced order complement model with respect to the C3 and C5 initial concentrations using 50 parameter sets.  Robustness analysis was conducted on the four cases we used to train our model, C3a alternate (0 zymosan), C5a alternate (0 zymosan),  C3a lectin (1 g zymosan), and C5a lectin (1 g zymosan), by reducing the initial concentration of C3 and/or C5 by (A) 50 \% and (B) 90 \%. The bars denote robustness index which a measure of system changes from the perturbation of initial concentration that defined by the ratio of the area under the concentration curve of perturbed case and that of the unperturbed case. The error bars represent one standard deviation. At unity, the perturbed initial concentration has no impact on the measured output, and a robustness index lesser than or greater than one indicates a negative or positive relation between the perturbed initial concentration and the measured output respectively.}\label{fig-robustness-analysis}
 \end{figure}
 

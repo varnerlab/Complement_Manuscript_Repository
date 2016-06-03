@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 JUN 2016 07:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 JUN 2016 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,10 +889,15 @@ duced or-der com-ple-ment model de-scribed
 
 ] [11] [12] [13] [14] [15
 
-] [16] [17] [18] [19] [20
+] [16] [17] [18] [19]
+Overfull \hbox (5.04312pt too wide) in paragraph at lines 541--544
+\OT1/phv/m/n/12 M.M an-a-lyzed model sim-u-la-tions and gen-er-ated fig-ures fo
+r the manuscript. The manuscript
+ []
 
-]
-(./Paper_v4.bbl [21
+[20
+
+] (./Paper_v4.bbl [21
 
 ] [22] [23] [24]
 Underfull \hbox (badness 4940) in paragraph at lines 271--276
@@ -910,13 +915,13 @@ Underfull \hbox (badness 3623) in paragraph at lines 271--276
 File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 552.
+Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 568.
 (pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 553.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 569.
 
 
-LaTeX Warning: Float too large for page by 50.68376pt on input line 554.
+LaTeX Warning: Float too large for page by 50.68376pt on input line 570.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -925,7 +930,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure2_Fits_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fits_final.pdf>
-Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 560.
+Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 576.
 (pdftex.def)             Requested size: 469.75502pt x 392.7755pt.
 
 
@@ -936,7 +941,7 @@ File: ./figs/Figure3_predictions_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_predictions_final.pdf>
 Package pdftex.def Info: ./figs/Figure3_predictions_final.pdf used on input lin
-e 566.
+e 582.
 (pdftex.def)             Requested size: 469.75502pt x 437.24211pt.
 
 
@@ -946,26 +951,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure4_SEN_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure4_SEN_v2.pdf>
-Package pdftex.def Info: ./figs/Figure4_SEN_v2.pdf used on input line 579.
+Package pdftex.def Info: ./figs/Figure4_SEN_v2.pdf used on input line 595.
 (pdftex.def)             Requested size: 469.75502pt x 376.316pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure5_RobustnessAnalysis.pdf, id=108, 1563.8425pt x 541.02126pt>
-File: ./figs/Figure5_RobustnessAnalysis.pdf Graphic file (type pdf)
+<./figs/Figure5_RobustnessAnalysis_v2.pdf, id=108, 943.525pt x 1076.02pt>
+File: ./figs/Figure5_RobustnessAnalysis_v2.pdf Graphic file (type pdf)
 
-<use ./figs/Figure5_RobustnessAnalysis.pdf>
-Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis.pdf used on input li
-ne 585.
-(pdftex.def)             Requested size: 469.75502pt x 162.514pt.
+<use ./figs/Figure5_RobustnessAnalysis_v2.pdf>
+Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis_v2.pdf used on input
+ line 601.
+(pdftex.def)             Requested size: 469.75502pt x 535.72649pt.
+
+
+LaTeX Warning: Float too large for page by 45.29648pt on input line 603.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26 <./figs/Fig1_Schematic_v2.pdf>] [27 <./figs/Figure2_Fits_final.pdf>]
 [28 <./figs/Figure3_predictions_final.pdf>] [29 <./figs/Figure4_SEN_v2.pdf>]
-[30 <./figs/Figure5_RobustnessAnalysis.pdf>] [1
+[30 <./figs/Figure5_RobustnessAnalysis_v2.pdf>] [1
 
 
 ] [2] (./Paper_v4.aux) )
@@ -975,8 +983,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ### bottom level 
 Here is how much of TeX's memory you used:
  7553 strings out of 493089
- 110671 string characters out of 6134842
- 207495 words of memory out of 5000000
+ 110686 string characters out of 6134842
+ 207494 words of memory out of 5000000
  10824 multiletter control sequences out of 15000+600000
  29617 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1000,10 +1008,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (34 pages, 4299518 bytes).
+Output written on Paper_v4.pdf (34 pages, 4329545 bytes).
 PDF statistics:
- 3888 PDF objects out of 4296 (max. 8388607)
- 2577 compressed objects within 26 object streams
+ 3892 PDF objects out of 4296 (max. 8388607)
+ 2579 compressed objects within 26 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
