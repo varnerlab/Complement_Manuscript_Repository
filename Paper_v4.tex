@@ -274,8 +274,9 @@ and the correct order of magnitude for the concentration of C5a for three induce
 Next, we used global sensitivity and robustness analysis to determine which parameters and species controlled the performance of the complement model.
 
 %This gives us new insight in which of the parameters play a role in complement activation. Even though AP~C3~convertase is also responsible in the conversion of C3 and the production of C3a, the kinetic parameters that govern the equation was not sensitive at all. This elucidated that the activation of
-
+% We subsequently did a robustness analysis to interrogate the effects of perturbing initial concentrations of C3 and C5 on the levels of C3a and C5a
 %
+
 \subsection*{Global analysis of the reduced order complement model}
 We conducted sensitivity analysis to estimate which parameters controlled the performance of the reduced order complement model.
 We calculated the sensitivity of the C3a and C5a residuals with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA}A - D).
@@ -291,15 +292,32 @@ The rate constant governing C3a degradation was sensitive, while the degradation
 This difference was likely attributable to the magnitude of the degradation parameters and the respective concentrations of C3a and C5a.
 Thus, sensitivity analysis identified important indirect parameter interactions that could have therapeutic significance.
 However, sensitivity coefficients are a local measure of how small changes in a parameter value effects a performance objective, for example
-the abundance of C5a. To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody we performed
-robustness analysis. Robustness coefficients quantify the response of a marker to a structural or operational perturbation to the network architecture,
-in this case a decrease in the initial abundance of C3 and C5.
+the abundance of C5a. To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody, we performed
+robustness analysis. Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to the network architecture.
+In this case, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and C5.
 
-We subsequently did a robustness analysis to interrogate the effects of perturbing initial concentrations of C3 and C5 on the levels of C3a and C5a (Fig. \ref{fig-robustness-analysis}).
-We calculated robustness indices for C3a and C5a using the ratio of their area under the curves (AUCs) in the perturbed and unperturbed states for each of the 50 parameter vectors. We perturbed the initial concentration of C3, C5 and a combination of both by decreasing their concentrations by 50 \% and 90\%. We calculated corresponding robustness indices for C3a and C5a with no initiator (alternate pathway activation) and maximum initiator of lectin pathway (1g of zymosan).  A robustness index of one indicated no effect due to the perturbation whereas an index of zero indicated a strong effect of the perturbation. In both cases (50 \% and 90\% knockdown) we see that C3a and C5a levels are strongly influenced by initial concentrations of C3 and C5 in the presence of lectin pathway initiator. The C3a generated from the alternate pathway also follows the same pattern where it is influenced by the initial concentration of C3. However we observe an interesting trend with respect to C5a generated in the alternate pathway. The amount of C5a decreases with decrease in C3 concentration. This suggests that the C3b that is generated in the alternate pathway is primarily involved in the formation of AP C5-convertase (and is a rate limiting step). This is in agreement with our sensitivity analysis where were we see that the AP C3-convertase primarily can affect the dynamics of C5a formation. At the same time, in the lectin initiated pathway, the robustness of C5a levels to initial C3 concentration in both cases (robustness index of 1 or almost 1 in the 90\%) indicates that small concentrations of C3 and C5 convertases can catalyze the downstream formation of C5a. Thus the formation of C5a in presence of an initiator remains unaffected until C3 reaches a very low concentration. These results agree with the current push for complement therapeutics targeting C3 and C5. Conversely, the significance of the convertases identified by the sensitivity analysis indicate that they may also be effective targets for therapeutic intervention, however, these results require experimental validation before any definitive conclusions can be reached.
-The combination of robustness analysis and sensitivity analysis, taken together, indicate specific mechanisms that can be targeted for therapeutic interventions.
+Robustness analysis suggested there was no single intervention that inhibited complement activation in the presence of both initiation pathways (Fig. \ref{fig-robustness-analysis}).
+We calculated robustness indices for C3a and C5a for the 50 parameter sets in the ensemble with and without the lectin pathway initiator.
+We simulated the addition of different doses of anti-complement antibody cocktails by decreasing the initial concentration of C3 or C5 or the combination of C3 and C5 by 50\% and 90\%.
+A \texttt{log$_{10}$} transformed robustness index of zero indicated no effect due to the perturbation, whereas an index of less than zero indicated decreased C3a or C5a.
+As expected, a C5 knockdown had no effect on C3a formation for either the alternate (Fig. \ref{fig-robustness-analysis}A, lanes 1 or 3) or lectin pathways
+(Fig. \ref{fig-robustness-analysis}B, lanes 1 or 3).
+However, C3a abundance and to a lesser extent C5a abundance decreased with decreasing C3 concentration in the alternate pathway (Fig. \ref{fig-robustness-analysis}A or B, lanes 1 or 2).
+This agreed with the sensitivity results; changes in AP C3-convertase formation or activity affected the downstream dynamics of C5a formation.
+Thus, these results suggested that C3 alone would be a reasonable target, especially given that C5a formation was surprisingly robust to C5 levels in the alternate pathway (Fig. \ref{fig-robustness-analysis}A or B, lane 2).
+Yet, in lectin initiated complement activation, C5a levels were robust to the initial C3 concentration (Fig. \ref{fig-robustness-analysis}A or B, lane 4).
+Thus, above some limiting threshold, even small concentrations of C3 and C5 convertases catalyzed the downstream formation of C5a.
+The only reliable intervention that consistently reduced C5a formation for all cases was a dual-knockdown.
+For example, a 90\% decrease of both C3 and C5 reduced the formation of C5a by over an order of magnitude (Fig. \ref{fig-robustness-analysis}B, lane 4).
 
+
+% These results agree with the current push for complement therapeutics targeting both C3 and C5.
+% Conversely, the significance of the convertases identified by the sensitivity analysis indicate that they may also be effective targets for therapeutic intervention, however, these results require experimental validation before any definitive conclusions can be reached.
+% The combination of robustness analysis and sensitivity analysis, taken together, indicate specific mechanisms that can be targeted for therapeutic interventions.
 %We summarize the sensitive mechanisms identified our model and corresponding drugs that target these mechanisms in Fig \ref{fig-targets}
+%For both a 50\% and 90\% knockdown, C3a and C5a levels were strongly influenced by initial concentrations of C3 and C5 in the presence of lectin pathway initiator.
+%The C3a generated from the alternate pathway also followed the same pattern where it was influenced by the initial concentration of C3.
+%Thus, the formation of C5a in presence of an initiator remained unaffected until C3 reached a limiting threshold concentration.
 
 %Could be in discussion - the below text
 %Using the sensitive parameters that was determined from the analysis, we constructed a visual representing possible pathways that are attractive possible therapeutic targets (Fig. \ref{fig-SA} (E)). The sensitivity provided insightful information about the how system output changes due to perturbations kinetics parameters which is extremely useful in strategically targeting the possible enzymes and proteases in the network, for instance C3 convertase. However, the sensitivity analysis fails to provide any information about how the concentration of each species influences the dynamics of the system. Since many therapeutic dugs are antibody based and targets small molecules for inactivation  and decrease the total active concentration(Fig \ref{fig-SA}(E)), a computational method for analyzing the system influence contributed by active species concentration is of need.
