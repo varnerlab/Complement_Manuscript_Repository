@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 JUN 2016 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 JUN 2016 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,15 +889,10 @@ duced or-der com-ple-ment model de-scribed
 
 ] [11] [12] [13] [14] [15
 
-] [16] [17] [18] [19]
-Overfull \hbox (5.04312pt too wide) in paragraph at lines 559--562
-\OT1/phv/m/n/12 M.M an-a-lyzed model sim-u-la-tions and gen-er-ated fig-ures fo
-r the manuscript. The manuscript
- []
+] [16] [17] [18] [19] [20
 
-[20
-
-] (./Paper_v4.bbl [21
+]
+(./Paper_v4.bbl [21
 
 ] [22] [23] [24]
 Underfull \hbox (badness 4940) in paragraph at lines 271--276
@@ -915,13 +910,13 @@ Underfull \hbox (badness 3623) in paragraph at lines 271--276
 File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 586.
+Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 593.
 (pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 587.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 594.
 
 
-LaTeX Warning: Float too large for page by 50.68376pt on input line 588.
+LaTeX Warning: Float too large for page by 50.68376pt on input line 595.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -930,7 +925,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure2_Fits_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fits_final.pdf>
-Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 594.
+Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 601.
 (pdftex.def)             Requested size: 469.75502pt x 392.7755pt.
 
 
@@ -941,7 +936,7 @@ File: ./figs/Figure3_predictions_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_predictions_final.pdf>
 Package pdftex.def Info: ./figs/Figure3_predictions_final.pdf used on input lin
-e 600.
+e 607.
 (pdftex.def)             Requested size: 469.75502pt x 437.24211pt.
 
 
@@ -951,7 +946,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure4_SEN_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure4_SEN_v2.pdf>
-Package pdftex.def Info: ./figs/Figure4_SEN_v2.pdf used on input line 613.
+Package pdftex.def Info: ./figs/Figure4_SEN_v2.pdf used on input line 620.
 (pdftex.def)             Requested size: 469.75502pt x 376.316pt.
 
 
@@ -962,11 +957,11 @@ File: ./figs/Figure5_RobustnessAnalysis_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure5_RobustnessAnalysis_v2.pdf>
 Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis_v2.pdf used on input
- line 619.
+ line 626.
 (pdftex.def)             Requested size: 469.75502pt x 553.54373pt.
 
 
-LaTeX Warning: Float too large for page by 63.11372pt on input line 621.
+LaTeX Warning: Float too large for page by 63.11372pt on input line 628.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1008,7 +1003,7 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (34 pages, 4337767 bytes).
+Output written on Paper_v4.pdf (34 pages, 4338222 bytes).
 PDF statistics:
  3910 PDF objects out of 4296 (max. 8388607)
  2593 compressed objects within 26 object streams

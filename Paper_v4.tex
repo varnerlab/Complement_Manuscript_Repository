@@ -517,9 +517,14 @@ and $\sigma$ denotes the perturbation amplitude:
 	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
 \end{equation}
 where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
-At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ for our model which we use for plotting best fits against the experimental data. The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org.
+At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ which we use for plotting best fits against the experimental data, and for generating a parameter ensemble.
 
-We generated an ensemble of parameter vectors by perturbing the optimal parameter vector obtained at the end of DDS phase. Through repeated perturbations of this vector we roughly identified sensitive and robust parameters within the parameter vector. This enabled us to approximately determine the bounds on the perturbation of each parameter. Thereafter the optimal parameter vector was perturbed within these bounds for 100,000 iterations. Within each iteration the quality of perturbed vector was measured using goodness of fit (model residual). If the residual was too high or generated a numerical error the vector was rejected. In this fashion we generated an ensemble of 50 parameter vectors
+An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by perturbing each parameter and measuring the increase in the residual.
+Thereafter, the optimal parameter vector was perturbed within these bounds for approximately 100,000 iterations.
+Within each iteration the quality of perturbed vector was measured using goodness of fit (model residual).
+If the residual was too high or the perturbed vector generated a numerical error, the vector was rejected.
+We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
+The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org.
 
 %From each of these local points, a globally best error is identified. Both the local and global error
 %are then used to update the parameter estimates of each particle using the rules:
@@ -547,6 +552,8 @@ Robustness coefficients denoted by $\alpha\left(i,j,t_{o},t_{f}\right)$ are defi
 \end{equation}
 Here $t_o$ and $t_f$ denote the initial and final simulation time respectively, while $i$ and $j$ denote the indices for the marker and the perturbation respectively.
 A value of $\alpha\left(i,j,t_{o},t_{f}\right)>1$, indicates increased marker abundance, while $\alpha\left(i,j,t_{o},t_{f}\right)<1$ indicates decreased marker abundance following perturbation $j$. If $\alpha\left(i,j,t_{o},t_{f}\right)\sim{1}$ the $j$th perturbation does not influence the abundance of marker $i$.
+In this study, we perturbed the initial condition of C3 or C5 or a combination of C3 and C5 by 50\% or 90\% and measured the AUC of C3a or C5a with and without lectin initiator.
+Robustness coefficients were calculated for every member of the ensemble, the mean $\pm$ 1$\times$standard-deviation are reported.
 
 %Need to talk more about biochemical benefits and importance for of biochemical problems
 
@@ -556,7 +563,7 @@ A value of $\alpha\left(i,j,t_{o},t_{f}\right)>1$, indicates increased marker ab
 The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
-J.V directed the study. A.S developed the reduced order complement model.
+J.V directed the study. A.S developed the reduced order complement model and the parameter ensemble.
 W.D and M.M analyzed model simulations and generated figures for the manuscript.
 The manuscript was prepared and edited for publication by A.S, W.D, M.M and J.V.
 
