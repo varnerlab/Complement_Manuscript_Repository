@@ -4,47 +4,47 @@ The top-level auxiliary file: Paper_v4.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
 Warning--entry type for "SALIB" isn't style-file defined
---line 504 of file References_v1.bib
+--line 514 of file References_v1.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 42 entries,
+You've used 43 entries,
             2441 wiz_defined-function locations,
-            793 strings with 14318 characters,
-and the built_in function-call counts, 38580 in all, are:
-= -- 3562
-> -- 692
+            800 strings with 14483 characters,
+and the built_in function-call counts, 39142 in all, are:
+= -- 3615
+> -- 696
 < -- 0
-+ -- 346
-- -- 173
-* -- 3379
-:= -- 4611
-add.period$ -- 87
-call.type$ -- 42
-change.case$ -- 42
++ -- 348
+- -- 174
+* -- 3422
+:= -- 4681
+add.period$ -- 89
+call.type$ -- 43
+change.case$ -- 43
 chr.to.int$ -- 0
-cite$ -- 84
-duplicate$ -- 3785
-empty$ -- 4001
-format.name$ -- 211
-if$ -- 8538
+cite$ -- 86
+duplicate$ -- 3841
+empty$ -- 4062
+format.name$ -- 212
+if$ -- 8663
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 446
-newline$ -- 228
-num.names$ -- 42
-pop$ -- 526
+int.to.str$ -- 43
+missing$ -- 454
+newline$ -- 233
+num.names$ -- 43
+pop$ -- 535
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 333
+skip$ -- 336
 stack$ -- 0
-substring$ -- 5727
-swap$ -- 887
+substring$ -- 5808
+swap$ -- 903
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 290
-width$ -- 44
-write$ -- 461
+while$ -- 294
+width$ -- 45
+write$ -- 472
 (There was 1 warning)

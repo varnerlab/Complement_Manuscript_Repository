@@ -13,10 +13,11 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{sarma2011complement}
-Sarma JV, Ward PA (2011) The complement system.
-\newblock Cell and tissue research 343: 227--235.
-\bibAnnoteFile{sarma2011complement}
+\bibitem{OG_COMPLEMENT_REF}
+Nuttall G (1888) {Experimente {\"u}ber die bacterienfeindlichen Einfl{\"u}sse
+  des thierischen K{\"o}rpers}.
+\newblock Z Hyg Infektionskr 4: 353-394.
+\bibAnnoteFile{OG_COMPLEMENT_REF}
 
 \bibitem{ricklin2010complement}
 Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
@@ -33,6 +34,11 @@ Ricklin D, Lambris JD (2007) Complement-targeted therapeutics.
 Rittirsch D, Flierl MA, Ward PA (2008) Harmful molecular mechanisms in sepsis.
 \newblock Nature Reviews Immunology 8: 776--787.
 \bibAnnoteFile{rittirsch2008harmful}
+
+\bibitem{sarma2011complement}
+Sarma JV, Ward PA (2011) The complement system.
+\newblock Cell and tissue research 343: 227--235.
+\bibAnnoteFile{sarma2011complement}
 
 \bibitem{ricklin2013complement}
 Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
