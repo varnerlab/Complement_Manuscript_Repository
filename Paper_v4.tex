@@ -171,33 +171,38 @@ Complement has also been linked with several diseases including Alzheimers, Park
 Complement plays both positive and negative roles in cancer; attacking tumor cells with altered surface proteins in some cases, while potentially contributing to tumor growth in others \cite{sarma2011complement, ricklin2013complement}.
 Lastly, several other important biochemical subsystems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}. Thus, complement is important in a variety of beneficial and potentially harmful functions in the body.
 
-Complement is mediated by over 30 soluble and cell surface proteins and regulators.
-The molecular connectivity of complement is complex, and has been extensively reviewed by Walport \cite{Walport:2001ab,Walport:2001aa}.
-The central outputs of complement are the Membrane Attack Complex (MAC), and the inflammatory mediators C3a and C5a.
-The membrane attack complex forms transmembrane channels which disrupt the membrane integrity of targeted cells, leading to cell lysis and death.
-On the other hand, the C3a and C5a proteins act as a bridge between innate and adaptive immunity, and play an important role in regulating inflammation and coagulation in the case of C5a \cite{sarma2011complement}.
-Complement activation takes places through three pathways: the alternate, the classical and the lectin binding pathway.
-Each of these pathways involves a different initiator signal which leads to a cascade of downstream events in the complement system.
+The complement cascade involves over 30 soluble and cell surface proteins, receptors and regulators.
+The molecular connectivity of complement is complex, see the review of Walport \cite{Walport:2001ab,Walport:2001aa}.
+The central outputs of complement are the Membrane Attack Complex (MAC), and the inflammatory mediator proteins C3a and C5a.
+The membrane attack complex, generated during the terminal phase of the response,
+forms transmembrane channels which disrupt the membrane integrity of targeted cells, leading to cell lysis and death.
+On the other hand, the C3a and C5a proteins act as a bridge between innate and adaptive immunity, and play an important role in regulating inflammation \cite{sarma2011complement}.
+Complement activation takes places through three pathways: the classical, the lectin binding and the alternate pathways.
+Each of these pathways involves a different initiator signal which triggers downstream events in the complement system.
 The classical pathway is triggered by antibody recognition of foreign antigens or other pathogens.
 A multimeric protein complex C1 binds to antibody-antigen complexes and undergoes a conformational change, leading to an activated form with proteolytic activity.
-This activated complex then cleaves soluble complement proteins C4 and C2 into C4a, C4b, C2a and C2b respectively.
-The C4a and C2b fragments combine to form the C4bC2a protease, which is also known as the classical C3 convertase.
-The lectin binding pathway is initiated through the binding of L-ficolin or Mannose Binding Lectin (MBL) to carbohydrates on the surfaces of bacterial pathogens.
-These complexes also cleave C4 and C2, leading the formation of additional classical C3 convertase.
-Thus, the classical and lectin pathways converge at the classical C3 convertase, and are initiated by the recognition of a foreign surface.
-However, the final pathway, known as the alternate pathway, works differently.
+This activated complex then cleaves soluble complement proteins C4 and C2 into C4a, C4b, C2a and C2b, respectively.
+The C4a and C2b fragments bind to form the C4bC2a protease, which is also known as the classical C3 convertase.
+The lectin pathway is initiated through the binding of L-ficolin or Mannose Binding Lectin (MBL) to carbohydrates on the surfaces of bacterial pathogens.
+These complexes, in combination with the associated mannose-associated serine proteases
+1 and 2 (MASP-1/2), also cleave C4 and C2, leading to additional classical C3 convertase.
+Thus, the classical and lectin pathways, initiated by the recognition of a foreign surface,  converge at the classical C3 convertase.
+However, the alternate pathway works differently.
 The alternate pathway involves a 'tickover' mechanism in which complement protein C3 is spontaneously hydrolyzed to form an activated intermediate C3w;
-C3w recruits factor B and factor D, leading to the formation of C3wBb which cleaves C3 into C3a and C3b.
-The C3b fragment can further recruit additional factor B and factor D to form C3bBbC3b, otherwise known as the alternate C3 convertase \cite{pangburn1984alternative}.
-The role of classical and alternative C3 convertases is varied.
-First, the C3 convertases encode an amplification loop by cleaving C3 into C3a and C3b, the latter is then free to form additional alternate C3 convertase.
-Next, they link complement initiation with the terminal response of the cascade through the formation of C5 convertases.
-The classical and alternate C3 convertases recruit C3b, form the classical C5 convertase (C4bC2aC3b), and alternate C5 convertase (C3bBbC3b) respectively.
-The C5 convertases cleave C5 to form the C5a and C5b fragments.
+C3w recruits factor B and factor D, leading to the formation of C3wBb. C3wBb can cleave C3 into C3a and C3b, where
+the C3b fragment can further recruit additional factor B and factor D to form C3bBbC3b, which is also known as the alternate C3 convertase \cite{pangburn1984alternative}.
+The role of classical and alternate C3 convertases is varied.
+First, C3 convertases encode an amplification loop by cleaving C3 into C3a and C3b; the C3b fragment is then free to form additional alternate C3 convertases,
+thereby forming a positive feedback loop.
+Next, C3 convertase activity links complement initiation with the terminal phase of the cascade through the formation of C5 convertases.
+Both classical and alternate C3 convertases can recruit an additional C3b subunit to form the classical C5 convertase (C4bC2aC3b), and the alternate C5 convertase (C3bBbC3b), respectively.
+C5 convertases cleave C5 into the C5a and C5b fragments.
 The C5b fragment, along with the C6, C7, C8 and multiple C9 complement proteins, form the membrane attack complex.
 On the other hand, both C3a and C5a are important inflammatory signals involved in several responses.
 
-Complement activation is regulated by many plasma and host cell proteins.
+%Complement activation is largely irreversible, involving positive feedback driven proteolytic cleavage.
+%Thus,
+Activation of the complement cascade is strongly regulated by many plasma and host cell proteins.
 The initiation of the classical pathway via complement protein C1 is controlled by the C1 Inhibitor (C1-Inh), a protease inhibitor belonging to the serpin superfamily.
 C1-Inh irreversibly binds to and deactivates the active subunits of C1, preventing spontaneous fluid phase and chronic activation of complement \cite{walker1995complement}.
 Regulation of the upstream elements of complement is also achieved through the interaction of the C4 binding protein (C4BP) with C4b, as well as
@@ -412,7 +417,7 @@ Lectin initiated C3a formation showed a number of sensitive parameters.
 This included the lectin initiation parameters that controlled C5a formation, C3 convertase inhibition by C4BP, and parameters governing C3 convertase activity.
 All these mechanisms are potential drug targets.
 
-To further validate these results from sensitivity analysis about potential drug targets we did a robustness analysis. We knocked down C3 and C5 levels and studied their impact on the generation of C3a and C5a. The C3a and C5a levels in the lectin pathway were strongly influenced by initial levels of C3 and C5. Thus direct inhibition of C3 and C5, or targeting complexes (MASP complex, C3 and C5 convertases) that act on C3 and C5 have a direct impact on production of C3a and C5a. This is also in agreement with sensitivity analysis that C5 is a good drug target. A number of drugs targeting C5 are being developed. For example LFG316 by Novartis is being used to target C5 in cases of Age-Related Macular Degeneration \cite{roguska2014generation}, Mubodina is an antibody that targets C5 in the treatment of Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}, Coversin is a small molecule targeting C5 \cite{weston2014clinical}, Zimura is an aptamer targeting C5 \cite{epstein2007complement}, small peptides and RNAi are also being used to inhibit C5 \cite{borodovsky2014aln}. Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets. Though knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate \cite{sissons1977metabolism, swaak1982determination} of these proteins make them difficult targets. Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components. Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway). For example, Omeros is a protease inhibitor that targets MASP-2 complex and thereby inhibits formation of downstream convertases \cite{schwaeble2011methods}. Lampalizumab (an immunoglobulin) and Bikaciomab (an antibody fragment) target Factor B and Factor D respectively. Factor B and Factor D are crucial to formation alternate pathway convertases \cite{katschke2012inhibiting, hu2013therapeutic}. Novelmed Therapeutics recently developed antibody,NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}. Cobra Venom Factor (CVF), an analogue of C3b has been used to bind to Factor B to regulate alternate convertases \cite{vogel2004recombinant}.  Thus, analysis of the ensemble of complement models identified potentially important therapeutic targets that are consistent with therapeutic strategies that are under development.
+To further validate these results from sensitivity analysis about potential drug targets we did a robustness analysis. We knocked down C3 and C5 levels and studied their impact on the generation of C3a and C5a. The C3a and C5a levels in the lectin pathway were strongly influenced by initial levels of C3 and C5. Thus direct inhibition of C3 and C5, or targeting complexes (MASP complex, C3 and C5 convertases) that act on C3 and C5 have a direct impact on production of C3a and C5a. This is also in agreement with sensitivity analysis that C5 is a good drug target. A number of drugs targeting C5 are being developed. For example LFG316 by Novartis is being used to target C5 in cases of Age-Related Macular Degeneration \cite{roguska2014generation}, Mubodina is an antibody that targets C5 in the treatment of Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}, Coversin is a small molecule targeting C5 \cite{weston2014clinical}, Zimura is an aptamer targeting C5 \cite{epstein2007complement}, small peptides and RNAi are also being used to inhibit C5 \cite{borodovsky2014aln}. Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets. Though knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate \cite{sissons1977metabolism, swaak1982determination} of these proteins make them difficult targets. Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components. Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway). For example, Omeros is a protease inhibitor that targets MASP-2 complex and thereby inhibits formation of downstream convertases \cite{schwaeble2011methods}. Lampalizumab (an immunoglobulin) and Bikaciomab (an antibody fragment) target Factor B and Factor D respectively. Factor B and Factor D are crucial to formation alternate pathway convertases \cite{katschke2012inhibiting, hu2013therapeutic}. Novelmed Therapeutics recently developed antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}. Cobra Venom Factor (CVF), an analogue of C3b has been used to bind to Factor B to regulate alternate convertases \cite{vogel2004recombinant}.  Thus, analysis of the ensemble of complement models identified potentially important therapeutic targets that are consistent with therapeutic strategies that are under development.
 
 %Indeed a number of next generation drugs are targeting convertases directly \cite{}, inhibiting their assembly or formation \cite{} or targeting the individual convertase components \cite{}
 
@@ -499,7 +504,7 @@ We used mass action kinetics to model protein-protein binding interactions withi
 	\bar{r}_{j} = k_{j}^{max}\prod_{s\in{m_{j}^{-}}}x_{s}^{-\sigma_{sj}}
 \end{equation}
 where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\sigma_{sj}$ denotes the stoichiometric coefficient for species $s$ in reaction $j$,
-and $s\in{m_{j}}$ denotes the set of \textit{reactants} for reaction $j$.
+and $s\in{m_{j}}$ denotes the set of \textit{reactants} for reaction $j$. We assumed all binding interactions were irreversible.
 The control terms $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
 For each rate, we used a rule-based approach to select from competing control factors.
 If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
@@ -514,7 +519,7 @@ In this study, we used $\mathcal{I}_{j}\in\left\{min,max\right\}$ \cite{pr301017
 The model equations were implemented in MATLAB and solved using the \texttt{ODE23s} routine (The Mathworks, Natick MA).
 The complement model code and parameter ensemble is freely available under an MIT software license and can be downloaded from http://www.varnerlab.org.
 
-\subsection*{Estimation of an ensemble of model parameters.}
+\subsection*{Estimation of an ensemble of complement model parameters.}
 We minimized the residual between simulations and experimental C3a and C5a measurements using Dynamic Optimization with Particle Swarms (DOPS). DOPS minimized the objective:
 \begin{equation}\label{eqn:objective-function}
 	\min_{\mathbf{k}} \sum_{\tau=1}^{\mathcal{T}}\sum_{j=1}^{\mathcal{S}}\left(\frac{\hat{x}_{j}\left(\tau\right) - x_{j}\left(\tau,\mathbf{k}\right)}{\omega_{j}\left(\tau\right)}\right)^{2}
@@ -555,7 +560,7 @@ Thereafter, the optimal parameter vector was perturbed within these bounds for a
 Within each iteration the quality of perturbed vector was measured using goodness of fit (model residual).
 If the residual was too high or the perturbed vector generated a numerical error, the vector was rejected.
 We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
-The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org.
+The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
 
 %From each of these local points, a globally best error is identified. Both the local and global error
 %are then used to update the parameter estimates of each particle using the rules:
@@ -566,7 +571,7 @@ The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be
 %$\mathcal{G}$ denotes the best solution found over the entire population of particles. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
 %parameters \linebreak($\mathcal{K}\times{1}$). In thus study, we used $\left(\theta_{1},\theta_{2},\theta_{3}\right) = \left(1.0, 0.05564, 0.02886\right)$.
 
-\subsection*{Sensitivity and robustness analysis of model performance.}
+\subsection*{Sensitivity and robustness analysis of complement model performance.}
 We conducted global sensitivity and robustness analysis to estimate which parameters and species controlled the performance of the reduced order model.
 We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a alternate, C5a alternate, C3a lectin, and C5a lectin cases using the Sobol method \cite{SOBOL_METHOD}.
 The sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
@@ -577,15 +582,15 @@ The variance-based sensitivity analysis was conducted using the SALib module enc
 
 Robustness coefficients quantify the response of a marker to a structural or operational perturbation to the network architecture.
 Robustness coefficients were calculated as shown previously \cite{Tasseff:2011aa}.
-Robustness coefficients denoted by $\alpha\left(i,j,t_{o},t_{f}\right)$ are defined as:
+Log-transformed robustness coefficients denoted by $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)$ are defined as:
 \begin{equation}
-\alpha\left(i,j,t_{o},t_{f}\right)=\log_{10}\left[\left(\displaystyle\int_{t_{o}}^{t_{f}}x_{i}\left(t\right)dt\right)^{-1}\left(\displaystyle\int_{t_{o}}^{t_{f}}x^{(j)}_{i}\left(t\right)dt\right)\right]
+\hat{\alpha}\left(i,j,t_{o},t_{f}\right)=\log_{10}\left[\left(\displaystyle\int_{t_{o}}^{t_{f}}x_{i}\left(t\right)dt\right)^{-1}\left(\displaystyle\int_{t_{o}}^{t_{f}}x^{(j)}_{i}\left(t\right)dt\right)\right]
 \end{equation}
-Here $t_o$ and $t_f$ denote the initial and final simulation time respectively, while $i$ and $j$ denote the indices for the marker and the perturbation respectively.
-A value of $\alpha\left(i,j,t_{o},t_{f}\right)>0$, indicates increased marker abundance, while $\alpha\left(i,j,t_{o},t_{f}\right)<0$ indicates decreased marker abundance following perturbation $j$. If $\alpha\left(i,j,t_{o},t_{f}\right)\sim{0}$ the $j$th perturbation did not influence the abundance of marker $i$.
+Here $t_o$ and $t_f$ denote the initial and final simulation time, while $i$ and $j$ denote the indices for the marker and the perturbation, respectively.
+A value of $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)>0$, indicates increased marker abundance, while $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)<0$ indicates decreased marker abundance following perturbation $j$. If $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)\sim{0}$, perturbation $j$ did not influence the abundance of marker $i$.
 In this study, we perturbed the initial condition of C3 or C5 or a combination of C3 and C5 by 50\% or 90\% and measured the area under the curve (AUC)
 of C3a or C5a with and without lectin initiator.
-Robustness coefficients were calculated for every member of the ensemble, where the mean $\pm$ 1$\times$standard-deviation are reported.
+Log-transformed robustness coefficients were calculated for every member of the ensemble, where the mean $\pm$ 1$\times$standard-deviation are reported.
 
 %Need to talk more about biochemical benefits and importance for of biochemical problems
 
@@ -596,7 +601,7 @@ The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
 J.V directed the study. A.S developed the reduced order complement model and the parameter ensemble.
-W.D and M.M analyzed model simulations and generated figures for the manuscript.
+A.S, W.D and M.M analyzed the model ensemble, and generated figures for the manuscript.
 The manuscript was prepared and edited for publication by A.S, W.D, M.M and J.V.
 
 \section*{Acknowledgements}
