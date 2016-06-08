@@ -285,18 +285,19 @@ To address this question, we fixed the model parameters and simulated data sets 
 %The decreasing slope of the experimental measurements may be an indication of the decreasing cofactors that are required for the spontaneous hydrolysis in the alternative pathway, which we neglected. %Due to this discrepancy in between our model and the experimental results, we believe that the interaction and the reversibility of the C4BP is a key player in creating a threshold where C5a is resistant to minor changes in inducer concentration even though C3a is sensitive.
 
 We tested the predictive power of the reduced order complement model with data not used during model training (Fig. \ref{fig-prediction}).
-Six validation cases were considered, three for C3a and C5a respectively at different zymosan concentrations.
-All model parameters were fixed for the validation simulations.
-The ensemble of reduced order models captured the qualitative dynamics of C3a formation (Fig. \ref{fig-prediction}, left column), and C5a formation (Fig. \ref{fig-prediction}, right column) at three inducer concentrations.
-However, there were shortcomings, especially for the C3a prediction.
-First, while the C3a dynamics and concentration peak times were captured, the overall level of C3a was under-predicted in all cases (Fig. \ref{fig-prediction}, inset left column).
-We believe the C3a under-prediction can be attributed to how we modeled C4BP interactions.
-C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes;
-however, the binding of C4BP with complement proteins is likely reversible and convertases may have residual activity even in the bound form.
-Thus, the model may over-predict the influence of C4BP.
-We also failed to capture the concave down curvature for the 0.001~g and 0.01~g zymosan cases in the C5a validation studies.
-The decreasing slope of the C5a measurements may indicate decreasing cofactors abundance, or missing biology which we have not explicitly accounted for in the reduced order approach.
-However, despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the dynamic time scale of C3a formation,
+Six validation cases were considered, three for C3a and C5a, respectively.
+All model parameters and initial conditions were fixed for the validation simulations (with the exception of zymosan).
+The ensemble of reduced order models predicted the qualitative dynamics of C3a formation (Fig. \ref{fig-prediction}, left column),
+and C5a formation (Fig. \ref{fig-prediction}, right column) at three inducer concentrations.
+However, there were shortcomings with model performance, especially for the C3a prediction.
+First, while the C3a trend was captured, the overall level of C3a was consistently under-predicted in all cases (Fig. \ref{fig-prediction}, left column).
+We believe the C3a under-prediction was related to how we modeled C4BP interactions;
+C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes.
+However, the binding of C4BP with complement proteins is likely reversible, and CP C3 convertase may have residual activity even in the bound form.
+Thus, the model likely over-predicted the influence of C4BP.
+Second, while the C5a measurements were within the 95\% confidence estimate, we failed to capture the concave down curvature for the 0.001~g and 0.01~g zymosan cases.
+The decreasing slope of the C5a may indicate cofactor limitation, or missing biology which we have not accounted for in the reduced order approach.
+Despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the dynamic time scale of C3a formation,
 and the correct order of magnitude for the concentration of C5a for three inducer levels.
 Next, we used global sensitivity and robustness analysis to determine which parameters and species controlled the performance of the complement model.
 
@@ -638,7 +639,9 @@ This study was supported by an award from the US Army and Systems Biology of Tra
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Fig1_Schematic_v2.pdf}
-\caption{Simplified schematic of the human complement system. The complement cascade is activated through any one, or more, of the three pathways:  the classical, the lectin, and the alternate pathways. The classical pathway is activated by the binding of C1 complex through the C1q subunit to the IgG or IgM immune complex.  This binding leads to conformational changes in the C1 complex that leads to the activation of C1r and C1s subunits. Activated C1-antibody complex cleaves C4 and C2 to form the classical C3 convertase. The lectin pathway is initiated by the binding mannose-binding lectins (MBL) and ficolins to carbohydrate moieties on the pathogen surfaces. This results in the formation mannose-binding lectin-associated serine proteases (MASPs). The MBL-MASP complex cleaves C4 and C2 to form the lectin C3 convertase. The alternative pathway is activated through a spontaneous tick-over mechanism by the hydrolysis of C3 to form fluid phase C3 convertase. The C3 convertases  cleaves C3 into C3a, and C3b. C3b combines with C4b and C2a to form classical C5 convertase (C4bC3aC3b). The C3b binds with Factor B to form the alternate C5 convertase (C3bBbC3b) . The C5 convertases cleave C5 into C5a, and C5b that undergoes a series of reactions to form the membrane attack complex (MAC).}\label{fig-schematic}
+\caption{Simplified schematic of the human complement system. The complement cascade is activated through three pathways:  the classical, the lectin, and the alternate pathways.
+Complement initiation results in the formation of classical or alternative C3 convertases, which amplify the initial complement response and signal to the adaptive immune system by cleaving C3 into C3a and C3b. C3 convertases further react to form C5 convertases which catalyze the cleavage of the C5 complement protein to C5a and C5b.
+C5b is critical to the formation of the membrane attack complex (MAC), while C5a recruits an adaptive immune response.}\label{fig-schematic}
 \end{figure}
 
 
@@ -646,13 +649,22 @@ This study was supported by an award from the US Army and Systems Biology of Tra
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure2_Fits_final.pdf}
-\caption{Reduced order complement model training simulations. Reduced order complement model parameters were estimated using Dynamic Optimization with Particle Swarms (DOPS). The model was trained against experimental data from Shaw and co-workers \cite{morad2015time} in the presence and absence of zymosan. The model was trained using C3a and C5a data generated from the alternative pathway (\textbf{A}--\textbf{B}) and lectin initiated pathway with 1g zymosan (\textbf{C}--\textbf{D}). The solid red line shows the simulation with the best-fit parameter, the solid black lines show the simulated mean value of C3a or C5a for 50 independent particles. The  dark shaded region denotes 99 \% confidence interval of the simulated mean concentrations of C3a or C5a , while the light shaded region is the 99 \% confidence interval of the best prediction. All initial concentrations of complement proteins are at human serum levels unless otherwise noted.}\label{fig-fit}
+\caption{Reduced order complement model training.
+Model parameters were estimated using Dynamic Optimization with Particle Swarms (DOPS) from C3a and C5a measurements with and without zymosan \cite{morad2015time}.
+The model was trained using C3a and C5a data generated from the alternative pathway (\textbf{A}--\textbf{B}) and lectin pathway initiated with 1g zymosan (\textbf{C}--\textbf{D}).
+The solid red line shows the simulation with the best-fit parameter set, the solid black lines show the simulated mean value of C3a or C5a for the ensemble (N = 50).
+The dark shaded region denotes the 99\% confidence interval of the simulated mean concentrations, while the light shaded region denotes the 99\%
+confidence interval of the best-fit simulation for C3a and C5a. All initial conditions were assumed to be at their physiological serum levels unless otherwise noted.}\label{fig-fit}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure3_predictions_final.pdf}
-\caption{Reduced order complement model predictions vs experimental data for C3a and C5a generated in the lectin pathway. The reduced order coagulation model parameter estimates were tested against data not used during model training. Simulations of C3a and C5a generated in the lectin pathway using different levels of zymosan ($0.1$, $0.01$, and $0.001$ grams of zymosan) were compared with the corresponding experimental data (\textbf{A}--\textbf{F}). The solid red line shows the simulation with the best-fit parameter, the solid black lines show the simulated mean value of C3a or C5a for 50 independent particles. The shaded region denotes 99 \% confidence interval of the simulated mean concentrations of C3a or C5a, while the light shaded region is the 99 \% confidence interval of the best prediction. All initial concentrations of complement proteins are at human serum levels unless otherwise noted.
+\caption{Reduced order complement model predictions. The reduced order coagulation model parameter estimates were tested against data not used during model training \cite{morad2015time}.
+Simulations of C3a and C5a generated in the lectin pathway using 0.1g, 0.01g, and 0.001g zymosan were compared with the corresponding experimental measurement.
+The solid red line shows the simulation with the best-fit parameter set, the solid black lines show the simulated mean value of C3a or C5a for the ensemble (N = 50).
+The dark shaded region denotes the 99\% confidence interval of the simulated mean concentrations, while the light shaded region denotes the 99\%
+confidence interval of the best-fit simulation for C3a and C5a. All initial conditions were assumed to be at their physiological serum levels unless otherwise noted.
 }\label{fig-prediction}
 \end{figure}
 
@@ -665,13 +677,27 @@ This study was supported by an award from the US Army and Systems Biology of Tra
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure4_SEN_v2.pdf}
-\caption{Sobol's sensitivity analysis of the reduced order complement model with respect to the modeling parameters.  Sensitivity analysis was conducted on the four cases we used to train our model: (A) C3a at 0g zymosan, (B) C5a 0g zymosan, (C) C3a 1g zymosan, and (D) C5a 1g zymosan. The bars denote total sensitivity index which includes local contribution of each parameter and global sensitivity of significant pairwise interactions. The error bars are the 95 percent confidence interval. Pathways controlled by the sensitivity parameters (E): Bold black lines indicates the pathway is governed by one or more sensitive parameters and the red lines shows some of the current therapeutics targets. Red indicates current complement therapeutics. }\label{fig-SA}
+\caption{Global sensitivity analysis of the reduced order complement model.
+Sensitivity analysis was conducted on the four cases used for model training.
+\textbf{A}: Sensitivity of the C3a residual at 0g zymosan,
+\textbf{B}: Sensitivity of the C5a residual at 0g zymosan,
+\textbf{C}: Sensitivity of the C3a residual at 1g zymosan, and
+\textbf{D}: Sensitivity of the C5a residual at 1g zymosan.
+The bars denote the mean total sensitivity index for each parameter, while the error bars denote the 95\% confidence interval.
+\textbf{E}: Pathways controlled by the sensitivity parameters.
+Bold black lines indicates the pathway is governed by one or more sensitive parameters and the red lines shows some of the current therapeutics targets.
+Red indicates current complement therapeutics. }\label{fig-SA}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis_v2.pdf}
-\caption{Robustness analysis of the reduced order complement model with respect to the C3 and C5 initial concentrations using 50 parameter sets.  Robustness analysis was conducted on the four cases we used to train our model, C3a alternate (0 zymosan), C5a alternate (0 zymosan),  C3a lectin (1 g zymosan), and C5a lectin (1 g zymosan), by reducing the initial concentration of C3 and/or C5 by (A) 50 \% and (B) 90 \%. The bars denote robustness index which a measure of system changes from the perturbation of initial concentration that defined by the ratio of the area under the concentration curve of perturbed case and that of the unperturbed case. The error bars represent one standard deviation. At unity, the perturbed initial concentration has no impact on the measured output, and a robustness index lesser than or greater than one indicates a negative or positive relation between the perturbed initial concentration and the measured output respectively.}\label{fig-robustness-analysis}
+\caption{Robustness analysis of the reduced order complement model with respect to the C3 and C5 initial concentrations.
+Robustness analysis was conducted on the four cases used for model training:
+C3a alternate (0g zymosan), C5a alternate (0g zymosan),  C3a lectin (1g zymosan), and C5a lectin (1g zymosan), by reducing the initial concentration of C3 and/or C5
+by \textbf{A} 50\% and \textbf{B} 90 \%.
+The bars denote the log-transformated robustness index while error bars denote one standard deviation. At zero, the perturbed initial concentration has no impact on the measured output.
+A log-transformed robustness index less than zero indicates a negative relation between the perturbed initial concentration and the measured output.}\label{fig-robustness-analysis}
 \end{figure}
 
 
