@@ -267,17 +267,19 @@ Thus, while the reduced order complement model encoded significant biology, it w
 Next, we estimated an ensemble of model parameters from time series measurements of the C3a and C5a complement proteins.
 
 \subsection*{Estimating an ensemble of reduced order complement models.}
-A critical challenge for any dynamic model is the estimation of model parameters.
-We estimated the complement model parameters in a hierarchical fashion using two \textit{in~vitro} time-series data sets generated with and without zymosan, a lectin pathway activator \cite{morad2015time}.
-The residual between model simulations and experimental measurements was minimized using the dynamic optimization with particle swarms (DOPS) approach,
-starting from an initial random parameter guess.
-A hierarchical approach was taken to determine model parameters in which the alternate pathway parameters were first estimated and then fixed during the estimation of the lectin pathway parameters.
-The reduced order complement model captured the behavior of the alternative and lectin pathways (Fig. \ref{fig-fit}).
-For the alternative pathway, we used the C3a and C5a measurements in the absence of zymosan, and only allowed the alternative parameters to vary (Fig. \ref{fig-fit}A and B).
-Lectin parameters were estimated from C3a and C5a measurmemts in the presence of 1g zymosan (Fig. \ref{fig-fit}C and D).
-Taken together, the reduced order model reproduced a panel of lectin pathway initiation data sets in the neighborhood of physiological factor and inhibitor concentrations.
+A critical challenge for the development of any dynamic model is the estimation of model parameters.
+We estimated an ensemble of complement model parameters in a hierarchical fashion using \textit{in~vitro} time-series data sets generated with and without zymosan, a lectin pathway activator \cite{morad2015time}.
+The residual between model simulations and experimental measurements was minimized using the dynamic optimization with particle swarms (DOPS) routine,
+starting from an initial random parameter guess. Unless otherwise specified, all initial conditions were assumed to be their mean physiological values.
+A hierarchical approach was taken in which the alternate pathway parameters were estimated first and then fixed during the estimation of the lectin pathway parameters.
+While we had significant training data, the parameter estimation problem was underdetermined (we were not able to uniquely determine model parameters).
+Thus, instead of using a best-fit yet uncertain parameter set, we estimated an ensemble of probable parameter sets (N = 50, see materials and methods).
+The reduced order complement model ensemble captured the behavior of both the alternative and lectin pathways (Fig. \ref{fig-fit}).
+For the alternative pathway, we used C3a and C5a measurements in the absence of zymosan, and only allowed the alternative parameters to vary (Fig. \ref{fig-fit}A and B).
+On the other hand, lectin pathway parameters were estimated from C3a and C5a measurements in the presence of 1g zymosan with alternate pathway parameters fixed (Fig. \ref{fig-fit}C and D).
+The reduced order model reproduced a panel of alternate and lectin pathway data sets in the neighborhood of physiological factor and inhibitor concentrations.
 However, it was unclear whether the reduced order model could predict new data, without updating the model parameters.
-To address this question, we fixed the model parameters and simulated data not used for model training.
+To address this question, we fixed the model parameters and simulated data sets not used for model training.
 
 %However, we failed to fully capture the curvature of C5a alternative measureme (Fig. \ref{fig-fit}).
 %The decreasing slope of the experimental measurements may be an indication of the decreasing cofactors that are required for the spontaneous hydrolysis in the alternative pathway, which we neglected. %Due to this discrepancy in between our model and the experimental results, we believe that the interaction and the reversibility of the C4BP is a key player in creating a threshold where C5a is resistant to minor changes in inducer concentration even though C3a is sensitive.
