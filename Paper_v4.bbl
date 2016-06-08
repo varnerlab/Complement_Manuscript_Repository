@@ -46,10 +46,15 @@ Ricklin D, Lambris JD (2013) Complement in immune and inflammatory disorders:
 \newblock J Immunol 190: 3831--3838.
 \bibAnnoteFile{ricklin2013complement}
 
-\bibitem{walport2001complement}
+\bibitem{Walport:2001ab}
 Walport MJ (2001) Complement. first of two parts.
-\newblock N Engl J Med 344: 1058--1066.
-\bibAnnoteFile{walport2001complement}
+\newblock N Engl J Med 344: 1058-66.
+\bibAnnoteFile{Walport:2001ab}
+
+\bibitem{Walport:2001aa}
+Walport MJ (2001) Complement. second of two parts.
+\newblock N Engl J Med 344: 1140-4.
+\bibAnnoteFile{Walport:2001aa}
 
 \bibitem{pangburn1984alternative}
 Pangburn MK, M{\"u}ller-Eberhard HJ (1984) The alternative pathway of
