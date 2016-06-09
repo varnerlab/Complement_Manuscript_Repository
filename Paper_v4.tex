@@ -565,13 +565,15 @@ and $\sigma$ denotes the perturbation amplitude:
 \end{equation}
 where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
 At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ which we use for plotting best fits against the experimental data, and for generating a parameter ensemble.
+The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
 
-An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by perturbing each parameter and measuring the increase in the residual.
+An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by analyzing the results of repeated DOPS runs.
 Thereafter, the optimal parameter vector was perturbed within these bounds for approximately 100,000 iterations.
 Within each iteration the quality of perturbed vector was measured using goodness of fit (model residual).
-If the residual was too high or the perturbed vector generated a numerical error, the vector was rejected.
+If the residual was too high or the perturbed vector generated a numerical error, the vector was rejected, otherwise it was accepted.
 We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
-The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
+The best fit parameter set, and parameter ensemble is available in tab-delimited plain-text format from the Complement model GitHub repository. 
+
 
 %From each of these local points, a globally best error is identified. Both the local and global error
 %are then used to update the parameter estimates of each particle using the rules:
@@ -643,7 +645,6 @@ This study was supported by an award from the US Army and Systems Biology of Tra
 Complement initiation results in the formation of classical or alternative C3 convertases, which amplify the initial complement response and signal to the adaptive immune system by cleaving C3 into C3a and C3b. C3 convertases further react to form C5 convertases which catalyze the cleavage of the C5 complement protein to C5a and C5b.
 C5b is critical to the formation of the membrane attack complex (MAC), while C5a recruits an adaptive immune response.}\label{fig-schematic}
 \end{figure}
-
 
 \begin{figure}[h]
 \centering
