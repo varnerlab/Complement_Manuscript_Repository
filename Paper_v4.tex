@@ -322,10 +322,10 @@ In the absence of zymosan, the tickover parameters were important to both C3a an
 However, sensitivity coefficients are a local measure of how small changes in a parameter value effects model performance.
 To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody, we performed
 robustness analysis. Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to the network architecture.
-In this case, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and C5.
+In this case, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5.
 
 Robustness analysis suggested there was no single intervention that inhibited complement activation in the presence of both initiation pathways (Fig. \ref{fig-robustness-analysis}).
-We calculated robustness indices for C3a and C5a for the 50 parameter sets in the ensemble with and without the lectin pathway initiator.
+We calculated robustness indices for C3a and C5a for the parameter ensemble (N = 50) with and without the lectin pathway initiator.
 We simulated the addition of different doses of anti-complement antibody cocktails by decreasing the initial concentration of C3 or C5 or the combination of C3 and C5 by 50\% and 90\%.
 A \texttt{log$_{10}$} transformed robustness index of zero indicated no effect due to the perturbation, whereas an index of less than zero indicated decreased C3a or C5a.
 As expected, a C5 knockdown had no effect on C3a formation for either the alternate (Fig. \ref{fig-robustness-analysis}A, lanes 1 or 3) or lectin pathways
