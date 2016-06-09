@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 JUN 2016 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 JUN 2016 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,7 +884,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 ] [12] [13] [14] [15] [16
 
 ] [17] [18]
-Overfull \hbox (7.37225pt too wide) in paragraph at lines 586--593
+Overfull \hbox (7.37225pt too wide) in paragraph at lines 608--615
 \OT1/phv/m/n/12 ducted global sen-si-tiv-ity and ro-bust-ness anal-y-sis to es-
 ti-mate which pa-ram-e-ters and species
  []
@@ -909,31 +909,31 @@ Underfull \hbox (badness 3623) in paragraph at lines 281--286
 File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 641.
+Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 663.
 (pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 644.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 666.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure2_Fits_final.pdf, id=108, 1366.10374pt x 1142.2675pt>
+<./figs/Figure2_Fits_final.pdf, id=108, 650.43pt x 486.81876pt>
 File: ./figs/Figure2_Fits_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fits_final.pdf>
-Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 651.
-(pdftex.def)             Requested size: 469.75502pt x 392.7755pt.
+Package pdftex.def Info: ./figs/Figure2_Fits_final.pdf used on input line 671.
+(pdftex.def)             Requested size: 469.75502pt x 351.60118pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure3_predictions_final.pdf, id=109, 1305.87875pt x 1215.54124pt>
+<./figs/Figure3_predictions_final.pdf, id=109, 730.73pt x 543.02875pt>
 File: ./figs/Figure3_predictions_final.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_predictions_final.pdf>
 Package pdftex.def Info: ./figs/Figure3_predictions_final.pdf used on input lin
-e 662.
-(pdftex.def)             Requested size: 469.75502pt x 437.24211pt.
+e 682.
+(pdftex.def)             Requested size: 469.75502pt x 349.08667pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -942,10 +942,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figs/Figure4_SEN_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure4_SEN_v2.pdf>
-Package pdftex.def Info: ./figs/Figure4_SEN_v2.pdf used on input line 679.
+Package pdftex.def Info: ./figs/Figure4_SEN_v2.pdf used on input line 699.
 (pdftex.def)             Requested size: 516.73338pt x 413.9422pt.
 
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 679--689
+Overfull \hbox (46.97836pt too wide) in paragraph at lines 699--709
  [][] 
  []
 
@@ -957,7 +957,7 @@ File: ./figs/Figure5_RobustnessAnalysis_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure5_RobustnessAnalysis_v2.pdf>
 Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis_v2.pdf used on input
- line 694.
+ line 714.
 (pdftex.def)             Requested size: 422.77664pt x 498.18936pt.
 
 
@@ -999,10 +999,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (35 pages, 4333847 bytes).
+Output written on Paper_v4.pdf (35 pages, 4353447 bytes).
 PDF statistics:
- 3909 PDF objects out of 4296 (max. 8388607)
- 2592 compressed objects within 26 object streams
+ 3946 PDF objects out of 4296 (max. 8388607)
+ 2620 compressed objects within 27 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

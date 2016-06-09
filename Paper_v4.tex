@@ -104,7 +104,7 @@
 \vspace{0.1in}
 {\par \centering \textbf{Running Title:}~A reduced order model of complement}
 \vspace{0.1in}
-{\par \centering \textbf{To be submitted:}~\emph{PLoS~ONE}}
+{\par \centering \textbf{To be submitted:}~\emph{Scientific~Reports}}
 \vspace{0.5in}
 {\par \centering $^{\#}$ Denotes equal contribution}
 \vspace{0.1in}
@@ -122,18 +122,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abstract}
-Complement is an important pathway of innate immunity which plays a significant role in inflammation, and many disease processes.
-However, despite its importance, there has been a paucity of validated mathematical models of complement activation.
+Complement is an important pathway in innate immunity, inflammation, and many disease processes.
+However, despite its importance, there have been few validated mathematical models of complement activation.
 In this study, we developed an ensemble of experimentally validated reduced order complement models.
-The modeling approach combined ordinary differential equations with logical rules to produce a complement model with a limited number of equations and parameters.
-The reduced order model,  which described the lectin and alternative pathways, consisted of 18 differential equations with 28 parameters.
-Thus, the model was an order of magnitude smaller and included more pathways than comparable models in the literature.
-We estimated an ensemble of model parameters from \textit{in~vitro} time series measurements of the C3a and C5a complement proteins.
-Subsequently, we validated the model on unseen C3a and C5a measurements that were not used for model training.
+We combined ordinary differential equations with logical rules to produce a compact yet predictive complement model.
+The model,  which described the lectin and alternative pathways, was an order of magnitude smaller than comparable models in the literature.
+We estimated an ensemble of model parameters from \textit{in~vitro} dynamic measurements of the C3a and C5a complement proteins.
+Subsequently, we validated the model on unseen C3a and C5a measurements not used for model training.
 Despite its small size, the model was surprisingly predictive.
-After validation, we performed global sensitivity and robustness analysis to estimate which parameters and species
-controlled model performance. These analyses suggested complement was robust to any single therapeutic intervention.
-The only intervention that consistently reduced C5a formation for all cases was a dual-knockdown of both C3 and C5.
+Global sensitivity and robustness analysis suggested complement was robust to any single therapeutic intervention.
+Only dual dual-knockdown of both C3 and C5 consistently reduced C5a formation when all pathways were activated.
 Taken together, we developed a reduced order complement model that was computationally inexpensive,
 and could easily be incorporated into pre-existing or new pharmacokinetic models of immune system function.
 The model described experimental data, and predicted the need for multiple points of therapeutic intervention to disrupt complement activation.
@@ -169,7 +167,8 @@ However, research over the past decade has shown that the importance of compleme
 For example, complement contributes to tissue homeostasis by inducing tissue repair \cite{ricklin2010complement}.
 Complement has also been linked with several diseases including Alzheimers, Parkinson's disease, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{ricklin2007complement, rittirsch2008harmful}.
 Complement plays both positive and negative roles in cancer; attacking tumor cells with altered surface proteins in some cases, while potentially contributing to tumor growth in others \cite{sarma2011complement, ricklin2013complement}.
-Lastly, several other important biochemical subsystems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}. Thus, complement is important in a variety of beneficial and potentially harmful functions in the body.
+Lastly, several other important biochemical subsystems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}.
+Thus, complement is important in a variety of beneficial and potentially harmful functions in the body.
 
 The complement cascade involves over 30 soluble and cell surface proteins, receptors and regulators.
 The molecular connectivity of complement is complex, see the review of Walport \cite{Walport:2001ab,Walport:2001aa}.
@@ -198,7 +197,7 @@ Next, C3 convertase activity links complement initiation with the terminal phase
 Both classical and alternate C3 convertases can recruit an additional C3b subunit to form the classical C5 convertase (C4bC2aC3b), and the alternate C5 convertase (C3bBbC3b), respectively.
 C5 convertases cleave C5 into the C5a and C5b fragments.
 The C5b fragment, along with the C6, C7, C8 and multiple C9 complement proteins, form the membrane attack complex.
-On the other hand, both C3a and C5a are important inflammatory signals involved in several responses.
+On the other hand, both C3a and C5a are important inflammatory signals involved in several responses \cite{Walport:2001ab,Walport:2001aa}.
 
 %Complement activation is largely irreversible, involving positive feedback driven proteolytic cleavage.
 %Thus,
@@ -290,12 +289,13 @@ All model parameters and initial conditions were fixed for the validation simula
 The ensemble of reduced order models predicted the qualitative dynamics of C3a formation (Fig. \ref{fig-prediction}, left column),
 and C5a formation (Fig. \ref{fig-prediction}, right column) at three inducer concentrations.
 However, there were shortcomings with model performance, especially for the C3a prediction.
-First, while the C3a trend was captured, the overall level of C3a was consistently under-predicted in all cases (Fig. \ref{fig-prediction}, left column).
-We believe the C3a under-prediction was related to how we modeled C4BP interactions;
-C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes.
+First, while the overall C3a trend was captured, the level of C3a was consistently under-predicted (outside of our 99\% confidence interval) in all cases (Fig. \ref{fig-prediction}, left column).
+We believe the C3a under-prediction was related to our choice of training data, and how we modeled C4BP interactions.
+We trained the model using 1g zymosan, but predicted cases with much less initiator.
+Next, the C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes.
 However, the binding of C4BP with complement proteins is likely reversible, and CP C3 convertase may have residual activity even in the bound form.
 Thus, the model likely over-predicted the influence of C4BP.
-Second, while the C5a measurements were within the 95\% confidence estimate, we failed to capture the concave down curvature for the 0.001~g and 0.01~g zymosan cases.
+Second, while the C5a measurements were within the 99\% confidence estimate, we failed to capture the concave down curvature for the 0.001g and 0.01g zymosan cases.
 The decreasing slope of the C5a may indicate cofactor limitation, or missing biology which we have not accounted for in the reduced order approach.
 Despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the dynamic time scale of C3a formation,
 and the correct order of magnitude for the concentration of C5a for three inducer levels.
@@ -305,22 +305,22 @@ Next, we used global sensitivity and robustness analysis to determine which para
 % We subsequently did a robustness analysis to interrogate the effects of perturbing initial concentrations of C3 and C5 on the levels of C3a and C5a
 %
 
-\subsection*{Global analysis of the reduced order complement model}
+\subsection*{Global analysis of the reduced order complement model.}
 We conducted sensitivity analysis to estimate which parameters controlled the performance of the reduced order complement model.
-We calculated the sensitivity of the C3a and C5a residuals with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA}A - D).
-In the absence of zymosan (where only the alternative pathway is active), $k_{f,C3b}$ (formation of C3b) and $k_{d,C3a}$ (degradation rate constant governing C3a)
-were largely responsible for the system response. Interestingly, $k_{c,C3}$ (the rate constant governing AP C3-convertase activity) was not sensitive in the absence of zymosan.
-Thus, the behavior of the alternative pathway was more heavily influenced by the spontaneous hydrolysis of C3, rather than AP C3-convertase activity.
-On the other hand, $k_{c,C3}$ was one of the parameters that controlled C5a formation, in addition to the expected parameters related to AP C5-convertase formation.
-The AP C3-convertase is required for AP C5-convertase formation, and the formation of the C3b fragment.
-Thus, changes in the activity of AP C3-convertase will not drastically change the C3a dynamics, but will effect AP C5-convertase activity and C5a formation.
-The sensitivity analysis yielded the expected results for the lectin pathway that included parameters sensitive to pathway initiation (Fig. \ref{fig-SA}C and D).
-One key difference observed between the sensitivity of C3a and C5a parameters, was their respective degradation constants.
-The rate constant governing C3a degradation was sensitive, while the degradation constant for C5a was not.
-This difference was likely attributable to the magnitude of the degradation parameters and the respective concentrations of C3a and C5a.
-Thus, sensitivity analysis identified important indirect parameter interactions that could have therapeutic significance.
-However, sensitivity coefficients are a local measure of how small changes in a parameter value effects a performance objective, for example
-the abundance of C5a. To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody, we performed
+We calculated the sensitivity of the C3a and C5a residuals to changes in model parameters with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA}A - D).
+In the absence of zymosan (where only the alternative pathway is active), $k_{f,C3b}$ (tickover formation of C3b) and $k_{d,C3a}$ (rate constant governing C3a degradation)
+controlled the C3a fit (Fig. \ref{fig-SA}A). Interestingly, $k_{c,C3}$ (the rate constant governing AP C3-convertase activity) was not sensitive in the absence of zymosan.
+Thus, C3a formation in the alternative pathway was more heavily influenced by the spontaneous hydrolysis of C3, rather than AP C3-convertase activity, in the absence of zymosan.
+On the other hand, the C5a residual was sensitive to tickover parameters e.g., $k_{f,C3b}$, and $k_{f,C3}$ (the rate constant governing AP C3 convertase formation) as well as
+parameters controlling AP C5 convertase activity in the absence of zymosan (Fig. \ref{fig-SA}B).
+Thus, the AP C3-convertase did not strongly influence C3a dynamics, but did effect C5a formation in the absence of zymosan.
+In the presence of zymosan, the C3a residual was controlled by the formation and activity of the CP C3 convertase, as well as tickover and degradation parameters (Fig. \ref{fig-SA}C).
+Further, the C5a residual was influenced by lectin initiation parameters, the formation and activity of CP C5 convertase, and the inhibition by C4BP in the presence of zymosan (Fig. \ref{fig-SA}D).
+Globally, sensitivity analysis suggested that lectin pathway parameters dominated system performance in the presence of zymosan, and that C5a formation was sensitive to both
+C3 and C5 convertase activity.
+In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to C3 and C5 convertase activity.
+However, sensitivity coefficients are a local measure of how small changes in a parameter value effects model performance.
+To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody, we performed
 robustness analysis. Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to the network architecture.
 In this case, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and C5.
 
@@ -426,7 +426,27 @@ Lectin initiated C3a formation showed a number of sensitive parameters.
 This included the lectin initiation parameters that controlled C5a formation, C3 convertase inhibition by C4BP, and parameters governing C3 convertase activity.
 All these mechanisms are potential drug targets.
 
-To further validate these results from sensitivity analysis about potential drug targets we did a robustness analysis. We knocked down C3 and C5 levels and studied their impact on the generation of C3a and C5a. The C3a and C5a levels in the lectin pathway were strongly influenced by initial levels of C3 and C5. Thus direct inhibition of C3 and C5, or targeting complexes (MASP complex, C3 and C5 convertases) that act on C3 and C5 have a direct impact on production of C3a and C5a. This is also in agreement with sensitivity analysis that C5 is a good drug target. A number of drugs targeting C5 are being developed. For example LFG316 by Novartis is being used to target C5 in cases of Age-Related Macular Degeneration \cite{roguska2014generation}, Mubodina is an antibody that targets C5 in the treatment of Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}, Coversin is a small molecule targeting C5 \cite{weston2014clinical}, Zimura is an aptamer targeting C5 \cite{epstein2007complement}, small peptides and RNAi are also being used to inhibit C5 \cite{borodovsky2014aln}. Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets. Though knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate \cite{sissons1977metabolism, swaak1982determination} of these proteins make them difficult targets. Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components. Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway). For example, Omeros is a protease inhibitor that targets MASP-2 complex and thereby inhibits formation of downstream convertases \cite{schwaeble2011methods}. Lampalizumab (an immunoglobulin) and Bikaciomab (an antibody fragment) target Factor B and Factor D respectively. Factor B and Factor D are crucial to formation alternate pathway convertases \cite{katschke2012inhibiting, hu2013therapeutic}. Novelmed Therapeutics recently developed antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}. Cobra Venom Factor (CVF), an analogue of C3b has been used to bind to Factor B to regulate alternate convertases \cite{vogel2004recombinant}.  Thus, analysis of the ensemble of complement models identified potentially important therapeutic targets that are consistent with therapeutic strategies that are under development.
+To further validate these results from sensitivity analysis about potential drug targets we did a robustness analysis.
+We knocked down C3 and C5 levels and studied their impact on the generation of C3a and C5a.
+The C3a and C5a levels in the lectin pathway were strongly influenced by initial levels of C3 and C5.
+Thus direct inhibition of C3 and C5, or targeting complexes (MASP complex, C3 and C5 convertases) that act on C3 and C5 have a direct impact on production of C3a and C5a.
+This is also in agreement with sensitivity analysis that C5 is a good drug target. A number of drugs targeting C5 are being developed.
+For example LFG316 by Novartis is being used to target C5 in cases of Age-Related Macular Degeneration \cite{roguska2014generation},
+Mubodina is an antibody that targets C5 in the treatment of Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement},
+Coversin is a small molecule targeting C5 \cite{weston2014clinical}, Zimura is an aptamer targeting C5 \cite{epstein2007complement},
+small peptides and RNAi are also being used to inhibit C5 \cite{borodovsky2014aln}.
+Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets.
+Though knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate \cite{sissons1977metabolism, swaak1982determination} of these proteins make them difficult targets.
+Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS),
+a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
+Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting
+upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway).
+For example, Omeros is a protease inhibitor that targets MASP-2 complex and thereby inhibits formation of downstream convertases \cite{schwaeble2011methods}.
+Lampalizumab (an immunoglobulin) and Bikaciomab (an antibody fragment) target Factor B and Factor D respectively.
+Factor B and Factor D are crucial to formation alternate pathway convertases \cite{katschke2012inhibiting, hu2013therapeutic}.
+Novelmed Therapeutics recently developed antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
+Cobra Venom Factor (CVF), an analogue of C3b has been used to bind to Factor B to regulate alternate convertases \cite{vogel2004recombinant}.
+Thus, analysis of the ensemble of complement models identified potentially important therapeutic targets that are consistent with therapeutic strategies that are under development.
 
 %Indeed a number of next generation drugs are targeting convertases directly \cite{}, inhibiting their assembly or formation \cite{} or targeting the individual convertase components \cite{}
 
@@ -572,7 +592,7 @@ Thereafter, the optimal parameter vector was perturbed within these bounds for a
 Within each iteration the quality of perturbed vector was measured using goodness of fit (model residual).
 If the residual was too high or the perturbed vector generated a numerical error, the vector was rejected, otherwise it was accepted.
 We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
-The best fit parameter set, and parameter ensemble is available in tab-delimited plain-text format from the Complement model GitHub repository. 
+The best fit parameter set, and parameter ensemble is available in tab-delimited plain-text format from the Complement model GitHub repository.
 
 
 %From each of these local points, a globally best error is identified. Both the local and global error
