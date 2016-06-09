@@ -319,24 +319,30 @@ Further, the C5a residual was influenced by lectin initiation parameters, the fo
 Globally, sensitivity analysis suggested that lectin pathway parameters dominated system performance in the presence of zymosan, and that C5a formation was sensitive to both
 C3 and C5 convertase activity.
 In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to C3 and C5 convertase activity.
-However, sensitivity coefficients are a local measure of how small changes in a parameter value effects model performance.
-To more closely simulate a clinical intervention e.g., administration of an anti-complement antibody, we performed
-robustness analysis. Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to the network architecture.
-In this case, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5.
+Pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}E).
+However, sensitivity coefficients are only a local measure of how small changes in a parameter value affects model performance.
+To more closely simulate a clinical intervention e.g., administration of an anti-complement inhibitor, we performed
+robustness analysis.
 
+Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to a biochemical network.
+Here, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5.
 Robustness analysis suggested there was no single intervention that inhibited complement activation in the presence of both initiation pathways (Fig. \ref{fig-robustness-analysis}).
 We calculated robustness indices for C3a and C5a for the parameter ensemble (N = 50) with and without the lectin pathway initiator.
-We simulated the addition of different doses of anti-complement antibody cocktails by decreasing the initial concentration of C3 or C5 or the combination of C3 and C5 by 50\% and 90\%.
+We simulated the addition of different doses of anti-complement inhibitor cocktails by decreasing the initial concentration of C3 or C5 or the combination of C3 and C5 by 50\% and 90\%.
+This would be conceptually analogous to the administration of a C3 inhibitor e.g., compstatin alone or combination with eculizumab (Fig. \ref{fig-SA}E).
 A \texttt{log$_{10}$} transformed robustness index of zero indicated no effect due to the perturbation, whereas an index of less than zero indicated decreased C3a or C5a.
+The response of the complement model to different knock-down magnitudes was non-linear; a 90\% knock-down had an order of magnitude more impact than a 50\% knock-down.
 As expected, a C5 knockdown had no effect on C3a formation for either the alternate (Fig. \ref{fig-robustness-analysis}A, lanes 1 or 3) or lectin pathways
 (Fig. \ref{fig-robustness-analysis}B, lanes 1 or 3).
 However, C3a abundance and to a lesser extent C5a abundance decreased with decreasing C3 concentration in the alternate pathway (Fig. \ref{fig-robustness-analysis}A or B, lanes 1 or 2).
 This agreed with the sensitivity results; changes in AP C3-convertase formation or activity affected the downstream dynamics of C5a formation.
-Thus, these results suggested that C3 alone would be a reasonable target, especially given that C5a formation was surprisingly robust to C5 levels in the alternate pathway (Fig. \ref{fig-robustness-analysis}A or B, lane 2).
-Yet, in lectin initiated complement activation, C5a levels were robust to the initial C3 concentration (Fig. \ref{fig-robustness-analysis}A or B, lane 4).
-Thus, above some limiting threshold, even small concentrations of C3 and C5 convertases catalyzed the downstream formation of C5a.
-The only reliable intervention that consistently reduced C5a formation for all cases was a dual-knockdown.
-For example, a 90\% decrease of both C3 and C5 reduced the formation of C5a by over an order of magnitude (Fig. \ref{fig-robustness-analysis}B, lane 4).
+Thus, if we only considered the alternate pathway, C3 alone could be a reasonable target, especially given that C5a formation was surprisingly robust to C5 levels in the alternate pathway (Fig. \ref{fig-robustness-analysis}A or B, lane 2).
+Yet, when both pathways were activated, C5a levels were robust to the initial C3 concentration (Fig. \ref{fig-robustness-analysis}A or B, lane 4);
+C5a formation was catalyzed by CP C3 and C5 convertases.
+Thus, the only reliable intervention that consistently reduced both C3a and C5a formation for all cases was a dual-knockdown of C3 and C5.
+For example, a 90\% decrease of both C3 and C5 reduced the formation of C5a by over an order of magnitude (Fig. \ref{fig-robustness-analysis}B, lane 4),
+while C3a was reduced 
+
 
 
 % These results agree with the current push for complement therapeutics targeting both C3 and C5.
@@ -560,8 +566,8 @@ time, while the inner summation is with respect to state. DOPS is a novel metahe
 DOPS is faster than conventional global optimizers and has the ability to find near optimal solutions for high dimensional systems within a relatively few function evaluations.
 It uses an adaptive switching strategy based on error convergence rates to switch from the particle swarm to DDS search phases.
 This enables DOPS to quickly estimate globally optimal or near optimal solutions even in the presence of many local minima.
-In the swarm search, for each iteration the particles compute error within each sub-swarm by evaluating the model equations using their specific parameter vector realization. From each of these points within a sub-swarm a local best is identified. This along with the particle best within the sub-swarm $\mathcal{S}_{k}$ is used to update the parameter estimate for each particle using the following rules:
-
+In the swarm search, for each iteration the particles compute error within each sub-swarm by evaluating the model equations using their specific parameter vector realization.
+From each of these points within a sub-swarm a local best is identified. This along with the particle best within the sub-swarm $\mathcal{S}_{k}$ is used to update the parameter estimate for each particle using the following rules:
 \begin{equation}\label{eqn:update-rule}
 	%\mathbf{z}_{i,j} = \theta_{1,j-1}\mathbf{z}_{i,j-1} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{z}_{i,j-1}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G}_{k} - \mathbf{z}_{i,j-1}\right)
 	{z}_{i,j} = \theta_{1,j-1}{z}_{i,j-1} + \theta_{2}{r}_{1}\left(\mathcal{L}_{i} - {z}_{i,j-1}\right) + \theta_{3}{r}_{2}\left(\mathcal{G}_{k} - {z}_{i,j-1}\right)
@@ -699,14 +705,14 @@ confidence interval of the best-fit simulation for C3a and C5a. All initial cond
 \includegraphics[width=1.1\textwidth]{./figs/Figure4_SEN_v2.pdf}
 \caption{Global sensitivity analysis of the reduced order complement model.
 Sensitivity analysis was conducted on the four cases used for model training.
-\textbf{A}: Sensitivity of the C3a residual at 0g zymosan,
-\textbf{B}: Sensitivity of the C5a residual at 0g zymosan,
+\textbf{A}: Sensitivity of the C3a residual at w/o zymosan,
+\textbf{B}: Sensitivity of the C5a residual at w/o zymosan,
 \textbf{C}: Sensitivity of the C3a residual at 1g zymosan, and
 \textbf{D}: Sensitivity of the C5a residual at 1g zymosan.
 The bars denote the mean total sensitivity index for each parameter, while the error bars denote the 95\% confidence interval.
 \textbf{E}: Pathways controlled by the sensitivity parameters.
-Bold black lines indicates the pathway is governed by one or more sensitive parameters and the red lines shows some of the current therapeutics targets.
-Red indicates current complement therapeutics. }\label{fig-SA}
+Bold black lines indicate the pathway involves one or more sensitive parameters, while the red lines show current therapeutics targets.
+Current complement therapeutics were taken from the review of Morgan and Harris \cite{morgan2015complement}. }\label{fig-SA}
 \end{figure}
 
 \begin{figure}[h]
@@ -714,8 +720,10 @@ Red indicates current complement therapeutics. }\label{fig-SA}
 \includegraphics[width=0.9\textwidth]{./figs/Figure5_RobustnessAnalysis_v2.pdf}
 \caption{Robustness analysis of the complement model with respect to C3 and C5 initial conditions.
 Robustness analysis was conducted on the four cases used for model training:
-C3a alternate (0g zymosan), C5a alternate (0g zymosan),  C3a lectin (1g zymosan), and C5a lectin (1g zymosan), by reducing the initial concentration of C3 and/or C5
-by \textbf{A} 50\% and \textbf{B} 90 \%.
+C3a alternate (w/o zymosan), C5a alternate (w/o zymosan),  C3a lectin (1g zymosan), and C5a lectin (1g zymosan), by reducing the initial concentration of C3 and/or C5
+by 50\% or 90 \%.
+\textbf{A}: Robustness results for a 50\% decrease in the C3, C5, or C3 and C5 initial condition.
+\textbf{B}: Robustness results for a 90\% decrease in the C3, C5, or C3 and C5 initial condition.
 The bars denote the log-transformated robustness index while error bars denote one standard deviation. At zero, the perturbed initial concentration has no impact on the measured output.
 A log-transformed robustness index less than zero indicates a negative relation between the perturbed initial concentration and the measured output.}\label{fig-robustness-analysis}
 \end{figure}
@@ -745,47 +753,47 @@ A log-transformed robustness index less than zero indicates a negative relation 
 \setcounter{page}{1}
 
 
-\section*{Supplemental materials.}
-\subsection*{Model equations.}
-The reduced-order complement model consisted of 18 ordinary differential equations, 12 rate equations, and two control equations:
-\begin{eqnarray}
-	\frac{dx_{1}}{dt} & =& - r_{1}f_{1} \\ 								%C4
-	\frac{dx_{2}}{dt} &=& - r_{2}f_{2} \\  								%C2
-	\frac{dx_{3}}{dt} &=&  r_{1}f_{1} \\ 								%C4a
-	\frac{dx_{4}}{dt} &=& r_{1}f_{1} - r_{6} \\ 					%C4b
-	\frac{dx_{5}}{dt} & = & r_{2}f_{2} - r_{6} \\ 					%C2a
-	\frac{dx_{6}}{dt} &=& r_{2}f_{2} \\ 								%C2b
-	\frac{dx_{7}}{dt} &=& r_{3} - r_{4} - r_{5}\\ 				%C3
-	\frac{dx_{8}}{dt} &=& r_{3}  + r_{4} + r_{5}  - k_{deg,c3a}*C3a \\		%C3a
-	\frac{dx_{9}}{dt} &=& r_{3}  + r_{4} + r_{5}  -  r_{7} \\		%C3b
-	\frac{dx_{10}}{dt} &=& r_{6} - r_{10} -  r_{8} \\			%CP C3C
-	\frac{dx_{11}}{dt} &=& r_{7} - r_{11} -  r_{9} \\			%AP C3C
-	\frac{dx_{12}}{dt} &=& r_{10} - r_{14} \\							%CP C5C
-	\frac{dx_{13}}{dt} &=& r_{10}  \\											%AP C5C
-	\frac{dx_{14}}{dt} &=& - r_{12} - r_{13} \\								%C5
-	\frac{dx_{15}}{dt} &=&  r_{12} + r_{13} - k_{deg,c5a} \\					%C5a
-	\frac{dx_{16}}{dt} &=& r_{12} + r_{13} \\								%C5b
-	\frac{dx_{17}}{dt} &=& - r_{8} - r_{14} \\  				         %C4BP
-	\frac{dx_{18}}{dt} &=& - r_{9} \\									%Factor H
-\end{eqnarray}where the rate equations are given by:
-\begin{eqnarray}
-	r_{1} &=& \frac{k_{i1}(C4)}{(K_{1s} + C4)} \\
-	r_{2} &=& \frac{k_{2}(C2)}{(K_{2s} + C2)} \\
-	f_{1} &=& \frac{Zymo^{\eta_{1}}}{(Zymo^{\eta_{1}} + \alpha_{1}^{\eta_{1}})} \\
-	f_{2} &=& \frac{Zymo^{\eta_{2}}}{(Zymo^{\eta_{2}} + \alpha_{2}^{\eta_{2}})} \\
-	r_{3} &=& k_{3}(C3) \\
-	r_{4} &=& \frac{k_{4}(C3C_{L})(C3^{\eta_{3})}}{(K_{4s}^{\eta_{3}} + C3^{\eta_{3}})}  \\
-	r_{5} &=& \frac{k_{5}(C3C_{A})(C3)}{(K_{5s} + C3)} \\
-	r_{6} &=& k_{6}(C4b)(C2a) \\
-	r_{7} &=& k_{7}(C4b)(C2a) \\
-	r_{8} &=& k_{8}(C3C_{L})(C4b)(C4BP) \\
-	r_{9} &=& k_{9}(C3C_{A})(FactorH) \\
-	r_{10} &=& k_{10}(C3C_{L})(C3b) \\
-	r_{11} &=& k_{11}(C3C_{A})(C3b) \\
-	r_{12} &=& \frac{k_{12}(C5C_{L})(C5^{\eta_{4}})}{(K_{12s}^{\eta_{4}} + C5^{\eta_{4}})} \\
-	r_{13} &=& \frac{k_{13}(C5C_{A})(C5)}{(K_{13s} + C5)} \\
-	r_{14} &=& k_{14}(C5C_{L})(C4BP)
-\end{eqnarray}
+% \section*{Supplemental materials.}
+% \subsection*{Model equations.}
+% The reduced-order complement model consisted of 18 ordinary differential equations, 12 rate equations, and two control equations:
+% \begin{eqnarray}
+% 	\frac{dx_{1}}{dt} & =& - r_{1}f_{1} \\ 								%C4
+% 	\frac{dx_{2}}{dt} &=& - r_{2}f_{2} \\  								%C2
+% 	\frac{dx_{3}}{dt} &=&  r_{1}f_{1} \\ 								%C4a
+% 	\frac{dx_{4}}{dt} &=& r_{1}f_{1} - r_{6} \\ 					%C4b
+% 	\frac{dx_{5}}{dt} & = & r_{2}f_{2} - r_{6} \\ 					%C2a
+% 	\frac{dx_{6}}{dt} &=& r_{2}f_{2} \\ 								%C2b
+% 	\frac{dx_{7}}{dt} &=& r_{3} - r_{4} - r_{5}\\ 				%C3
+% 	\frac{dx_{8}}{dt} &=& r_{3}  + r_{4} + r_{5}  - k_{d,c3a}x_{8} \\		%C3a
+% 	\frac{dx_{9}}{dt} &=& r_{3}  + r_{4} + r_{5}  -  r_{7} \\		%C3b
+% 	\frac{dx_{10}}{dt} &=& r_{6} - r_{10} -  r_{8} \\			%CP C3C
+% 	\frac{dx_{11}}{dt} &=& r_{7} - r_{11} -  r_{9} \\			%AP C3C
+% 	\frac{dx_{12}}{dt} &=& r_{10} - r_{14} \\							%CP C5C
+% 	\frac{dx_{13}}{dt} &=& r_{10}  \\											%AP C5C
+% 	\frac{dx_{14}}{dt} &=& - r_{12} - r_{13} \\								%C5
+% 	\frac{dx_{15}}{dt} &=&  r_{12} + r_{13} - k_{d,c5a}x_{15} \\					%C5a
+% 	\frac{dx_{16}}{dt} &=& r_{12} + r_{13} \\								%C5b
+% 	\frac{dx_{17}}{dt} &=& - r_{8} - r_{14} \\  				         %C4BP
+% 	\frac{dx_{18}}{dt} &=& - r_{9} \\									%Factor H
+% \end{eqnarray}where the rate equations are given by:
+% \begin{eqnarray}
+% 	r_{1} &=& \frac{k_{i1}(C4)}{(K_{1s} + C4)} \\
+% 	r_{2} &=& \frac{k_{2}(C2)}{(K_{2s} + C2)} \\
+% 	f_{1} &=& \frac{Zymo^{\eta_{1}}}{(Zymo^{\eta_{1}} + \alpha_{1}^{\eta_{1}})} \\
+% 	f_{2} &=& \frac{Zymo^{\eta_{2}}}{(Zymo^{\eta_{2}} + \alpha_{2}^{\eta_{2}})} \\
+% 	r_{3} &=& k_{3}(C3) \\
+% 	r_{4} &=& \frac{k_{4}(C3C_{L})(C3^{\eta_{3})}}{(K_{4s}^{\eta_{3}} + C3^{\eta_{3}})}  \\
+% 	r_{5} &=& \frac{k_{5}(C3C_{A})(C3)}{(K_{5s} + C3)} \\
+% 	r_{6} &=& k_{6}(C4b)(C2a) \\
+% 	r_{7} &=& k_{7}(C4b)(C2a) \\
+% 	r_{8} &=& k_{8}(C3C_{L})(C4b)(C4BP) \\
+% 	r_{9} &=& k_{9}(C3C_{A})(FactorH) \\
+% 	r_{10} &=& k_{10}(C3C_{L})(C3b) \\
+% 	r_{11} &=& k_{11}(C3C_{A})(C3b) \\
+% 	r_{12} &=& \frac{k_{12}(C5C_{L})(C5^{\eta_{4}})}{(K_{12s}^{\eta_{4}} + C5^{\eta_{4}})} \\
+% 	r_{13} &=& \frac{k_{13}(C5C_{A})(C5)}{(K_{13s} + C5)} \\
+% 	r_{14} &=& k_{14}(C5C_{L})(C4BP)
+% \end{eqnarray}
 
 % Supplemental figures go here ...
 %\begin{figure}[ht]
