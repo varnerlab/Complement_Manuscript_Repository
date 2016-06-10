@@ -309,20 +309,21 @@ Next, we used global sensitivity and robustness analysis to determine which para
 We conducted sensitivity analysis to estimate which parameters controlled the performance of the reduced order complement model.
 We calculated the sensitivity of the C3a and C5a residuals to changes in model parameters with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA}A - D).
 In the absence of zymosan (where only the alternative pathway is active), $k_{f,C3b}$ (tickover formation of C3b) and $k_{d,C3a}$ (rate constant governing C3a degradation)
-controlled the C3a fit (Fig. \ref{fig-SA}A). Interestingly, $k_{c,C3}$ (the rate constant governing AP C3-convertase activity) was not sensitive in the absence of zymosan.
+controlled the C3a fit (Fig. \ref{fig-SA}A). Interestingly, neither $k_{c,C3C,AP}$ (the rate constant governing AP C3-convertase activity) nor $k_{f,C3C,AP}$ (the rate constant governing AP C3-convertase formation) were sensitive in the absence of zymosan.
 Thus, C3a formation in the alternative pathway was more heavily influenced by the spontaneous hydrolysis of C3, rather than AP C3-convertase activity, in the absence of zymosan.
-On the other hand, the C5a residual was sensitive to tickover parameters e.g., $k_{f,C3b}$, and $k_{f,C3}$ (the rate constant governing AP C3 convertase formation) as well as
+On the other hand, the C5a residual was strongly sensitive to tickover parameters e.g., $k_{f,C3b}$, and to a lesser extent $k_{f,C3C,AP}$ as well as
 parameters controlling AP C5 convertase activity in the absence of zymosan (Fig. \ref{fig-SA}B).
-Thus, the AP C3-convertase did not strongly influence C3a dynamics, but did effect C5a formation in the absence of zymosan.
+Thus, AP C3-convertase did not influence C3a dynamics, but strongly effected C5a formation in the absence of zymosan.
 In the presence of zymosan, the C3a residual was controlled by the formation and activity of the CP C3 convertase, as well as tickover and degradation parameters (Fig. \ref{fig-SA}C).
 Further, the C5a residual was influenced by lectin initiation parameters, the formation and activity of CP C5 convertase, and the inhibition by C4BP in the presence of zymosan (Fig. \ref{fig-SA}D).
 Globally, sensitivity analysis suggested that lectin pathway parameters dominated system performance in the presence of zymosan, and that C5a formation was sensitive to both
-C3 and C5 convertase activity.
-In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to C3 and C5 convertase activity.
-Pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}E).
+C3 and C5 convertase activity, while C3a was robust to the AP C3 convertase.
+In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to both AP C3 and C5 convertase activity.
+We compared the sensitivity results to current therapeutic approaches; pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}E).
+Thus, there was a qualitative overlap between sensitivity and the potential of biochemical efficacy.
 However, sensitivity coefficients are only a local measure of how small changes in a parameter value affects model performance.
 To more closely simulate a clinical intervention e.g., administration of an anti-complement inhibitor, we performed
-robustness analysis.
+robustness analysis on the model ensemble.
 
 Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to a biochemical network.
 Here, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5.
@@ -341,9 +342,7 @@ Yet, when both pathways were activated, C5a levels were robust to the initial C3
 C5a formation was catalyzed by CP C3 and C5 convertases.
 Thus, the only reliable intervention that consistently reduced both C3a and C5a formation for all cases was a dual-knockdown of C3 and C5.
 For example, a 90\% decrease of both C3 and C5 reduced the formation of C5a by over an order of magnitude (Fig. \ref{fig-robustness-analysis}B, lane 4),
-while C3a was reduced 
-
-
+while C3a was reduced to a lesser extent (Fig. \ref{fig-robustness-analysis}B, lane 3).
 
 % These results agree with the current push for complement therapeutics targeting both C3 and C5.
 % Conversely, the significance of the convertases identified by the sensitivity analysis indicate that they may also be effective targets for therapeutic intervention, however, these results require experimental validation before any definitive conclusions can be reached.
@@ -542,6 +541,7 @@ We used mass action kinetics to model protein-protein binding interactions withi
 \end{equation}
 where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\sigma_{sj}$ denotes the stoichiometric coefficient for species $s$ in reaction $j$,
 and $s\in{m_{j}}$ denotes the set of \textit{reactants} for reaction $j$. We assumed all binding interactions were irreversible.
+
 The control terms $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
 For each rate, we used a rule-based approach to select from competing control factors.
 If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
@@ -591,14 +591,12 @@ and $\sigma$ denotes the perturbation amplitude:
 \end{equation}
 where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
 At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ which we use for plotting best fits against the experimental data, and for generating a parameter ensemble.
-The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
 
-An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by analyzing the results of repeated DOPS runs.
-Thereafter, the optimal parameter vector was perturbed within these bounds for approximately 100,000 iterations.
-Within each iteration the quality of perturbed vector was measured using goodness of fit (model residual).
-If the residual was too high or the perturbed vector generated a numerical error, the vector was rejected, otherwise it was accepted.
+An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by analyzing repeated DOPS runs.
+Parameters were selected  using goodness of fit (model residual) and numerical stability criteria.
 We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
-The best fit parameter set, and parameter ensemble is available in tab-delimited plain-text format from the Complement model GitHub repository.
+The best fit parameter set, and parameter ensemble is available in a tab delimited plain text format from the Complement model GitHub repository.
+The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
 
 
 %From each of these local points, a globally best error is identified. Both the local and global error
