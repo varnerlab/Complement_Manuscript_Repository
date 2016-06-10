@@ -297,8 +297,8 @@ However, the binding of C4BP with complement proteins is likely reversible, and 
 Thus, the model likely over-predicted the influence of C4BP.
 Second, while the C5a measurements were within the 99\% confidence estimate, we failed to capture the concave down curvature for the 0.001g and 0.01g zymosan cases.
 The decreasing slope of the C5a may indicate cofactor limitation, or missing biology which we have not accounted for in the reduced order approach.
-Despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the dynamic time scale of C3a formation,
-and the correct order of magnitude for the concentration of C5a for three inducer levels.
+Despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the time scale of C3a formation,
+and the correct order of magnitude for C5a for three inducer levels.
 Next, we used global sensitivity and robustness analysis to determine which parameters and species controlled the performance of the complement model.
 
 %This gives us new insight in which of the parameters play a role in complement activation. Even though AP~C3~convertase is also responsible in the conversion of C3 and the production of C3a, the kinetic parameters that govern the equation was not sensitive at all. This elucidated that the activation of
@@ -318,12 +318,12 @@ In the presence of zymosan, the C3a residual was controlled by the formation and
 Further, the C5a residual was influenced by lectin initiation parameters, the formation and activity of CP C5 convertase, and the inhibition by C4BP in the presence of zymosan (Fig. \ref{fig-SA}D).
 Globally, sensitivity analysis suggested that lectin pathway parameters dominated system performance in the presence of zymosan, and that C5a formation was sensitive to both
 C3 and C5 convertase activity, while C3a was robust to the AP C3 convertase.
-In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to both AP C3 and C5 convertase activity.
+In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to both AP C3 and C5 convertase formation.
 We compared the sensitivity results to current therapeutic approaches; pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}E).
 Thus, there was a qualitative overlap between sensitivity and the potential of biochemical efficacy.
-However, sensitivity coefficients are only a local measure of how small changes in a parameter value affects model performance.
+However, sensitivity coefficients are only a local measure of how small changes in a parameters affect model performance.
 To more closely simulate a clinical intervention e.g., administration of an anti-complement inhibitor, we performed
-robustness analysis on the model ensemble.
+robustness analysis.
 
 Robustness coefficients quantify the response of a marker to a macroscopic structural or operational perturbation to a biochemical network.
 Here, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5.
