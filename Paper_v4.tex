@@ -521,9 +521,10 @@ Alternatively, we could also perform sensitivity analysis on the C3a prediction 
 \subsection*{Formulation and solution of the complement model equations.}
 We used ordinary differential equations (ODEs) to model the time evolution of complement proteins ($x_{i}$) in the reduced order model:
 \begin{equation}
-	\frac{dx_{i}}{dt}  =  \sum_{j = 1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)\qquad{i=1,2,\hdots,\mathcal{M}}\\
+	\frac{1}{\tau_{i}}\frac{dx_{i}}{dt}  =  \sum_{j = 1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)\qquad{i=1,2,\hdots,\mathcal{M}}\\
 \end{equation}
 where $\mathcal{R}$ denotes the number of reactions and $\mathcal{M}$ denotes the number of protein species in the model.
+The quantity $\tau_{i}$ denotes a timescale parameter for species $i$ which captures unmodeled effects; by default $\tau_{i}$ = 1, for all species unless otherwise specified.
 The quantity $r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)$ denotes the rate of reaction $j$.
 Typically, reaction $j$ is a non-linear function of biochemical and enzyme species abundance, as well as unknown model parameters $\mathbf{k}$ ($\mathcal{K}\times{1}$).
 The quantity $\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$.
@@ -675,7 +676,7 @@ C5b is critical to the formation of the membrane attack complex (MAC), while C5a
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure2_Fits_final.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure2_Fits_final_v2.pdf}
 \caption{Reduced order complement model training.
 Model parameters were estimated using Dynamic Optimization with Particle Swarms (DOPS) from C3a and C5a measurements with and without zymosan \cite{morad2015time}.
 The model was trained using C3a and C5a data generated from the alternative pathway (\textbf{A}--\textbf{B}) and lectin pathway initiated with 1g zymosan (\textbf{C}--\textbf{D}).
@@ -686,7 +687,7 @@ confidence interval of the best-fit simulation for C3a and C5a. All initial cond
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure3_predictions_final.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure3_predictions_final_v2.pdf}
 \caption{Reduced order complement model predictions. The reduced order coagulation model parameter estimates were tested against data not used during model training \cite{morad2015time}.
 Simulations of C3a and C5a generated in the lectin pathway using 0.1g, 0.01g, and 0.001g zymosan were compared with the corresponding experimental measurement.
 The solid red line shows the simulation with the best-fit parameter set, the solid black lines show the simulated mean value of C3a or C5a for the ensemble (N = 50).
@@ -703,15 +704,13 @@ confidence interval of the best-fit simulation for C3a and C5a. All initial cond
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.1\textwidth]{./figs/Figure4_SEN_v2.pdf}
+\includegraphics[width=1.1\textwidth]{./figs/Figure4_Sensitivity_v3.pdf}
 \caption{Global sensitivity analysis of the reduced order complement model.
-Sensitivity analysis was conducted on the four cases used for model training.
-\textbf{A}: Sensitivity of the C3a residual at w/o zymosan,
-\textbf{B}: Sensitivity of the C5a residual at w/o zymosan,
-\textbf{C}: Sensitivity of the C3a residual at 1g zymosan, and
-\textbf{D}: Sensitivity of the C5a residual at 1g zymosan.
+Sensitivity analysis was conducted on the two objectives used for model training.
+\textbf{A}: Sensitivity of the C3a and C5a residual w/o zymosan,
+\textbf{B}: Sensitivity of the C3a and C5a residual with 1mg/ml zymosan.
 The bars denote the mean total sensitivity index for each parameter, while the error bars denote the 95\% confidence interval.
-\textbf{E}: Pathways controlled by the sensitivity parameters.
+\textbf{C}: Pathways controlled by the sensitivity parameters.
 Bold black lines indicate the pathway involves one or more sensitive parameters, while the red lines show current therapeutics targets.
 Current complement therapeutics were taken from the review of Morgan and Harris \cite{morgan2015complement}. }\label{fig-SA}
 \end{figure}
