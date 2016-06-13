@@ -556,50 +556,70 @@ variable. Each regulatory transfer function took the form:
 	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right)=k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
 \end{equation}where $\mathcal{Z}_{i}$ denotes the abundance of factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
 In this study, we used $\mathcal{I}_{j}\in\left\{min,max\right\}$ \cite{pr3010178}. If a process has no modifying factors, $v_{j}=1$.
-The model equations were implemented in MATLAB and solved using the \texttt{ODE23s} routine (The Mathworks, Natick MA).
+The model equations were implemented in Julia and solved using the \texttt{SUNDIALS} routine [REFs].
 The complement model code and parameter ensemble is freely available under an MIT software license and can be downloaded from http://www.varnerlab.org.
 
 \subsection*{Estimation of an ensemble of complement model parameters.}
-We minimized the residual between simulations and experimental C3a and C5a measurements using Dynamic Optimization with Particle Swarms (DOPS). DOPS minimized the objective:
-\begin{equation}\label{eqn:objective-function}
-	\min_{\mathbf{k}} \sum_{\tau=1}^{\mathcal{T}}\sum_{j=1}^{\mathcal{S}}\left(\frac{\hat{x}_{j}\left(\tau\right) - x_{j}\left(\tau,\mathbf{k}\right)}{\omega_{j}\left(\tau\right)}\right)^{2}
-\end{equation}where $\hat{x}_{j}\left(\tau\right)$ denotes the measured value of species $j$ at time $\tau$, $x_{j}\left(\tau,\mathbf{k}\right)$ denotes the simulated
-value for species $j$ at time $\tau$, and $\omega_{j}\left(\tau\right)$ denotes the experimental measurement variance for species $j$ at time $\tau$. The outer summation is with respect to
-time, while the inner summation is with respect to state. DOPS is a novel metaheuristic that combines multi swarm particle swarm optimization (PSO) with a greedy global optimization algorithm called dynamically dimensioned search (DDS).
-DOPS is faster than conventional global optimizers and has the ability to find near optimal solutions for high dimensional systems within a relatively few function evaluations.
-It uses an adaptive switching strategy based on error convergence rates to switch from the particle swarm to DDS search phases.
-This enables DOPS to quickly estimate globally optimal or near optimal solutions even in the presence of many local minima.
-In the swarm search, for each iteration the particles compute error within each sub-swarm by evaluating the model equations using their specific parameter vector realization.
-From each of these points within a sub-swarm a local best is identified. This along with the particle best within the sub-swarm $\mathcal{S}_{k}$ is used to update the parameter estimate for each particle using the following rules:
-\begin{equation}\label{eqn:update-rule}
-	%\mathbf{z}_{i,j} = \theta_{1,j-1}\mathbf{z}_{i,j-1} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{z}_{i,j-1}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G}_{k} - \mathbf{z}_{i,j-1}\right)
-	{z}_{i,j} = \theta_{1,j-1}{z}_{i,j-1} + \theta_{2}{r}_{1}\left(\mathcal{L}_{i} - {z}_{i,j-1}\right) + \theta_{3}{r}_{2}\left(\mathcal{G}_{k} - {z}_{i,j-1}\right)
+We estimated a single initial parameter set using the using Dynamic Optimization with Particle Swarms (DOPS) technique [REF].
+DOPS minimized the squared residual between simulated and experimental C3a and C5a measurements with and without zymosan as a single objective formulation.
+This initial best fit set then served as the starting point for multiobjective ensemble generation using Pareto Optimal Ensemble Technique in the Julia programming language (JuPOETs) [REF].
+JuPOETs is a multiobjective approach which integrates simulated annealing with Pareto optimality to estimate model ensembles on or near the optimal tradeoff surface between competing training objectives. JuPOETs minimized training objective functions of the form:
+\begin{equation}\label{eqn_cost2}
+	E_{j}(\mathbf{k}) = \sum_{i=1}^{\mathcal{T}_{j}}\biggl(\hat{\mathcal{M}}_{ij}-\hat{y}_{ij}(\mathbf{k})\biggr)^2 + \left(\frac{{\mathcal{M}^{\prime}_{ij}}-\max{y_{ij}}}{{\mathcal{M}^{\prime}_{ij}}}\right)^{2}
 \end{equation}
-where ${z}_{i,j}$ is the parameter vector, $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters, $\mathcal{L}_{i}$ denotes the best solution found by particle $i$ within sub-swarm
-$\mathcal{S}_{k}$ for function evaluations $1\rightarrow j-1$, and
-$\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
-The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
-At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k}$, over the k sub-swarms was used to initialize the DDS phase.
-For the DDS phase, the best parameter estimate was updated using the rule:
-\begin{equation}
-  \mathcal{G}_{new}({J})=\begin{cases}
-    \mathcal{G}(\mathbf{J})+\mathbf{r}_{normal}(\mathbf{J})\sigma(\mathbf{J}), & \text{if $\mathcal{G}_{new}(\mathbf{J})<\mathcal{G}(\mathbf{J})$}.\\
-    \mathcal{G}(\mathbf{J}), & \text{otherwise}.
-  \end{cases}
-\end{equation}
-where $\mathbf{J}$ is a vector representing the subset of dimensions that are being perturbed, $\mathbf{r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$,
-and $\sigma$ denotes the perturbation amplitude:
-\begin{equation}
-	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
-\end{equation}
-where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
-At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ which we use for plotting best fits against the experimental data, and for generating a parameter ensemble.
+The symbol $\hat{\mathcal{M}}_{ij}$ denotes an experimental observation (from training set $j$) while the symbol $\hat{y}_{ij}$ denotes the simulation output (from training objective $j$). The quantity $i$ denotes the sampled time-index and $\mathcal{T}_{j}$ denotes the number of time points for experiment $j$.
+In this study, we minimized two training objectives, the sum of the C3a and C5a residual w/o zymosan (objective )
 
-An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by analyzing repeated DOPS runs.
-Parameters were selected  using goodness of fit (model residual) and numerical stability criteria.
-We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
-The best fit parameter set, and parameter ensemble is available in a tab delimited plain text format from the Complement model GitHub repository.
-The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
+% \subsubsection*{Dynamic Optimization with Particle Swarms (DOPS).}
+% DOPS minimized the residual between simulations and experimental C3a and C5a measurements using Dynamic Optimization with Particle Swarms (DOPS).
+%
+
+% DOPS minimized the objective:
+% \begin{equation}\label{eqn:objective-function}
+% 	\min_{\mathbf{k}} \sum_{\tau=1}^{\mathcal{T}}\sum_{j=1}^{\mathcal{S}}\left(\frac{\hat{x}_{j}\left(\tau\right) - x_{j}\left(\tau,\mathbf{k}\right)}{\omega_{j}\left(\tau\right)}\right)^{2}
+% \end{equation}where $\hat{x}_{j}\left(\tau\right)$ denotes the measured value of species $j$ at time $\tau$, $x_{j}\left(\tau,\mathbf{k}\right)$ denotes the simulated
+% value for species $j$ at time $\tau$, and $\omega_{j}\left(\tau\right)$ denotes the experimental measurement variance for species $j$ at time $\tau$. The outer summation is with respect to
+% time, while the inner summation is with respect to state. DOPS is a novel metaheuristic that combines multi swarm particle swarm optimization (PSO) with a greedy global optimization algorithm called dynamically dimensioned search (DDS).
+% DOPS is faster than conventional global optimizers and has the ability to find near optimal solutions for high dimensional systems within a relatively few function evaluations.
+% It uses an adaptive switching strategy based on error convergence rates to switch from the particle swarm to DDS search phases.
+% This enables DOPS to quickly estimate globally optimal or near optimal solutions even in the presence of many local minima.
+% In the swarm search, for each iteration the particles compute error within each sub-swarm by evaluating the model equations using their specific parameter vector realization.
+% From each of these points within a sub-swarm a local best is identified. This along with the particle best within the sub-swarm $\mathcal{S}_{k}$ is used to update the parameter estimate for each particle using the following rules:
+% \begin{equation}\label{eqn:update-rule}
+% 	%\mathbf{z}_{i,j} = \theta_{1,j-1}\mathbf{z}_{i,j-1} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{z}_{i,j-1}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G}_{k} - \mathbf{z}_{i,j-1}\right)
+% 	{z}_{i,j} = \theta_{1,j-1}{z}_{i,j-1} + \theta_{2}{r}_{1}\left(\mathcal{L}_{i} - {z}_{i,j-1}\right) + \theta_{3}{r}_{2}\left(\mathcal{G}_{k} - {z}_{i,j-1}\right)
+% \end{equation}
+% where ${z}_{i,j}$ is the parameter vector, $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters, $\mathcal{L}_{i}$ denotes the best solution found by particle $i$ within sub-swarm
+% $\mathcal{S}_{k}$ for function evaluations $1\rightarrow j-1$, and
+% $\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
+% The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
+% At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k}$, over the k sub-swarms was used to initialize the DDS phase.
+% For the DDS phase, the best parameter estimate was updated using the rule:
+% \begin{equation}
+%   \mathcal{G}_{new}({J})=\begin{cases}
+%     \mathcal{G}(\mathbf{J})+\mathbf{r}_{normal}(\mathbf{J})\sigma(\mathbf{J}), & \text{if $\mathcal{G}_{new}(\mathbf{J})<\mathcal{G}(\mathbf{J})$}.\\
+%     \mathcal{G}(\mathbf{J}), & \text{otherwise}.
+%   \end{cases}
+% \end{equation}
+% where $\mathbf{J}$ is a vector representing the subset of dimensions that are being perturbed, $\mathbf{r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$,
+% and $\sigma$ denotes the perturbation amplitude:
+% \begin{equation}
+% 	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
+% \end{equation}
+% where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a monotonically decreasing probability function $\mathcal{P}_{i}$ that represents a threshold for determining whether a specific dimension $j$ was perturbed or not. DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
+% At the end of DDS phase we obtain the optimal vector  $\mathcal{G}$ which we use for plotting best fits against the experimental data, and for generating a parameter ensemble.
+
+% \subsubsection*{Pareto Optimal Ensemble Technique in the Julia programming language (JuPOETs).}
+% An ensemble of parameter sets was estimated using JuPOETs using .
+%
+%
+% Two objective functions were used to train the
+%
+% An ensemble of parameters was obtained by randomly perturbing the optimal parameter set within bounds established by analyzing repeated DOPS runs.
+% Parameters were selected  using goodness of fit (model residual) and numerical stability criteria.
+% We selected an ensemble of N = 50 parameter sets for this study using this sampling procedure.
+% The best fit parameter set, and parameter ensemble is available in a tab delimited plain text format from the Complement model GitHub repository.
+% The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be downloaded from http://www.varnerlab.org under an MIT software license.
 
 
 %From each of these local points, a globally best error is identified. Both the local and global error
@@ -613,11 +633,11 @@ The DOPS routine was implemented in MATLAB (The Mathworks, Natick MA) and can be
 
 \subsection*{Sensitivity and robustness analysis of complement model performance.}
 We conducted global sensitivity and robustness analysis to estimate which parameters and species controlled the performance of the reduced order model.
-We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a alternate, C5a alternate, C3a lectin, and C5a lectin cases using the Sobol method \cite{SOBOL_METHOD}.
-The sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
+We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a/C5a alternate and C3a/C5a lectin objectives
+using the Sobol method \cite{SOBOL_METHOD}. The sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
 We used the sampling method of Saltelli \textit{et al.} to compute a family of $N\left(2d+2\right)$ parameter sets which obeyed our parameter ranges,
 where $N$ was the number of trials per parameters, and $d$ was the number of parameters in the model \cite{saltelli2010variance}.
-In our case, $N$ = 200 and $d$ = 28, so the total sensitivity indices were computed using 11,600 model evaluations.
+In our case, $N$ = 400 and $d$ = 28, so the total sensitivity indices were computed using 23,200 model evaluations.
 The variance-based sensitivity analysis was conducted using the SALib module encoded in the Python programming language \cite{SALIB}.
 
 Robustness coefficients quantify the response of a marker to a structural or operational perturbation to the network architecture.
