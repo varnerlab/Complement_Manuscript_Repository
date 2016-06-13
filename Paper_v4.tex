@@ -288,20 +288,22 @@ To address this question, we fixed the model parameters and simulated data sets 
 
 We tested the predictive power of the reduced order complement model with data not used during model training (Fig. \ref{fig-prediction}).
 Six validation cases were considered, three for C3a and C5a, respectively.
-All model parameters and initial conditions were fixed for the validation simulations (with the exception of zymosan).
-The ensemble of reduced order models predicted the qualitative dynamics of C3a formation (Fig. \ref{fig-prediction}, left column),
-and C5a formation (Fig. \ref{fig-prediction}, right column) at three inducer concentrations.
-However, there were shortcomings with model performance, especially for the C3a prediction.
-First, while the overall C3a trend was captured, the level of C3a was consistently under-predicted (outside of our 99\% confidence interval) in all cases (Fig. \ref{fig-prediction}, left column).
-We believe the C3a under-prediction was related to our choice of training data, and how we modeled C4BP interactions.
-We trained the model using 1g zymosan, but predicted cases with much less initiator.
-Next, the C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes.
-However, the binding of C4BP with complement proteins is likely reversible, and CP C3 convertase may have residual activity even in the bound form.
-Thus, the model likely over-predicted the influence of C4BP.
-Second, while the C5a measurements were within the 99\% confidence estimate, we failed to capture the concave down curvature for the 0.001g and 0.01g zymosan cases.
-The decreasing slope of the C5a may indicate cofactor limitation, or missing biology which we have not accounted for in the reduced order approach.
-Despite these shortcomings, we qualitatively predicted unseen experimental data, including correctly capturing the time scale of C3a formation,
-and the correct order of magnitude for C5a for three inducer levels.
+All model parameters and initial conditions were fixed for the validation simulations (with the exception of zymosan, and other experimentally mandated changes).
+The ensemble of reduced order models predicted the qualitative dynamics of C3a formation (Fig. \ref{fig-prediction}, top),
+and C5a formation (Fig. \ref{fig-prediction}, bottom) at three inducer concentrations.
+The rate of C3a formation and C3a peak time were directly proportional to initiator dose.
+Similarly, the C5a plateau and rate of formation were also directly proportional to initiator dose, with the lag time being indirectly proportional to initiator exposure.
+However, there were shortcomings with model performance.
+First, while the overall C3a trend was captured (within the 99\% confidence interval), the C3a dynamics were too fast with the exception of the low dose case.
+We believe the C3a timescale was related to our choice of training data, how we modeled the tickover mechanism, and factor B and D limitation.
+We trained the model using either no or 1 mg/ml zymosan, but predicted cases in a different initiator range;
+comparing the training to prediction, the model performance e.g., the shape of the C3a trajectory was biased towards either high or very low initiator doses.
+Next, tickover was modeled as a first-order generation processes where C3wBb formation and activity was lumped into the AP C3 convertase.
+Thus, we skipped an important step which could strongly influence AP C3 convertase formation by slowing down the rate C3 cleavage into C3a and C3b.
+We also assumed both factor B and factor D were not limiting, thereby artificially accelerating the rate of AP C3 convertase formation.
+The C5a predictions followed a similar trend as C3a; we captured the long-time C5a behavior but over predicted the time scale of C5 cleavage.
+However, because the C5a time scale depends strongly upon C3 convertase formation, we can likely correct the C5 issues by fixing the rate of C3 cleavage.
+Despite these shortcomings, we qualitatively predicted unseen experimental measurements within the 99\% confidence of the ensemble, for three inducer levels.
 Next, we used global sensitivity and robustness analysis to determine which parameters and species controlled the performance of the complement model.
 
 %This gives us new insight in which of the parameters play a role in complement activation. Even though AP~C3~convertase is also responsible in the conversion of C3 and the production of C3a, the kinetic parameters that govern the equation was not sensitive at all. This elucidated that the activation of
@@ -310,21 +312,20 @@ Next, we used global sensitivity and robustness analysis to determine which para
 
 \subsection*{Global analysis of the reduced order complement model.}
 We conducted sensitivity analysis to estimate which parameters controlled the performance of the reduced order complement model.
-We calculated the sensitivity of the C3a and C5a residuals to changes in model parameters with and without zymosan for the ensemble of parameter sets (Fig. \ref{fig-SA}A - D).
-In the absence of zymosan (where only the alternative pathway is active), $k_{f,C3b}$ (tickover formation of C3b) and $k_{d,C3a}$ (rate constant governing C3a degradation)
-controlled the C3a fit (Fig. \ref{fig-SA}A). Interestingly, neither $k_{c,C3C,AP}$ (the rate constant governing AP C3-convertase activity) nor $k_{f,C3C,AP}$ (the rate constant governing AP C3-convertase formation) were sensitive in the absence of zymosan.
+We calculated the total sensitivity of the C3a and C5a residual to changes in model parameters with and without zymosan (Fig. \ref{fig-SA}).
+In the absence of zymosan (where only the alternative pathway is active), the most sensitive parameter was the rate constant governing the assembly of the AP C3 convertase, as
+well as the rate constant controlling basal C3b formation. The C5a trajectory was sensitive to the AP C5 convertase kinetic parameters (Fig. \ref{fig-SA}A).
+Interestingly, neither the rate nor the saturation constants governing AP C3-convertase activity were sensitive in the absence of zymosan.
 Thus, C3a formation in the alternative pathway was more heavily influenced by the spontaneous hydrolysis of C3, rather than AP C3-convertase activity, in the absence of zymosan.
-On the other hand, the C5a residual was strongly sensitive to tickover parameters e.g., $k_{f,C3b}$, and to a lesser extent $k_{f,C3C,AP}$ as well as
-parameters controlling AP C5 convertase activity in the absence of zymosan (Fig. \ref{fig-SA}B).
-Thus, AP C3-convertase did not influence C3a dynamics, but strongly effected C5a formation in the absence of zymosan.
-In the presence of zymosan, the C3a residual was controlled by the formation and activity of the CP C3 convertase, as well as tickover and degradation parameters (Fig. \ref{fig-SA}C).
-Further, the C5a residual was influenced by lectin initiation parameters, the formation and activity of CP C5 convertase, and the inhibition by C4BP in the presence of zymosan (Fig. \ref{fig-SA}D).
-Globally, sensitivity analysis suggested that lectin pathway parameters dominated system performance in the presence of zymosan, and that C5a formation was sensitive to both
-C3 and C5 convertase activity, while C3a was robust to the AP C3 convertase.
-In the absence of zymosan, the tickover parameters were important to both C3a and C5a formation, but C5a was also sensitive to both AP C3 and C5 convertase formation.
-We compared the sensitivity results to current therapeutic approaches; pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}E).
-Thus, there was a qualitative overlap between sensitivity and the potential of biochemical efficacy.
-However, sensitivity coefficients are only a local measure of how small changes in a parameters affect model performance.
+In the presence of zymosan, the C3a residual was controlled by the formation and activity of the CP C3 convertase, as well as tickover and degradation parameters.
+On the other hand, the C5a residual was controlled by the formation and activity of CP C5 convertase, and tickover C3b formation in the presence of zymosan (Fig. \ref{fig-SA}B).
+The lectin initiation parameters were sensitive, but to a lesser extent than CP convertase kinetic parameters and tickover C3b formation.
+Thus, sensitivity analysis suggested that CP C3/C5 convertase formation and activity dominated in the presence of zymosan, but tickover parameters and AP C5 convertase were more important
+without initiator. Next, we compared the sensitivity results to current therapeutic approaches;
+pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}C).
+In particular, the sensitivity analysis suggested AP/CP C5 convertase inhibitors, or interventions aimed at attenuating C3 or C5 would most strongly influence complement performance.
+Thus, there was at least a qualitative overlap between sensitivity and the potential of biochemical efficacy.
+However, sensitivity coefficients are only a local measure of how small changes in parameters affect model performance.
 To more closely simulate a clinical intervention e.g., administration of an anti-complement inhibitor, we performed
 robustness analysis.
 
@@ -445,10 +446,8 @@ Coversin is a small molecule targeting C5 \cite{weston2014clinical}, Zimura is a
 small peptides and RNAi are also being used to inhibit C5 \cite{borodovsky2014aln}.
 Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets.
 Though knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate \cite{sissons1977metabolism, swaak1982determination} of these proteins make them difficult targets.
-Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS),
-a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
-Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting
-upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway).
+Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
+Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway).
 For example, Omeros is a protease inhibitor that targets MASP-2 complex and thereby inhibits formation of downstream convertases \cite{schwaeble2011methods}.
 Lampalizumab (an immunoglobulin) and Bikaciomab (an antibody fragment) target Factor B and Factor D respectively.
 Factor B and Factor D are crucial to formation alternate pathway convertases \cite{katschke2012inhibiting, hu2013therapeutic}.
@@ -687,7 +686,7 @@ confidence interval of the best-fit simulation for C3a and C5a. All initial cond
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure3_predictions_final_v2.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure3_predictions_final_v3.pdf}
 \caption{Reduced order complement model predictions. The reduced order coagulation model parameter estimates were tested against data not used during model training \cite{morad2015time}.
 Simulations of C3a and C5a generated in the lectin pathway using 0.1g, 0.01g, and 0.001g zymosan were compared with the corresponding experimental measurement.
 The solid red line shows the simulation with the best-fit parameter set, the solid black lines show the simulated mean value of C3a or C5a for the ensemble (N = 50).
