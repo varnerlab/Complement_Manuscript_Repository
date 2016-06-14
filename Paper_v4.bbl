@@ -164,13 +164,36 @@ Rice NT, Szlam F, Varner JD, Bernstein PS, Szlam AD, et~al. (2016) Differential
 \newblock PLoS One 11: e0154127.
 \bibAnnoteFile{Rice:2016aa}
 
-\bibitem{heja2012monospecific}
-H{\'e}ja D, Harmat V, Fodor K, Wilmanns M, Dob{\'o} J, et~al. (2012)
-  Monospecific inhibitors show that both mannan-binding lectin-associated
-  serine protease-1 (masp-1) and-2 are essential for lectin pathway activation
-  and reveal structural plasticity of masp-2.
-\newblock J Biol Chem : 20290--20300.
-\bibAnnoteFile{heja2012monospecific}
+\bibitem{schwaeble2011methods}
+Schwaeble HW, Stover CM, Tedford CE, Parent JB, Fujita T (2011).
+\newblock Methods for treating conditions associated with masp-2 dependent
+  complement activation.
+\newblock US Patent 7,919,094.
+\bibAnnoteFile{schwaeble2011methods}
+
+\bibitem{vogel2004recombinant}
+Vogel CW, Fritzinger DC, Hew BE, Thorne M, Bammert H (2004) Recombinant cobra
+  venom factor.
+\newblock Molecular immunology : 191--199.
+\bibAnnoteFile{vogel2004recombinant}
+
+\bibitem{katschke2012inhibiting}
+Katschke KJ, Wu P, Ganesan R, Kelley RF, Mathieu MA, et~al. (2012) Inhibiting
+  alternative pathway complement activation by targeting the factor d exosite.
+\newblock Journal of Biological Chemistry : 12886--12892.
+\bibAnnoteFile{katschke2012inhibiting}
+
+\bibitem{hu2013therapeutic}
+Hu X, Holers VM, Thurman JM, Schoeb TR, Ramos TN, et~al. (2013) Therapeutic
+  inhibition of the alternative complement pathway attenuates chronic eae.
+\newblock Mol Immunol : 302--308.
+\bibAnnoteFile{hu2013therapeutic}
+
+\bibitem{bansal2014humanized}
+Bansal R (2014).
+\newblock Humanized and chimeric anti-properdin antibodies.
+\newblock US Patent 8,664,362.
+\bibAnnoteFile{bansal2014humanized}
 
 \bibitem{roguska2014generation}
 Roguska M, Splawski I, Diefenbach-Streiber B, Dolan E, Etemad-Gilbertson B,
@@ -227,42 +250,35 @@ Noris M, Galbusera M, Gastoldi S, Macor P, Banterla F, et~al. (2014) Dynamics
 \newblock Blood : 1715--1726.
 \bibAnnoteFile{noris2014dynamics}
 
-\bibitem{schwaeble2011methods}
-Schwaeble HW, Stover CM, Tedford CE, Parent JB, Fujita T (2011).
-\newblock Methods for treating conditions associated with masp-2 dependent
-  complement activation.
-\newblock US Patent 7,919,094.
-\bibAnnoteFile{schwaeble2011methods}
-
-\bibitem{katschke2012inhibiting}
-Katschke KJ, Wu P, Ganesan R, Kelley RF, Mathieu MA, et~al. (2012) Inhibiting
-  alternative pathway complement activation by targeting the factor d exosite.
-\newblock Journal of Biological Chemistry : 12886--12892.
-\bibAnnoteFile{katschke2012inhibiting}
-
-\bibitem{hu2013therapeutic}
-Hu X, Holers VM, Thurman JM, Schoeb TR, Ramos TN, et~al. (2013) Therapeutic
-  inhibition of the alternative complement pathway attenuates chronic eae.
-\newblock Mol Immunol : 302--308.
-\bibAnnoteFile{hu2013therapeutic}
-
-\bibitem{bansal2014humanized}
-Bansal R (2014).
-\newblock Humanized and chimeric anti-properdin antibodies.
-\newblock US Patent 8,664,362.
-\bibAnnoteFile{bansal2014humanized}
-
-\bibitem{vogel2004recombinant}
-Vogel CW, Fritzinger DC, Hew BE, Thorne M, Bammert H (2004) Recombinant cobra
-  venom factor.
-\newblock Molecular immunology : 191--199.
-\bibAnnoteFile{vogel2004recombinant}
-
 \bibitem{pr3010178}
 Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
   using reduced order effective kinetic models.
 \newblock Processes 3: 178.
 \bibAnnoteFile{pr3010178}
+
+\bibitem{Julia}
+Bezanson J, Edelman A, Karpinski S, Shah VB (2015) {J}ulia: A fresh approach to
+  numerical computing .
+\bibAnnoteFile{Julia}
+
+\bibitem{Sundials}
+Hindmarsh AC, Brown PN, Grant KE, Lee SL, Serban R, et~al. (2005) Sundials:
+  Suite of nonlinear and differential/algebraic equation solvers.
+\newblock ACM Trans Math Softw 31: 363--396.
+\bibAnnoteFile{Sundials}
+
+\bibitem{Tolson2007}
+Tolson BA, Shoemaker CA (2007) Dynamically dimensioned search algorithm for
+  computationally efficient watershed model calibration.
+\newblock Water Resources Research 43: W01413.
+\bibAnnoteFile{Tolson2007}
+
+\bibitem{JuPOETs-BioArXiv}
+Bassen D, Vilkhovoy M, Minot M, Butcher JT, Varner JD (2016) Jupoets: A
+  constrained multiobjective optimization approach to estimate biochemical
+  model ensembles in the julia programming language.
+\newblock bioRxiv .
+\bibAnnoteFile{JuPOETs-BioArXiv}
 
 \bibitem{SOBOL_METHOD}
 Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and

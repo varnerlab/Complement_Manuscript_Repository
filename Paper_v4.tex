@@ -411,57 +411,53 @@ Though we did not model all the initiation interactions in detail, especially th
 we successfully captured C3a dynamics with respect to different concentrations of lectin initiators.
 The model also captured the dynamics of C3a and C5a formed from the alternate pathway using only seven ODEs.
 The reduced order model predictions of C5a were qualitatively similar to the theoretical complement model of Zewde et al which involved over 100 ODEs \cite{zewde2016quantitative}.
-However, we found that the quantity of C3a produced in the alternate pathway was nearly 1000 times the quantity of C5a produced.
-Though this was in agreement with the experimental data \cite{morad2015time},
-it differed from the theoretical predictions made by Zewde et al. who showed C3a was ${10^8}$ times the C5a concentration \cite{zewde2016quantitative}.
-In our model, the time profile of C5a generation from the lectin pathway changed with respect to the quantity of zymosan (the lectin pathway initiator).
-The lag phase for generation was inversely proportional to the initiator concentration.
+However, we found that the quantity of C3a produced in the alternate pathway was nearly 1000 times the amount of C5a generated.
+While this was in agreement with the experimental data \cite{morad2015time},
+it differed from the theoretical predictions made by Zewde et al. who showed C3a was ${10^8}$ times greater than the C5a concentration \cite{zewde2016quantitative}.
+In our model, the time profile of both C3a and C5a generated changed with respect to the quantity of zymosan (the lectin pathway initiator).
+In particular, the C3a peak time was directly proportional to initiator, while the lag phase for generation was inversely proportional to the initiator concentration.
 Korotaevskiy et al. showed a similar trend using a theoretical model of complement, albeit for much shorter time scales \cite{korotaevskiy2009non}.
-Thus, the reduced order complement model performed similarly to existing large mechanistic models, despite being significantly smaller.
+Thus, the reduced order complement model performed at least as well as existing larger mechanistic models, despite being significantly smaller.
 
-Global analysis of the complement model estimated potential important therapeutic targets.
-Complement malfunctions are implicated in a number of diseases, however the
+Global analysis of the complement model suggested potentially important therapeutic targets.
+Complement malfunctions are implicated in a spectrum of diseases, however the
 development of complement specific therapeutics has been challenging \cite{ricklin2007complement,morgan2015complement}.
 Previously, we have shown that mathematical modeling and sensitivity analysis can be useful tools to estimate therapeutically important mechanisms in biochemical networks \cite{Luan:2007aa,Nayak:2008aa,Tasseff:2010aa,Rice:2016aa}.
 In this study, we analyzed a validated ensemble of reduced order complement models to estimate therapeutically important mechanisms.
-In presence of an initiator, C5a formation was primarily sensitive to the lectin initiation parameters,
-and parameters governing the conversion of C5 to C5a and C5b.
-This result agrees well with the current protease inhibitors targeting initiating complexes, including mannose-associated serine proteases 1 and  2 (MASP-1,2) \cite{heja2012monospecific}.
-The most commonly used anti-complement drug eculizumab \cite{morgan2015complement}, targets the C5 protein which is cleaved to form C5a.
-Our sensitivity analysis showed that kinetic parameters governing C5 conversion were sensitive in both lectin initiated and alternate pathways, thus agreeing with targeting C5 protein.
-The formation of basal C3b was also a sensitive parameter in the formation of C3a through the alternate pathway.
-Thus, this mechanism can act as a target for both C3a and C5a inhibitors.
-Lectin initiated C3a formation showed a number of sensitive parameters.
-This included the lectin initiation parameters that controlled C5a formation, C3 convertase inhibition by C4BP, and parameters governing C3 convertase activity.
-All these mechanisms are potential drug targets.
+In the presence of an initiator, C3a and C5a formation was primarily sensitive to CP C3/C5 convertase assembly and activity, and to a lesser extent lectin initiation parameters.
+Formation of the CP convertases can be inhibited by targeting upstream protease complexes like MASP-1,2 from the lectin pathway (or C1r, C1s from classical pathway).
+For example, Omeros, a protease inhibitor that targets the MASP-2 complex, has been shown to inhibit the formation of downstream convertases \cite{schwaeble2011methods}.
+Lampalizumab and Bikaciomab, which target factor B and factor D respectively, or naturally occurring proteins such as Cobra Venom Factor (CVF), an analogue of C3b, could also attenuate AP convertase formation \cite{vogel2004recombinant,katschke2012inhibiting, hu2013therapeutic}.
+Removing supporting molecules could destabilize the convertases.
+For example, Novelmed Therapeutics recently developed the antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
+On the other hand, robustness analysis suggested C3a and C5a generation could be significantly attenuated by modulating the free levels of C3 and C5.
+The most commonly used anti-complement drug eculizumab, targets the C5 protein which is cleaved to form C5a \cite{morgan2015complement}.
+A number of other drugs targeting C5 are also being developed. For example, LFG316 targets C5 in Age-Related Macular Degeneration \cite{roguska2014generation},
+while Mubodina, an antibody that targets C5, is used to treat Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}.
+Other agents such as the small molecule Coversin \cite{weston2014clinical}, the aptamer Zimura \cite{epstein2007complement},
+as well as small peptides and RNAi could also be used to inhibit C5 \cite{borodovsky2014aln}.
+However, knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate of these proteins make them difficult targets \cite{sissons1977metabolism, swaak1982determination}. Thus, targeting C3 and C5 directly will require high dosage. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
 
-To further validate these results from sensitivity analysis about potential drug targets we did a robustness analysis.
-We knocked down C3 and C5 levels and studied their impact on the generation of C3a and C5a.
-The C3a and C5a levels in the lectin pathway were strongly influenced by initial levels of C3 and C5.
-Thus direct inhibition of C3 and C5, or targeting complexes (MASP complex, C3 and C5 convertases) that act on C3 and C5 have a direct impact on production of C3a and C5a.
-This is also in agreement with sensitivity analysis that C5 is a good drug target. A number of drugs targeting C5 are being developed.
-For example LFG316 by Novartis is being used to target C5 in cases of Age-Related Macular Degeneration \cite{roguska2014generation},
-Mubodina is an antibody that targets C5 in the treatment of Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement},
-Coversin is a small molecule targeting C5 \cite{weston2014clinical}, Zimura is an aptamer targeting C5 \cite{epstein2007complement},
-small peptides and RNAi are also being used to inhibit C5 \cite{borodovsky2014aln}.
-Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets.
-Though knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate \cite{sissons1977metabolism, swaak1982determination} of these proteins make them difficult targets.
-Thus targeting C3 and C5 directly will require high dosage of drugs. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
-Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a. Formation of convertases is inhibited by targeting upstream protease complexes like MASP-1,2 from lectin pathway (or C1r, C1s from classical pathway).
-For example, Omeros is a protease inhibitor that targets MASP-2 complex and thereby inhibits formation of downstream convertases \cite{schwaeble2011methods}.
-Lampalizumab (an immunoglobulin) and Bikaciomab (an antibody fragment) target Factor B and Factor D respectively.
-Factor B and Factor D are crucial to formation alternate pathway convertases \cite{katschke2012inhibiting, hu2013therapeutic}.
-Novelmed Therapeutics recently developed antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
-Cobra Venom Factor (CVF), an analogue of C3b has been used to bind to Factor B to regulate alternate convertases \cite{vogel2004recombinant}.
-Thus, analysis of the ensemble of complement models identified potentially important therapeutic targets that are consistent with therapeutic strategies that are under development.
-
+% and parameters governing the conversion of C5 to C5a and C5b.
+% This result agrees well with the current protease inhibitors targeting initiating complexes, including mannose-associated serine proteases 1 and  2 (MASP-1,2) \cite{heja2012monospecific}.
+% Our sensitivity analysis showed that kinetic parameters governing C5 conversion were sensitive in both lectin initiated and alternate pathways, thus agreeing with targeting C5 protein.
+% The formation of basal C3b was also a sensitive parameter in the formation of C3a through the alternate pathway.
+% Thus, this mechanism can act as a target for both C3a and C5a inhibitors.
+% Lectin initiated C3a formation showed a number of sensitive parameters.
+% This included the lectin initiation parameters that controlled C5a formation, C3 convertase inhibition by C4BP, and parameters governing C3 convertase activity.
+% All these mechanisms are potential drug targets.
+% To further validate these results from sensitivity analysis about potential drug targets we did a robustness analysis.
+% We knocked down C3 and C5 levels and studied their impact on the generation of C3a and C5a.
+% Thus direct inhibition of C3 and C5, or targeting complexes (MASP complex, C3 and C5 convertases) that act on C3 and C5 have a direct impact on production of C3a and C5a.
+% This is also in agreement with sensitivity analysis that C5 is a good drug target.
+% Another important conclusion that can be drawn together from sensitivity and robustness analysis is that C3 and C5 convertases can be important therapeutic targets.
+% Though Our analysis shows that formation and assembly of these convertases are sensitive mechanisms that strongly impact downstream proteins like C5a.
+% Thus, analysis of the ensemble of complement models identified potentially important therapeutic targets that are consistent with therapeutic strategies that are under development.
 %Indeed a number of next generation drugs are targeting convertases directly \cite{}, inhibiting their assembly or formation \cite{} or targeting the individual convertase components \cite{}
-
 %Without initiator, C5a formation was the most sensitive to the formation of basal C3b through the tick over mechanism.
 %On the other hand,
 
 %. Currently there are only four approved drugs targeting complement \cite{morgan2015complement}. Eculizumab targets C5, Berinert, Ruconest and Cinryze target C1.
-
 % complement in immune response has been well known since long, there
 % The lag phase in the initiation of C5a is followed by an acceleration in the production of C5a.
 %  Similarly, our model was able to capture C3a formation from the alternate pathway that showed the same qualitative trends as Zewde et al \cite{zewde2016quantitative}.
@@ -556,19 +552,33 @@ variable. Each regulatory transfer function took the form:
 	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right)=k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
 \end{equation}where $\mathcal{Z}_{i}$ denotes the abundance of factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
 In this study, we used $\mathcal{I}_{j}\in\left\{min,max\right\}$ \cite{pr3010178}. If a process has no modifying factors, $v_{j}=1$.
-The model equations were implemented in Julia and solved using the \texttt{SUNDIALS} routine [REFs].
-The complement model code and parameter ensemble is freely available under an MIT software license and can be downloaded from http://www.varnerlab.org.
+The model equations were implemented in Julia and solved using the \texttt{CVODE} routine of the Sundials package \cite{Julia,Sundials}.
+The model code and parameter ensemble is freely available under an MIT software license and can be downloaded from http://www.varnerlab.org.
 
-\subsection*{Estimation of an ensemble of complement model parameters.}
-We estimated a single initial parameter set using the using Dynamic Optimization with Particle Swarms (DOPS) technique [REF].
-DOPS minimized the squared residual between simulated and experimental C3a and C5a measurements with and without zymosan as a single objective formulation.
-This initial best fit set then served as the starting point for multiobjective ensemble generation using Pareto Optimal Ensemble Technique in the Julia programming language (JuPOETs) [REF].
-JuPOETs is a multiobjective approach which integrates simulated annealing with Pareto optimality to estimate model ensembles on or near the optimal tradeoff surface between competing training objectives. JuPOETs minimized training objective functions of the form:
+\subsection*{Estimating an ensemble of complement model parameters.}
+We estimated a single initial parameter set using the Dynamic Optimization with Particle Swarms (DOPS) technique [REF].
+DOPS is a novel hybrid meta-heuristic which combines a multi-swarm particle swarm method with the dynamically dimensioned search approach of Shoemaker and colleagues \cite{Tolson2007}.
+DOPS minimized the squared residual between simulated and C3a and C5a measurements with and without zymosan as a single objective.
+The best fit set estimated by DOPS served as the starting point for multiobjective ensemble generation using Pareto Optimal Ensemble Technique in the Julia programming language (JuPOETs) \cite{JuPOETs-BioArXiv}.
+JuPOETs is a multiobjective approach which integrates simulated annealing with Pareto optimality to estimate model ensembles on or near the optimal tradeoff surface between competing training objectives. JuPOETs minimized training objectives of the form:
 \begin{equation}\label{eqn_cost2}
-	E_{j}(\mathbf{k}) = \sum_{i=1}^{\mathcal{T}_{j}}\biggl(\hat{\mathcal{M}}_{ij}-\hat{y}_{ij}(\mathbf{k})\biggr)^2 + \left(\frac{{\mathcal{M}^{\prime}_{ij}}-\max{y_{ij}}}{{\mathcal{M}^{\prime}_{ij}}}\right)^{2}
+	O_{j}(\mathbf{k}) = \sum_{i=1}^{\mathcal{T}_{j}}\biggl(\hat{\mathcal{M}}_{ij}-\hat{y}_{ij}(\mathbf{k})\biggr)^2 + \left(\frac{{\mathcal{M}^{\prime}_{ij}}-\max{y_{ij}}}{{\mathcal{M}^{\prime}_{ij}}}\right)^{2}
+\end{equation}subject to the model equations, initial conditions and parameter bounds $\mathcal{L}\leq\mathbf{k}\leq\mathcal{U}$.
+The first term in the objective function measured the shape difference between the simulations and measurements.
+The symbol $\hat{\mathcal{M}}_{ij}$ denotes a scaled experimental observation (from training set $j$) while the symbol $\hat{y}_{ij}$ denotes the scaled simulation output (from training set $j$). The quantity $i$ denotes the sampled time-index and $\mathcal{T}_{j}$ denotes the number of time points for experiment $j$.
+The scaled measurement is given by:
+\begin{equation}\label{norm_exp_data}
+\hat{\mathcal{M}}_{ij} = \frac{\mathcal{M}_{ij} - \min_{i}\mathcal{M}_{ij}}{\max_{i}{\mathcal{M}_{ij}}-\min_{i}{\mathcal{M}_{ij}}}
 \end{equation}
-The symbol $\hat{\mathcal{M}}_{ij}$ denotes an experimental observation (from training set $j$) while the symbol $\hat{y}_{ij}$ denotes the simulation output (from training objective $j$). The quantity $i$ denotes the sampled time-index and $\mathcal{T}_{j}$ denotes the number of time points for experiment $j$.
-In this study, we minimized two training objectives, the sum of the C3a and C5a residual w/o zymosan (objective )
+Under this scaling, the lowest measured concentration become zero while the highest equaled one, where a similar scaling was defined for the simulation output.
+The second-term in the objective function quantified the absolute error in the estimated concentration scale, where the absolute measured
+concentration (denoted by $\mathcal{M}^{\prime}_{ij}$) was compared with the largest simulated value.
+In this study, we minimized two training objectives, the total C3a and C5a residual w/o zymosan (O$_{1}$) and the total C3a and C5a residual for 1 mg/ml zymosan (O$_{2}$).
+JuPOETs identified an ensemble of N $\simeq$ 2100 parameter sets which were used for model simulations and uncertainty quantification subsequently.
+JuPOETs is open source, available under an MIT software license.
+The JuPOETs source code is freely available from the JuPOETs GitHub repository at https://github.com/varnerlab/POETs.jl.
+The objective functions used in this study are available in the GitHub model repository available from http://varnerlab.org.
+
 
 % \subsubsection*{Dynamic Optimization with Particle Swarms (DOPS).}
 % DOPS minimized the residual between simulations and experimental C3a and C5a measurements using Dynamic Optimization with Particle Swarms (DOPS).
