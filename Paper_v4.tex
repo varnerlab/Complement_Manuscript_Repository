@@ -422,22 +422,26 @@ Thus, the reduced order complement model performed at least as well as existing 
 Global analysis of the complement model suggested potentially important therapeutic targets.
 Complement malfunctions are implicated in a spectrum of diseases, however the
 development of complement specific therapeutics has been challenging \cite{ricklin2007complement,morgan2015complement}.
-Previously, we have shown that mathematical modeling and sensitivity analysis can be useful tools to estimate therapeutically important mechanisms in biochemical networks \cite{Luan:2007aa,Nayak:2008aa,Tasseff:2010aa,Rice:2016aa}.
-In this study, we analyzed a validated ensemble of reduced order complement models to estimate therapeutically important mechanisms.
-In the presence of an initiator, C3a and C5a formation was primarily sensitive to CP C3/C5 convertase assembly and activity, and to a lesser extent lectin initiation parameters.
+Previously, we have shown that mathematical modeling and analysis can be useful tools to estimate therapeutically important mechanisms \cite{Luan:2007aa,Nayak:2008aa,Tasseff:2010aa,Rice:2016aa}.
+In this study, we analyzed a validated ensemble of reduced order complement models to better understand the strengths and weaknesses of the cascade.
+In the presence of an initiator, C3a and C5a formation was sensitive to CP C3/C5 convertase assembly and activity, and to a lesser extent lectin initiation parameters.
 Formation of the CP convertases can be inhibited by targeting upstream protease complexes like MASP-1,2 from the lectin pathway (or C1r, C1s from classical pathway).
 For example, Omeros, a protease inhibitor that targets the MASP-2 complex, has been shown to inhibit the formation of downstream convertases \cite{schwaeble2011methods}.
 Lampalizumab and Bikaciomab, which target factor B and factor D respectively, or naturally occurring proteins such as Cobra Venom Factor (CVF), an analogue of C3b, could also attenuate AP convertase formation \cite{vogel2004recombinant,katschke2012inhibiting, hu2013therapeutic}.
-Removing supporting molecules could destabilize the convertases.
-For example, Novelmed Therapeutics recently developed the antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
+Removing supporting molecules could also destabilize the convertases.
+For example, Novelmed Therapeutics developed the antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
+Lastly, convertase catalytic activity could be attenuated using small molecule protease inhibitors. All of these approaches are consistent with the results of the sensitivity analysis.
 On the other hand, robustness analysis suggested C3a and C5a generation could be significantly attenuated by modulating the free levels of C3 and C5.
-The most commonly used anti-complement drug eculizumab, targets the C5 protein which is cleaved to form C5a \cite{morgan2015complement}.
+The most commonly used anti-complement drug eculizumab, targets the C5 protein \cite{morgan2015complement}.
 A number of other drugs targeting C5 are also being developed. For example, LFG316 targets C5 in Age-Related Macular Degeneration \cite{roguska2014generation},
 while Mubodina, an antibody that targets C5, is used to treat Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}.
 Other agents such as the small molecule Coversin \cite{weston2014clinical}, the aptamer Zimura \cite{epstein2007complement},
 as well as small peptides and RNAi could also be used to inhibit C5 \cite{borodovsky2014aln}.
-However, knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate of these proteins make them difficult targets \cite{sissons1977metabolism, swaak1982determination}. Thus, targeting C3 and C5 directly will require high dosage. It is also well known that eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease that is caused due to uncontrolled complement activation \cite{noris2014dynamics}. The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
+The cyclic peptide C3 inhibitor Compstatin and its derivatives [FINISH] \cite{Mastellos:2015aa}.
+However, while the knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate of these proteins make them difficult to target \cite{sissons1977metabolism, swaak1982determination}.
+For example, the eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease involving uncontrolled complement activation \cite{noris2014dynamics}.
 
+%The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
 % and parameters governing the conversion of C5 to C5a and C5b.
 % This result agrees well with the current protease inhibitors targeting initiating complexes, including mannose-associated serine proteases 1 and  2 (MASP-1,2) \cite{heja2012monospecific}.
 % Our sensitivity analysis showed that kinetic parameters governing C5 conversion were sensitive in both lectin initiated and alternate pathways, thus agreeing with targeting C5 protein.
