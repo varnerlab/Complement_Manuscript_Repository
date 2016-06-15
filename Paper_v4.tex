@@ -131,7 +131,7 @@ We estimated an ensemble of model parameters from \textit{in~vitro} dynamic meas
 Subsequently, we validated the model on unseen C3a and C5a measurements not used for model training.
 Despite its small size, the model was surprisingly predictive.
 Global sensitivity and robustness analysis suggested complement was robust to any single therapeutic intervention.
-Only dual dual-knockdown of both C3 and C5 consistently reduced C5a formation when all pathways were activated.
+Only dual dual-knockdown of C3 and C5 consistently reduced C3 and C5a formation when all pathways were activated.
 Taken together, we developed a reduced order complement model that was computationally inexpensive,
 and could easily be incorporated into pre-existing or new pharmacokinetic models of immune system function.
 The model described experimental data, and predicted the need for multiple points of therapeutic intervention to disrupt complement activation.
@@ -163,13 +163,12 @@ The model described experimental data, and predicted the need for multiple point
 
 Complement is an important pathway in innate immunity. It plays a significant role in inflammation, host defense as well as many disease processes.
 Complement was discovered in the late 1880s where it was found to 'complement' the bactericidal activity of natural antibodies \cite{OG_COMPLEMENT_REF}.
-However, research over the past decade has shown that the importance of complement extends well beyond innate immunity.
-For example, complement contributes to tissue homeostasis by inducing tissue repair \cite{ricklin2010complement}.
-Complement has also been linked with several diseases including Alzheimers, Parkinson's disease, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{ricklin2007complement, rittirsch2008harmful}.
-Complement plays both positive and negative roles in cancer; attacking tumor cells with altered surface proteins in some cases, while potentially contributing to tumor growth in others \cite{sarma2011complement, ricklin2013complement}.
-Lastly, several other important biochemical subsystems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}.
+However, research over the past decade has shown the importance of complement extends well beyond innate immunity.
+For example, complement contributes to tissue homeostasis \cite{ricklin2010complement}, and has also been linked with several diseases including Alzheimers, Parkinson's, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{ricklin2007complement, rittirsch2008harmful}.
+Complement also plays positive and negative roles in cancer; attacking tumor cells with altered surface proteins in some cases, while potentially contributing to tumor growth in others \cite{sarma2011complement, ricklin2013complement}.
+Lastly, several other important biochemical systems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}.
 Thus, complement is important in a variety of beneficial and potentially harmful functions in the body.
-However, despite its importance, there are very few approved complement specific therapeutics.
+However, despite its importance, there have been relatively few approved complement specific therapeutics.
 
 The complement cascade involves many soluble and cell surface proteins, receptors and regulators.
 The molecular connectivity of complement involves both fluid phase and cell surface events, see the review of Walport \cite{Walport:2001ab,Walport:2001aa}.
@@ -227,7 +226,7 @@ Thus, while these models are undoubtably important theoretical tools, it is uncl
 The central challenge of complement model identification is the estimation of model parameters from experimental measurements.
 Unlike other important cascades, such as coagulation where there are well developed experimental tools and publicly available data sets,
 the data for complement is relatively sparse. Missing or incomplete data sets, and limited quantitative data make the identification of large mechanistic complement models difficult.
-Thus, reduced order modeling approaches, which describe the key biology with a limited number of parameters, will be important for developing validated models of complement, and to fully understanding its role in the body.
+Thus, reduced order modeling approaches, which describe the key biology of complement using a limited number of parameters, will be important for developing validated models of complement, and to fully understanding its role in the body.
 
 %Taken together, the combined analysis of alternate and lectin pathways along with the incorporation of the downstream reactions involving C5 convertase
 %elucidated new insight into the roles of parameters that govern the complement system.  A deeper understanding about how these parameters influence complement dynamics will greatly aid in the development of drugs for strategic therapeutic targets. Due to the low computational cost relative to the existing models and accuracy of our predictions, we believe that our reduced order complement network is the first step towards building a computation toolbox for screening drug potential drug targets or therapeutic agents that can be targeted against complement.
@@ -432,15 +431,16 @@ Lampalizumab and Bikaciomab, which target factor B and factor D respectively, or
 Removing supporting molecules could also destabilize the convertases.
 For example, Novelmed Therapeutics developed the antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
 Lastly, convertase catalytic activity could be attenuated using small molecule protease inhibitors. All of these approaches are consistent with the results of the sensitivity analysis.
-On the other hand, robustness analysis suggested C3a and C5a generation could be significantly attenuated by modulating the free levels of C3 and C5.
+On the other hand, robustness analysis suggested C3a and C5a generation could only be significantly attenuated by modulating the free levels of C3 and C5.
 The most commonly used anti-complement drug eculizumab, targets the C5 protein \cite{morgan2015complement}.
 A number of other drugs targeting C5 are also being developed. For example, LFG316 targets C5 in Age-Related Macular Degeneration \cite{roguska2014generation},
 while Mubodina, an antibody that targets C5, is used to treat Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}.
 Other agents such as the small molecule Coversin \cite{weston2014clinical}, the aptamer Zimura \cite{epstein2007complement},
 as well as small peptides and RNAi could also be used to inhibit C5 \cite{borodovsky2014aln}.
-The cyclic peptide C3 inhibitor Compstatin and its derivatives [FINISH] \cite{Mastellos:2015aa}.
-However, while the knockdown of C3 and C5 affects C3a and C5a levels downstream, the abundance and turnover rate of these proteins make them difficult to target \cite{sissons1977metabolism, swaak1982determination}.
-For example, the eculizumab dosage needs to be adjusted while treating for Atypical Hemolytic-Uremic Syndrome (aHUS), a disease involving uncontrolled complement activation \cite{noris2014dynamics}.
+The cyclic peptide inhibitor Compstatin and its derivatives, which target C3, are promising approaches for the treatment of X, Y and Z [FINISH] \cite{Mastellos:2015aa}.
+However, while the knockdown of C3 and C5 affect C3a and C5a levels downstream, the abundance, turnover rate and population variation of these proteins make them difficult targets \cite{sissons1977metabolism, swaak1982determination}.
+For example, the eculizumab dosage must be significantly adjusted during the course of treatment for aHUS \cite{noris2014dynamics}.
+A validated complement model, in combination with personalized pharmacokinetic models of immune system function, could be an important development for the field.
 
 %The issue of high dosage can potentially be circumvented by targeting convertases or fragile mechanisms that involve C3, C5 or their activated components.
 % and parameters governing the conversion of C5 to C5a and C5b.
@@ -472,21 +472,32 @@ For example, the eculizumab dosage needs to be adjusted while treating for Atypi
 The performance of the complement model was impressive given its limited size.
 However, there are several questions that should be explored further.
 A logical progression for this work would be to expand the network to include the classical pathway and the formation of the membrane attack complex (MAC).
-However, it is unclear whether the addition of the classical pathway will decrease the predictive quality of our existing model.
-Liu et al have shown cross-talk between the activation of the classical and lectin pathways that could influence model performance \cite{liu2011computational}.
-One potential approach to address such difficulties would be to incorporate C reactive proteins (CRP) and L-ficolin (LF) into the model,
-both of which are involved with the initiation of classical and lectin pathways. Liu et al. showed that under inflammation conditions interactions between lectin and classical pathways was mediated through CRP and LF  \cite{liu2011computational}. Thus incorporating these two proteins would help us in modeling cross talk.
-Time course measurements of MAC abundance (and MAC formation dynamics) are also scarce, making the inclusion of MAC challenging.
-Next, we should address the under-prediction of C3a. We believe the C3a under-prediction can be attributed to how we modeled C4BP interactions.
-C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes;
-however, the binding of C4BP with complement proteins is likely reversible and C4BP-bound convertases may have residual activity.
-We also did not capture the maximum concentration of C3a at low initiator levels.
-One possible reasons for this could the C2-by pass pathway, which was not included in the model.
-This pathway further accelerates C3a production without the involvement of a C3 convertase.
-Currently the C3a in the model is generated only through the activity of a C3 convertase.
-Incorporating this additional step within the reduced order modeling framework would be a future direction that we need to consider.
-We should test alternative model structures which include reversible C4BP binding, and partially active convertases.
-Alternatively, we could also perform sensitivity analysis on the C3a prediction residual to determine which parameters controlled the C3a prediction.
+However, time course measurements of MAC abundance (and MAC formation dynamics) are scarce, making the inclusion of MAC challenging.
+On the other hand, inclusion of classical pathway activation is straightforward.
+Liu et al., have shown cross-talk between the activation of the classical and lectin pathways through C reactive proteins (CRP) and L-ficolin (LF) under inflammation conditions \cite{liu2011computational}. Thus, inclusion of these species, in addition to a lumped activation term for the classical pathway should allow us to capture classical activation.
+Next, we should address the C3a time scale issue.
+We believe the C3a time scale was related to our choice of training data, how we modeled the tickover mechanism, and factor B and D limitation.
+Tickover was modeled as a first-order generation processes where C3wBb formation and activity was lumped into the AP C3 convertase.
+Thus, we skipped an important step which could strongly influence AP C3 convertase formation by slowing down the rate C3 cleavage into C3a and C3b.
+The model should be expanded to include the C3wBb intermediate, where C3wBb catalyzes C3 cleavage at a slow rate compared to normal AP or CP C3 convertases.
+We also assumed both factor B and factor D were not limiting, thereby artificially accelerating the rate of AP C3 convertase formation.
+This shortcoming could be addressed by including balances around factor B and D, and including these species in the appropriate kinetic rates.
+The C5a predictions also had an accelerated time scale.
+However, because the C5a time scale depended strongly upon C3 convertase formation, we can likely correct the C5 issues by fixing the rate of C3 cleavage.
+Lastly, we should also consider including the C2-by pass pathway, which was not included in the model.
+The C2-bypass mediates lectin pathway activation, without the involvement of MASP-1/2.
+Thus, inclusion of this pathway could be important for understanding the role of MASP-1/2 inhibitors on complement model performance.
+
+% We believe the C3a under-prediction can be attributed to how we modeled C4BP interactions.
+% C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes;
+% however, the binding of C4BP with complement proteins is likely reversible and C4BP-bound convertases may have residual activity.
+% We also did not capture the maximum concentration of C3a at low initiator levels.
+% One possible reasons for this could the C2-by pass pathway, which was not included in the model.
+% This pathway further accelerates C3a production without the involvement of a C3 convertase.
+% Currently the C3a in the model is generated only through the activity of a C3 convertase.
+% Incorporating this additional step within the reduced order modeling framework would be a future direction that we need to consider.
+% We should test alternative model structures which include reversible C4BP binding, and partially active convertases.
+% Alternatively, we could also perform sensitivity analysis on the C3a prediction residual to determine which parameters controlled the C3a prediction.
 
 %that are implicitly lumped together with our effective kinetics and control parameters. Due to the reduction of parameters, the model cannot determine the dynamics or explicit impact of the omitted species on the system. However, we have created a hierarchy approach for parameter estimation that can be used to uncouple the kinetic parameter and contribution of any additional complement proteins and regulators. Using this simple and versatile modeling approach that we created, we took the first step in the development of a computation toolkit that can be readily used in a clinical setting. Our reduced order complement model is computationally inexpensive, and versatile so it could easily be incorporated into pre-existing or new pharmacokinetic models. Furthermore this approach model has the potential to create individualized treatment plans for patients with complement deficiency.
 
