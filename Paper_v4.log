@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 JUN 2016 07:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 JUN 2016 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,7 +884,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 ] [12] [13] [14] [15
 
 ] [16] [17]
-Overfull \hbox (7.37225pt too wide) in paragraph at lines 661--668
+Overfull \hbox (7.37225pt too wide) in paragraph at lines 663--670
 \OT1/phv/m/n/12 ducted global sen-si-tiv-ity and ro-bust-ness anal-y-sis to es-
 ti-mate which pa-ram-e-ters and species
  []
@@ -909,10 +909,10 @@ Underfull \hbox (badness 3623) in paragraph at lines 304--309
 File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 716.
+Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 718.
 (pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 719.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 721.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -922,7 +922,7 @@ File: ./figs/Figure2_Fits_final_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fits_final_v2.pdf>
 Package pdftex.def Info: ./figs/Figure2_Fits_final_v2.pdf used on input line 72
-4.
+6.
 (pdftex.def)             Requested size: 469.75502pt x 333.76933pt.
 
 
@@ -933,7 +933,7 @@ File: ./figs/Figure3_predictions_final_v3.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_predictions_final_v3.pdf>
 Package pdftex.def Info: ./figs/Figure3_predictions_final_v3.pdf used on input 
-line 735.
+line 738.
 (pdftex.def)             Requested size: 469.75502pt x 262.65367pt.
 
 
@@ -944,23 +944,23 @@ File: ./figs/Figure4_Sensitivity_v3.pdf Graphic file (type pdf)
 
 <use ./figs/Figure4_Sensitivity_v3.pdf>
 Package pdftex.def Info: ./figs/Figure4_Sensitivity_v3.pdf used on input line 7
-52.
+55.
 (pdftex.def)             Requested size: 516.73338pt x 367.27596pt.
 
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 752--760
+Overfull \hbox (46.97836pt too wide) in paragraph at lines 755--763
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure5_RobustnessAnalysis_v2.pdf, id=107, 472.76625pt x 557.08125pt>
+<./figs/Figure5_RobustnessAnalysis_v2.pdf, id=107, 474.77374pt x 557.08125pt>
 File: ./figs/Figure5_RobustnessAnalysis_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure5_RobustnessAnalysis_v2.pdf>
 Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis_v2.pdf used on input
- line 765.
-(pdftex.def)             Requested size: 422.77664pt x 498.18936pt.
+ line 768.
+(pdftex.def)             Requested size: 422.77664pt x 496.08977pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -975,7 +975,7 @@ v3.pdf>] [30 <./figs/Figure5_RobustnessAnalysis_v2.pdf>] (./Paper_v4.aux) )
 Here is how much of TeX's memory you used:
  7564 strings out of 493089
  110995 string characters out of 6134842
- 201678 words of memory out of 5000000
+ 201148 words of memory out of 5000000
  10834 multiletter control sequences out of 15000+600000
  27439 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -996,10 +996,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (32 pages, 1303079 bytes).
+Output written on Paper_v4.pdf (32 pages, 1305806 bytes).
 PDF statistics:
- 3882 PDF objects out of 4296 (max. 8388607)
- 2581 compressed objects within 26 object streams
+ 3885 PDF objects out of 4296 (max. 8388607)
+ 2583 compressed objects within 26 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
