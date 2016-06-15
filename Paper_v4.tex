@@ -336,7 +336,7 @@ Robustness analysis suggested there was no single intervention that inhibited co
 Robustness coefficients quantify the response of a protein to a macroscopic structural or operational perturbation to a biochemical network.
 Here, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5 with and without lectin initiator.
 We simulated the addition of different doses of anti-complement inhibitor cocktails by decreasing the initial concentration of C3 or C5 or the combination of C3 and C5 by 50\% and 90\%.
-This would be conceptually analogous to the administration of a C3 inhibitor e.g., compstatin alone or combination with eculizumab (Fig. \ref{fig-SA}C).
+This would be conceptually analogous to the administration of a C3 inhibitor e.g., Compstatin alone or combination with Eculizumab (Fig. \ref{fig-SA}C).
 A \texttt{log$_{10}$} transformed robustness index of zero indicated no effect due to the perturbation, whereas an index of less than zero indicated decreased C3a or C5a.
 The response of the complement model to different knock-down magnitudes was non-linear; a 90\% knock-down had an order of magnitude more impact than a 50\% knock-down.
 As expected, a C5 knockdown had no effect on C3a formation for either the alternate (Fig. \ref{fig-robustness-analysis}A, lanes 1 or 3) or lectin pathways
@@ -399,7 +399,7 @@ Subsequently, we validated the model on unseen C3a and C5a measurements that wer
 Despite its small size, the model was surprisingly predictive.
 After validation, we performed global sensitivity and robustness analysis to estimate which parameters and species
 controlled model performance. These analyses suggested complement was robust to any single therapeutic intervention.
-The only intervention that consistently reduced C5a formation for all cases was a knockdown of both C3 and C5.
+The only intervention that consistently reduced C3a and C5a formation for all cases was a knockdown of both C3 and C5.
 Taken together, we developed a reduced order complement model that was computationally inexpensive,
 and could easily be incorporated into pre-existing or new pharmacokinetic models of immune system function.
 The model described experimental data, and predicted the need for multiple points of intervention to disrupt complement activation.
@@ -434,11 +434,10 @@ Removing supporting molecules could also destabilize the convertases.
 For example, Novelmed Therapeutics developed the antibody, NM9401 against propedin, a small protein that stabilizes alternate C3 convertase \cite{bansal2014humanized}.
 Lastly, convertase catalytic activity could be attenuated using small molecule protease inhibitors. All of these approaches are consistent with the results of the sensitivity analysis.
 On the other hand, robustness analysis suggested C3a and C5a generation could only be significantly attenuated by modulating the free levels of C3 and C5.
-The most commonly used anti-complement drug eculizumab, targets the C5 protein \cite{morgan2015complement}.
-A number of other drugs targeting C5 are also being developed. For example, LFG316 targets C5 in Age-Related Macular Degeneration \cite{roguska2014generation},
-while Mubodina, an antibody that targets C5, is used to treat Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}.
-Other agents such as the small molecule Coversin \cite{weston2014clinical}, the aptamer Zimura \cite{epstein2007complement},
-as well as small peptides and RNAi could also be used to inhibit C5 \cite{borodovsky2014aln}.
+The most commonly used anti-complement drug Eculizumab, targets the C5 protein \cite{morgan2015complement}.
+Several other antibodies targeting C5 are also being developed; for example, LFG316 targets C5 in Age-Related Macular Degeneration \cite{roguska2014generation},
+while Mubodina is used to treat Atypical Hemolytic-Uremic Syndrome (aHUS) \cite{melis2015complement}.
+Other agents such as Coversin \cite{weston2014clinical} or the aptamer Zimura \cite{epstein2007complement} could also be used to knockdown C5.
 The cyclic peptide inhibitor Compstatin and its derivatives, which target C3, are promising approaches for the treatment of X, Y and Z [FINISH] \cite{Mastellos:2015aa}.
 However, while the knockdown of C3 and C5 affect C3a and C5a levels downstream, the abundance, turnover rate and population variation of these proteins make them difficult targets \cite{sissons1977metabolism, swaak1982determination}.
 For example, the eculizumab dosage must be significantly adjusted during the course of treatment for aHUS \cite{noris2014dynamics}.
@@ -488,7 +487,7 @@ The C5a predictions also had an accelerated time scale.
 However, because the C5a time scale depended strongly upon C3 convertase formation, we can likely correct the C5 issues by fixing the rate of C3 cleavage.
 Lastly, we should also consider including the C2-by pass pathway, which was not included in the model.
 The C2-bypass mediates lectin pathway activation, without the involvement of MASP-1/2.
-Thus, inclusion of this pathway could be important for understanding the role of MASP-1/2 inhibitors on complement model performance.
+Thus, inclusion of this pathway could be important for understanding the role of MASP-1/2 inhibitors on complement activation.
 
 % We believe the C3a under-prediction can be attributed to how we modeled C4BP interactions.
 % C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes;
@@ -574,7 +573,7 @@ The model equations were implemented in Julia and solved using the \texttt{CVODE
 The model code and parameter ensemble is freely available under an MIT software license and can be downloaded from http://www.varnerlab.org.
 
 \subsection*{Estimating an ensemble of complement model parameters.}
-We estimated a single initial parameter set using the Dynamic Optimization with Particle Swarms (DOPS) technique [REF].
+We estimated a single initial parameter set using the Dynamic Optimization with Particle Swarms (DOPS) technique \cite{DOPS2016}.
 DOPS is a novel hybrid meta-heuristic which combines a multi-swarm particle swarm method with the dynamically dimensioned search approach of Shoemaker and colleagues \cite{Tolson2007}.
 DOPS minimized the squared residual between simulated and C3a and C5a measurements with and without zymosan as a single objective.
 The best fit set estimated by DOPS served as the starting point for multiobjective ensemble generation using Pareto Optimal Ensemble Technique in the Julia programming language (JuPOETs) \cite{JuPOETs-BioArXiv}.

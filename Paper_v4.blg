@@ -4,50 +4,48 @@ The top-level auxiliary file: Paper_v4.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
 Warning--entry type for "SALIB" isn't style-file defined
---line 635 of file References_v1.bib
+--line 626 of file References_v1.bib
+Warning--I didn't find a database entry for "Mastellos:2015aa"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-`journal' is a missing field, not a string, for entry Julia
-while executing---line 2643 of file plos2009.bst
-Warning--empty journal in Julia
-You've used 48 entries,
+You've used 47 entries,
             2441 wiz_defined-function locations,
-            852 strings with 15504 characters,
-and the built_in function-call counts, 40144 in all, are:
-= -- 3650
-> -- 768
+            853 strings with 15001 characters,
+and the built_in function-call counts, 38214 in all, are:
+= -- 3480
+> -- 732
 < -- 0
-+ -- 384
-- -- 192
-* -- 3420
-:= -- 4835
-add.period$ -- 98
-call.type$ -- 48
-change.case$ -- 48
++ -- 366
+- -- 183
+* -- 3213
+:= -- 4610
+add.period$ -- 97
+call.type$ -- 47
+change.case$ -- 47
 chr.to.int$ -- 0
-cite$ -- 97
-duplicate$ -- 3923
-empty$ -- 4140
-format.name$ -- 234
-if$ -- 8878
+cite$ -- 94
+duplicate$ -- 3721
+empty$ -- 3933
+format.name$ -- 224
+if$ -- 8470
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 506
-newline$ -- 257
-num.names$ -- 48
-pop$ -- 603
+int.to.str$ -- 47
+missing$ -- 499
+newline$ -- 253
+num.names$ -- 47
+pop$ -- 582
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 368
+skip$ -- 349
 stack$ -- 0
-substring$ -- 5693
-swap$ -- 1003
+substring$ -- 5342
+swap$ -- 989
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 325
-width$ -- 50
+warning$ -- 0
+while$ -- 313
+width$ -- 49
 write$ -- 526
-(There was 1 error message)
+(There were 2 warnings)

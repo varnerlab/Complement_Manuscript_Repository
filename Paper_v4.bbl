@@ -22,17 +22,17 @@ Nuttall G (1888) {Experimente {\"u}ber die bacterienfeindlichen Einfl{\"u}sse
 \bibitem{ricklin2010complement}
 Ricklin D, Hajishengallis G, Yang K, Lambris JD (2010) Complement: a key system
   for immune surveillance and homeostasis.
-\newblock NAT IMMUNOL 11: 785--797.
+\newblock Nat Immunol 11: 785--797.
 \bibAnnoteFile{ricklin2010complement}
 
 \bibitem{ricklin2007complement}
 Ricklin D, Lambris JD (2007) Complement-targeted therapeutics.
-\newblock NAT BIOTECHNOL 25: 1265-1275.
+\newblock Nat Biotechnol 25: 1265-1275.
 \bibAnnoteFile{ricklin2007complement}
 
 \bibitem{rittirsch2008harmful}
 Rittirsch D, Flierl MA, Ward PA (2008) Harmful molecular mechanisms in sepsis.
-\newblock NAT REV IMMUNOL 8: 776--787.
+\newblock Nat Rev Immunol 8: 776--787.
 \bibAnnoteFile{rittirsch2008harmful}
 
 \bibitem{sarma2011complement}
@@ -59,7 +59,7 @@ Walport MJ (2001) Complement. second of two parts.
 \bibitem{pangburn1984alternative}
 Pangburn MK, M{\"u}ller-Eberhard HJ (1984) The alternative pathway of
   complement.
-\newblock Semin Immunopathol .
+\newblock Springer Semin Immunopathol 7: 163--192.
 \bibAnnoteFile{pangburn1984alternative}
 
 \bibitem{walker1995complement}
@@ -103,7 +103,7 @@ Chauhan A, Moore T (2006) Presence of plasma complement regulatory proteins
 \bibitem{zewde2016quantitative}
 Zewde N, Gorham~Jr RD, Dorado A, Morikis D (2016) Quantitative modeling of the
   alternative pathway of the complement system.
-\newblock PloS one 11: e0152337.
+\newblock PloS One 11: e0152337.
 \bibAnnoteFile{zewde2016quantitative}
 
 \bibitem{hirayama1996linear}
@@ -134,7 +134,7 @@ Morad HO, Belete SC, Read T, Shaw AM (2015) Time-course analysis of c3a and c5a
 \bibitem{morgan2015complement}
 Morgan BP, Harris CL (2015) Complement, a target for therapy in inflammatory
   and degenerative diseases.
-\newblock NAT REV DRUG DISCOV 14: 857-877.
+\newblock Nat Rev Drug Discov 14: 857--877.
 \bibAnnoteFile{morgan2015complement}
 
 \bibitem{Luan:2007aa}
@@ -174,19 +174,19 @@ Schwaeble HW, Stover CM, Tedford CE, Parent JB, Fujita T (2011).
 \bibitem{vogel2004recombinant}
 Vogel CW, Fritzinger DC, Hew BE, Thorne M, Bammert H (2004) Recombinant cobra
   venom factor.
-\newblock Molecular immunology : 191--199.
+\newblock Molecular immunology 41: 191--199.
 \bibAnnoteFile{vogel2004recombinant}
 
 \bibitem{katschke2012inhibiting}
 Katschke KJ, Wu P, Ganesan R, Kelley RF, Mathieu MA, et~al. (2012) Inhibiting
   alternative pathway complement activation by targeting the factor d exosite.
-\newblock Journal of Biological Chemistry : 12886--12892.
+\newblock J Biol Chem 287: 12886--12892.
 \bibAnnoteFile{katschke2012inhibiting}
 
 \bibitem{hu2013therapeutic}
-Hu X, Holers VM, Thurman JM, Schoeb TR, Ramos TN, et~al. (2013) Therapeutic
-  inhibition of the alternative complement pathway attenuates chronic eae.
-\newblock Mol Immunol : 302--308.
+Hu X, Holers VM, Thurman JM, Schoeb TR, Ramos TN, et~al. (2013) {Therapeutic
+  inhibition of the alternative complement pathway attenuates chronic EAE}.
+\newblock Mol Immunol 54: 302--308.
 \bibAnnoteFile{hu2013therapeutic}
 
 \bibitem{bansal2014humanized}
@@ -197,24 +197,24 @@ Bansal R (2014).
 
 \bibitem{roguska2014generation}
 Roguska M, Splawski I, Diefenbach-Streiber B, Dolan E, Etemad-Gilbertson B,
-  et~al. (2014) Generation and characterization of lfg316, a fully-human
-  anti-c5 antibody for the treatment of age-related macular degeneration.
-\newblock Investigative Ophthalmology \& Visual Science : 3433--3433.
+  et~al. (2014) {Generation and Characterization of LFG316, A Fully-Human
+  Anti-C5 Antibody for the Treatment of Age-Related Macular Degeneration}.
+\newblock IOVS 55: 3433--3433.
 \bibAnnoteFile{roguska2014generation}
 
 \bibitem{melis2015complement}
 Melis JP, Strumane K, Ruuls SR, Beurskens FJ, Schuurman J, et~al. (2015)
-  Complement in therapy and disease: Regulating the complement system with
-  antibody-based therapeutics.
-\newblock Molecular immunology : 117--130.
+  {Complement in therapy and disease: Regulating the complement system with
+  antibody-based therapeutics}.
+\newblock Mol Immunol 67: 117--130.
 \bibAnnoteFile{melis2015complement}
 
 \bibitem{weston2014clinical}
 Weston-Davies WH, Nunn MA, Pinto FO, Mackie IJ, Richards SJ, et~al. (2014)
-  Clinical and immunological characterisation of coversin, a novel small
-  protein inhibitor of complement c5 with potential as a therapeutic agent in
-  pnh and other complement mediated disorders.
-\newblock Blood : 4280--4280.
+  {Clinical and immunological characterisation of coversin, a novel small
+  protein inhibitor of complement C5 with potential as a therapeutic agent in
+  PNH and other complement mediated disorders}.
+\newblock Blood 124: 4280--4280.
 \bibAnnoteFile{weston2014clinical}
 
 \bibitem{epstein2007complement}
@@ -223,19 +223,6 @@ Epstein D, Kurz JC (2007).
   treatment of ocular disorders.
 \newblock US Patent App. 12/224,708.
 \bibAnnoteFile{epstein2007complement}
-
-\bibitem{borodovsky2014aln}
-Borodovsky A, Yucius K, Sprague A, Banda NK, Holers VM, et~al. (2014) Aln-cc5,
-  an investigational rnai therapeutic targeting c5 for complement inhibition.
-\newblock Complement 20: 40.
-\bibAnnoteFile{borodovsky2014aln}
-
-\bibitem{Mastellos:2015aa}
-Mastellos DC, Yancopoulou D, Kokkinos P, Huber-Lang M, Hajishengallis G, et~al.
-  (2015) Compstatin: a c3-targeted complement inhibitor reaching its prime for
-  bedside intervention.
-\newblock Eur J Clin Invest 45: 423-40.
-\bibAnnoteFile{Mastellos:2015aa}
 
 \bibitem{sissons1977metabolism}
 Sissons J, Liebowitch J, Amos N, Peters D (1977) Metabolism of the fifth
@@ -265,7 +252,8 @@ Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
 
 \bibitem{Julia}
 Bezanson J, Edelman A, Karpinski S, Shah VB (2015) {J}ulia: A fresh approach to
-  numerical computing .
+  numerical computing.
+\newblock arXiv arXiv:1411.1607v4.
 \bibAnnoteFile{Julia}
 
 \bibitem{Sundials}
@@ -274,23 +262,30 @@ Hindmarsh AC, Brown PN, Grant KE, Lee SL, Serban R, et~al. (2005) Sundials:
 \newblock ACM Trans Math Softw 31: 363--396.
 \bibAnnoteFile{Sundials}
 
+\bibitem{DOPS2016}
+Sagar A, Shoemaker CA, Varner J (2016) {Dynamic Optimization with Particle
+  Swarms (DOPS): A meta- heuristic for parameter estimation in biochemical
+  models}.
+\newblock Biotechnol J submitted.
+\bibAnnoteFile{DOPS2016}
+
 \bibitem{Tolson2007}
 Tolson BA, Shoemaker CA (2007) Dynamically dimensioned search algorithm for
   computationally efficient watershed model calibration.
-\newblock Water Resources Research 43: W01413.
+\newblock Water Res Research 43: W01413.
 \bibAnnoteFile{Tolson2007}
 
 \bibitem{JuPOETs-BioArXiv}
-Bassen D, Vilkhovoy M, Minot M, Butcher JT, Varner JD (2016) Jupoets: A
-  constrained multiobjective optimization approach to estimate biochemical
-  model ensembles in the julia programming language.
-\newblock bioRxiv .
+Bassen D, Vilkhovoy M, Minot M, Butcher JT, Varner JD (2016) {JuPOETs: A
+  Constrained Multiobjective Optimization Approach to Estimate Biochemical
+  Model Ensembles in the Julia Programming Language}.
+\newblock bioRxiv 10.1101/056044.
 \bibAnnoteFile{JuPOETs-BioArXiv}
 
 \bibitem{SOBOL_METHOD}
-Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and
-  their monte carlo estimates.
-\newblock MATH COMPUT SIMULAT 55: 271 - 280.
+Sobol I (2001) {Global sensitivity indices for nonlinear mathematical models
+  and their Monte Carlo estimates.}
+\newblock Math Comput Simulat 55: 271 - 280.
 \bibAnnoteFile{SOBOL_METHOD}
 
 \bibitem{saltelli2010variance}
