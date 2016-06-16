@@ -764,15 +764,13 @@ Current complement therapeutics were taken from the review of Morgan and Harris 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{./figs/Figure5_RobustnessAnalysis_v2.pdf}
-\caption{Robustness analysis of the complement model with respect to C3 and C5 initial conditions.
-Robustness analysis was conducted on the four cases used for model training:
-C3a alternate (w/o zymosan), C5a alternate (w/o zymosan),  C3a lectin (1mg/ml zymosan), and C5a lectin (1mg/ml zymosan), by reducing the initial concentration of C3 and/or C5
-by 50\% or 90\%.
-\textbf{A}: Robustness results for a 50\% decrease in the C3, C5, or C3 and C5 initial condition.
-\textbf{B}: Robustness results for a 90\% decrease in the C3, C5, or C3 and C5 initial condition.
-The bars denote the log-transformated robustness index while error bars denote one standard deviation. At zero, the perturbed initial concentration has no impact on the measured output.
-A log-transformed robustness index less than zero indicates a negative relation between the perturbed initial concentration and the measured output.}\label{fig-robustness-analysis}
+\includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis_v3.pdf}
+\caption{Robustness analysis of the complement model.
+Robustness coefficients were calculated for a 50\%, 90\% and 99\% reduction in C3, C5, or C3 and C5 initial conditions.
+\textbf{A}: Mean robustness index for C3a and C5a generated from the alternate pathway (w/o zymosan).
+\textbf{B}: Mean robustness index for C3a and C5a generated from the lectin and alternate pathway (1 mg/ml zymosan).
+The color describes the degree of reduction of C3a or C5a following the network perturbation.
+}\label{fig-robustness-analysis}
 \end{figure}
 
 

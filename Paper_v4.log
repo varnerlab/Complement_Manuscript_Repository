@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 JUN 2016 16:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 JUN 2016 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -954,20 +954,20 @@ Overfull \hbox (46.97836pt too wide) in paragraph at lines 754--762
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure5_RobustnessAnalysis_v2.pdf, id=107, 474.77374pt x 557.08125pt>
-File: ./figs/Figure5_RobustnessAnalysis_v2.pdf Graphic file (type pdf)
+<./figs/Figure5_RobustnessAnalysis_v3.pdf, id=107, 668.4975pt x 399.4925pt>
+File: ./figs/Figure5_RobustnessAnalysis_v3.pdf Graphic file (type pdf)
 
-<use ./figs/Figure5_RobustnessAnalysis_v2.pdf>
-Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis_v2.pdf used on input
+<use ./figs/Figure5_RobustnessAnalysis_v3.pdf>
+Package pdftex.def Info: ./figs/Figure5_RobustnessAnalysis_v3.pdf used on input
  line 767.
-(pdftex.def)             Requested size: 422.77664pt x 496.08977pt.
+(pdftex.def)             Requested size: 469.75502pt x 280.73398pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26 <./figs/Fig1_Schematic_v2.pdf>] [27 <./figs/Figure2_Fits_final_v2.pdf>]
 [28 <./figs/Figure3_predictions_final_v3.pdf>] [29 <./figs/Figure4_Sensitivity_
-v3.pdf>] [30 <./figs/Figure5_RobustnessAnalysis_v2.pdf>] (./Paper_v4.aux) )
+v3.pdf>] [30 <./figs/Figure5_RobustnessAnalysis_v3.pdf>] (./Paper_v4.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 50 (\begingroup)
@@ -975,7 +975,7 @@ v3.pdf>] [30 <./figs/Figure5_RobustnessAnalysis_v2.pdf>] (./Paper_v4.aux) )
 Here is how much of TeX's memory you used:
  7564 strings out of 493089
  110959 string characters out of 6134842
- 201148 words of memory out of 5000000
+ 199709 words of memory out of 5000000
  10834 multiletter control sequences out of 15000+600000
  27439 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -996,10 +996,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (32 pages, 1305366 bytes).
+Output written on Paper_v4.pdf (32 pages, 1176058 bytes).
 PDF statistics:
- 3885 PDF objects out of 4296 (max. 8388607)
- 2583 compressed objects within 26 object streams
+ 3860 PDF objects out of 4296 (max. 8388607)
+ 2568 compressed objects within 26 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
