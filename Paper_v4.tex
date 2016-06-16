@@ -214,12 +214,12 @@ Thus, there are many points of control which influence complement across the thr
 Developing quantitative mathematical models of complement will be crucial to fully understanding its role in the body.
 Traditionally, complement models have been formulated as systems of linear or non-linear ordinary differential equations (ODEs).
 For example, Hirayama et al., modeled the classical complement pathway as a system of linear ODEs \cite{hirayama1996linear},
-while Korotaevskiy and co-workers modeled the classical, lectin and alternate pathways (up to C3a) as a system of non-linear ODEs \cite{korotaevskiy2009non}.
+while Korotaevskiy and co-workers modeled the classical, lectin and alternate pathways as a system of non-linear ODEs \cite{korotaevskiy2009non}.
 More recently, large mechanistic models of sections of complement have also been proposed.
 For example, Liu et al., analyzed the formation of the classical and lectin C3 convertases, and the regulatory role of C4BP using a system of 45 non-linear ODEs with 85 parameters \cite{liu2011computational}.
 Zewde and co-workers constructed a detailed mechanistic model of the alternative pathway which consisted of 107 ODEs and 74 kinetic parameters and delineated between
 the fluid, host and pathogen surfaces \cite{zewde2016quantitative}.
-However, these previous modeling studies involved little experimental validation.
+However, these previous modeling studies involved large models with little experimental validation.
 Thus, while these models are undoubtably important theoretical tools, it is unclear if they can describe or quantitatively predict complement measurements.
 The central challenge of complement model identification is the estimation of model parameters from experimental measurements.
 Unlike other important cascades, such as coagulation where there are well developed experimental tools and publicly available data sets,
@@ -343,7 +343,7 @@ However, C3a and to a greater extent C5a abundance decreased with decreasing C3 
 This agreed with the sensitivity results; changes in AP C3-convertase formation affected the downstream dynamics of C5a formation.
 Thus, if we only considered the alternate pathway, C3 alone could be a reasonable target, especially given that C5a formation was surprisingly robust to C5 levels in the alternate pathway.
 Yet, when both pathways were activated, C5a levels were robust to the initial C3 concentration (Fig. \ref{fig-robustness-analysis}B);
-even 1\% of the nominal C3 was able to generated enough AP/CP C5 convertase to maintain C5a formation.
+even 1\% of the nominal C3 was able to generate enough AP/CP C5 convertase to maintain C5a formation.
 Thus, the only reliable intervention that consistently reduced both C3a and C5a formation for all cases was a knockdown of both C3 and C5.
 For example, a 90\% decrease of both C3 and C5 reduced the formation of C5a by an order of magnitude,
 while C3a was reduced to a lesser extent (Fig. \ref{fig-robustness-analysis}B).
@@ -483,9 +483,9 @@ We also assumed both factor B and factor D were not limiting, thereby artificial
 This shortcoming could be addressed by including balances around factor B and D, and including these species in the appropriate kinetic rates.
 The C5a predictions also had an accelerated time scale.
 However, because the C5a time scale depended strongly upon C3 convertase formation, we can likely correct the C5 issues by fixing the rate of C3 cleavage.
-Lastly, we should also consider including the C2-by pass pathway, which was not included in the model.
+Lastly, we should also consider including the C2-bypass pathway, which was not included in the model.
 The C2-bypass mediates lectin pathway activation, without the involvement of MASP-1/2.
-Thus, inclusion of this pathway could be important for understanding the role of MASP-1/2 inhibitors on complement activation.
+Thus, this pathway could be important for understanding the role of MASP-1/2 inhibitors on complement activation.
 
 % We believe the C3a under-prediction can be attributed to how we modeled C4BP interactions.
 % C4BP interactions were modeled as irreversible binding steps resulting in completely inactive complexes;
