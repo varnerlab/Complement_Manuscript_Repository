@@ -533,8 +533,9 @@ We used ordinary differential equations (ODEs) to model the time evolution of co
 \begin{equation}
 	\frac{1}{\tau_{i}}\frac{dx_{i}}{dt}  =  \sum_{j = 1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)\qquad{i=1,2,\hdots,\mathcal{M}}\\
 \end{equation}
-where $\mathcal{R}$ denotes the number of reactions and $\mathcal{M}$ denotes the number of protein species in the model.
-The quantity $\tau_{i}$ denotes a timescale parameter for species $i$ which captures unmodeled effects; by default $\tau_{i}$ = 1, for all species unless otherwise specified.
+where $\mathcal{R}$ denotes the number of reactions and $\mathcal{M}$ denotes the number of proteins in the model.
+The quantity $\tau_{i}$ denotes a time scale parameter for species $i$ which captures unmodeled effects.
+For the current study, $\tau$ scaled with the level of initiator ($z$) for C5a and C5b; $\tau_{i}=z/z^{*}$ for i = C5a, C5b where $z^{*}$ was 1mg/ml, $\tau_{i}$ = 1 for all other species.
 The quantity $r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)$ denotes the rate of reaction $j$.
 Typically, reaction $j$ is a non-linear function of biochemical and enzyme species abundance, as well as unknown model parameters $\mathbf{k}$ ($\mathcal{K}\times{1}$).
 The quantity $\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$.
