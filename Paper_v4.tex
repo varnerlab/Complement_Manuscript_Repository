@@ -660,7 +660,8 @@ The objective functions used in this study are available in the GitHub model rep
 \subsection*{Sensitivity and robustness analysis of complement model performance.}
 We conducted global sensitivity and robustness analysis to estimate which parameters and species controlled the performance of the reduced order model.
 We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a/C5a alternate and C3a/C5a lectin objectives
-using the Sobol method \cite{SOBOL_METHOD}. The sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
+using the Sobol method \cite{SOBOL_METHOD}.
+sThe sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
 We used the sampling method of Saltelli \textit{et al.} to compute a family of $N\left(2d+2\right)$ parameter sets which obeyed our parameter ranges,
 where $N$ was the number of trials per parameters, and $d$ was the number of parameters in the model \cite{saltelli2010variance}.
 In our case, $N$ = 400 and $d$ = 28, so the total sensitivity indices were computed using 23,200 model evaluations.
@@ -673,7 +674,8 @@ Log-transformed robustness coefficients denoted by $\hat{\alpha}\left(i,j,t_{o},
 \hat{\alpha}\left(i,j,t_{o},t_{f}\right)=\log_{10}\left[\left(\displaystyle\int_{t_{o}}^{t_{f}}x_{i}\left(t\right)dt\right)^{-1}\left(\displaystyle\int_{t_{o}}^{t_{f}}x^{(j)}_{i}\left(t\right)dt\right)\right]
 \end{equation}
 Here $t_o$ and $t_f$ denote the initial and final simulation time, while $i$ and $j$ denote the indices for the marker and the perturbation, respectively.
-A value of $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)>0$, indicates increased marker abundance, while $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)<0$ indicates decreased marker abundance following perturbation $j$. If $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)\sim{0}$, perturbation $j$ did not influence the abundance of marker $i$.
+A value of $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)>0$, indicates increased marker abundance, while $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)<0$ indicates decreased marker abundance following perturbation $j$.
+If $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)\sim{0}$, perturbation $j$ did not influence the abundance of marker $i$.
 In this study, we perturbed the initial condition of C3 or C5 or a combination of C3 and C5 by 50\%, 90\% and 99\% and measured the area under the curve (AUC)
 of C3a or C5a with and without lectin initiator. We computed the robustness coefficients for a subset of the parameter ensemble.
 
@@ -762,7 +764,7 @@ Current complement therapeutics were taken from the review of Morgan and Harris 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis_v3.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis_v4.pdf}
 \caption{Robustness analysis of the complement model.
 Robustness coefficients were calculated for a 50\%, 90\% and 99\% reduction in C3, C5, or C3 and C5 initial conditions.
 \textbf{A}: Mean robustness index for C3a and C5a generated from the alternate pathway (w/o zymosan).
