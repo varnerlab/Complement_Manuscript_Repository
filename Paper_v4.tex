@@ -99,7 +99,7 @@
 \vspace{0.05in}
 {\par \centering \large{Adithya Sagar, Wei Dai$^{\#}$, Mason Minot$^{\#}$, and Jeffrey D. Varner$^{*}$}}
 \vspace{0.10in}
-{\par \centering {School of Chemical and Biomolecular Engineering}}
+{\par \centering {Robert Frederick Smith School of Chemical and Biomolecular Engineering}}
 {\par \centering {Cornell University, Ithaca NY 14853}}
 \vspace{0.1in}
 {\par \centering \textbf{Running Title:}~A reduced order model of complement}
@@ -110,7 +110,7 @@
 \vspace{0.1in}
 {\par \centering $^{*}$Corresponding author:}
 {\par \centering Jeffrey D. Varner,}
-{\par \centering Professor, School of Chemical and Biomolecular Engineering,}
+{\par \centering Professor, Robert Frederick Smith School of Chemical and Biomolecular Engineering,}
 {\par \centering 244 Olin Hall, Cornell University, Ithaca NY, 14853}
 {\par \centering Email: jdv27@cornell.edu}
 {\par \centering Phone: (607) 255 - 4258}
@@ -123,16 +123,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abstract}
 Complement is an important pathway in innate immunity, inflammation, and many disease processes.
-However, despite its importance, there have been few validated mathematical models of complement activation.
+However, despite its importance, there are few validated mathematical models of complement activation.
 In this study, we developed an ensemble of experimentally validated reduced order complement models.
-We combined ordinary differential equations with logical rules to produce a compact yet predictive complement model.
+We combined ordinary differential equations with logical rules to produce a compact yet predictive model of complement activation.
 The model,  which described the lectin and alternative pathways, was an order of magnitude smaller than comparable models in the literature.
 We estimated an ensemble of model parameters from \textit{in~vitro} dynamic measurements of the C3a and C5a complement proteins.
 Subsequently, we validated the model on unseen C3a and C5a measurements not used for model training.
 Despite its small size, the model was surprisingly predictive.
 Global sensitivity and robustness analysis suggested complement was robust to any single therapeutic intervention.
-Only the knockdown of both C3 and C5 consistently reduced C3a and C5a formation from all pathways.
-Taken together, we developed a reduced order complement model that was computationally inexpensive,
+Only the simultaneous knockdown of both C3 and C5 consistently reduced C3a and C5a formation from all pathways.
+Taken together, we developed a validated mathematical model of complement activation that was computationally inexpensive,
 and could easily be incorporated into pre-existing or new pharmacokinetic models of immune system function.
 The model described experimental data, and predicted the need for multiple points of therapeutic intervention to fully disrupt complement activation.
 
@@ -163,12 +163,14 @@ The model described experimental data, and predicted the need for multiple point
 
 Complement is an important pathway in innate immunity. It plays a significant role in inflammation, host defense as well as many disease processes.
 Complement was discovered in the late 1880s where it was found to 'complement' the bactericidal activity of natural antibodies \cite{OG_COMPLEMENT_REF}.
-However, research over the past decade has shown the importance of complement extends beyond innate immunity.
-For example, complement contributes to tissue homeostasis \cite{ricklin2010complement}, and has been linked with several diseases including Alzheimers, Parkinson's, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{ricklin2007complement, rittirsch2008harmful}.
+However, research over the past decade has suggested the importance of complement extends beyond innate immunity.
+For example, complement contributes to tissue homeostasis \cite{ricklin2010complement}.
+It has also has been linked with several diseases including Alzheimers, Parkinson's, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{ricklin2007complement, rittirsch2008harmful}.
 Complement also plays positive and negative roles in cancer; attacking tumor cells with altered surface proteins in some cases, while potentially contributing to tumor growth in others \cite{sarma2011complement, ricklin2013complement}.
 Lastly, several other important biochemical systems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}.
 Thus, complement is important in a variety of beneficial and potentially harmful functions in the body.
-However, despite its importance, there have been relatively few approved complement specific therapeutics, largely because of safety concerns and challenging pharmacokinetic constraints.
+Despite its importance, there have been few approved complement specific therapeutics,
+largely because of safety concerns and challenging pharmacokinetic constraints, however, progress is being made \cite{Ricklin:2013aa}.
 
 The complement cascade involves many soluble and cell surface proteins, receptors and regulators \cite{Walport:2001ab,Walport:2001aa}.
 The outputs of complement are the Membrane Attack Complex (MAC), and the inflammatory mediator proteins C3a and C5a.
@@ -178,13 +180,13 @@ On the other hand, the C3a and C5a proteins act as a bridge between innate and a
 Complement activation takes places through three pathways: the classical, the lectin and the alternate pathways.
 The classical pathway is triggered by antibody recognition of foreign antigens or other pathogens.
 A multimeric protein complex C1 binds antibody-antigen complexes and undergoes a conformational change, leading to an activated form with proteolytic activity.
-The activated complex cleaves soluble complement proteins C4 and C2 into C4a, C4b, C2a and C2b, respectively.
+The activated C1-complex cleaves soluble complement proteins C4 and C2 into C4a, C4b, C2a and C2b, respectively.
 The C4a and C2b fragments bind to form the C4bC2a protease, also known as the classical pathway C3 convertase (CP C3 convertase).
 The lectin pathway is initiated through the binding of L-ficolin or Mannose Binding Lectin (MBL) to carbohydrates on the surfaces of bacterial pathogens.
-These complexes, in combination mannose-associated serine proteases
+These complexes, in combination with mannose-associated serine proteases
 1 and 2 (MASP-1/2), also cleave C4 and C2, leading to additional CP C3 convertase.
 Thus, the classical and lectin pathways, initiated by different cues on foreign surfaces,  converge at the CP C3 convertase.
-However, the alternate pathway works differently. It is activated by a 'tickover' mechanism in which complement protein C3 is spontaneously hydrolyzed to form an activated intermediate C3w;
+On the other hand, the alternate pathway is activated by a 'tickover' mechanism in which complement protein C3 is spontaneously hydrolyzed to form an activated intermediate C3w;
 C3w recruits factor B and factor D, leading to the formation of C3wBb. C3wBb cleaves C3 into C3a and C3b, where
 the C3b fragment further recruits additional factor B and factor D to form C3bBb, the alternate C3 convertase (AP C3 convertase) \cite{pangburn1984alternative}.
 The role of classical and alternate C3 convertases is varied.
@@ -199,7 +201,7 @@ Thus, the complement cascade attacks invading pathogens, while acting as a beaco
 
 %Complement activation is largely irreversible, involving positive feedback driven proteolytic cleavage.
 %Thus,
-The complement cascade is regulated by plasma and host cell proteins which balance host safety with effectiveness.
+The complement cascade is regulated by plasma and host cell surface proteins which balance host safety with effectiveness.
 The initiation of the classical pathway via complement protein C1 is controlled by the C1 Inhibitor (C1-Inh);
 C1-Inh irreversibly binds to and deactivates the active subunits of C1, preventing chronic complement activation \cite{walker1995complement}.
 Regulation of upstream processes in the lectin and alternate pathways also occurs through the interaction of the C4 binding protein (C4BP) with C4b, and factor H with C3b \cite{blom2001structural}. Interestingly,
@@ -211,7 +213,7 @@ Although Carboxypeptidase-N does not directly influence complement activation, i
 Lastly, assembly of the MAC complex itself can be inhibited by vitronectin and clusterin in the plasma, and CD59 at the host surface \cite{chauhan2006presence,zewde2016quantitative}.
 Thus, there are many points of control which influence complement across the three activation pathways.
 
-Developing quantitative mathematical models of complement will be crucial to fully understanding its role in the body.
+Developing quantitative mathematical models of complement could be crucial to fully understanding its role in the body.
 Traditionally, complement models have been formulated as systems of linear or non-linear ordinary differential equations (ODEs).
 For example, Hirayama et al., modeled the classical complement pathway as a system of linear ODEs \cite{hirayama1996linear},
 while Korotaevskiy and co-workers modeled the classical, lectin and alternate pathways as a system of non-linear ODEs \cite{korotaevskiy2009non}.
@@ -219,7 +221,7 @@ More recently, large mechanistic models of sections of complement have also been
 For example, Liu et al., analyzed the formation of the classical and lectin C3 convertases, and the regulatory role of C4BP using a system of 45 non-linear ODEs with 85 parameters \cite{liu2011computational}.
 Zewde and co-workers constructed a detailed mechanistic model of the alternative pathway which consisted of 107 ODEs and 74 kinetic parameters and delineated between
 the fluid, host and pathogen surfaces \cite{zewde2016quantitative}.
-However, these previous modeling studies involved large models with little experimental validation.
+However, these previous studies involved large models with little experimental validation.
 Thus, while these models are undoubtably important theoretical tools, it is unclear if they can describe or quantitatively predict complement measurements.
 The central challenge of complement model identification is the estimation of model parameters from experimental measurements.
 Unlike other important cascades, such as coagulation where there are well developed experimental tools and publicly available data sets,
@@ -657,7 +659,7 @@ The objective functions used in this study are available in the GitHub model rep
 %$\mathcal{G}$ denotes the best solution found over the entire population of particles. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
 %parameters \linebreak($\mathcal{K}\times{1}$). In thus study, we used $\left(\theta_{1},\theta_{2},\theta_{3}\right) = \left(1.0, 0.05564, 0.02886\right)$.
 
-\subsection*{Sensitivity and robustness analysis of complement model performance.}
+\subsection*{Sensitivity and robustness analysis.}
 We conducted global sensitivity and robustness analysis to estimate which parameters and species controlled the performance of the reduced order model.
 We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a/C5a alternate and C3a/C5a lectin objectives
 using the Sobol method \cite{SOBOL_METHOD}.
@@ -695,7 +697,7 @@ The manuscript was prepared and edited for publication by A.S, W.D, M.M and J.V.
 We gratefully acknowledge the suggestions from the anonymous reviewers to improve this manuscript.
 
 \section*{Funding}
-This study was supported by an award from the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376) to J.V. for the support of A.S.
+This material is based upon work supported by, or in part by, the U. S. Army Research Laboratory and the U. S. Army Research Office under contract/grant number W911NF1020114.
 
 \clearpage
 
