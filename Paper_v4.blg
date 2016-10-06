@@ -3,48 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v4.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
+Warning--entry type for "Varnerlab" isn't style-file defined
+--line 11 of file References_v1.bib
+Warning--entry type for "JuPOETS-GitHub" isn't style-file defined
+--line 17 of file References_v1.bib
 Warning--entry type for "SALIB" isn't style-file defined
---line 664 of file References_v1.bib
+--line 688 of file References_v1.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 49 entries,
+You've used 52 entries,
             2441 wiz_defined-function locations,
-            866 strings with 15493 characters,
-and the built_in function-call counts, 40120 in all, are:
-= -- 3659
-> -- 764
+            880 strings with 15720 characters,
+and the built_in function-call counts, 41284 in all, are:
+= -- 3751
+> -- 776
 < -- 0
-+ -- 382
-- -- 191
-* -- 3382
-:= -- 4839
-add.period$ -- 101
-call.type$ -- 49
-change.case$ -- 49
++ -- 388
+- -- 194
+* -- 3454
+:= -- 4972
+add.period$ -- 108
+call.type$ -- 52
+change.case$ -- 52
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 3914
-empty$ -- 4130
-format.name$ -- 234
-if$ -- 8892
+cite$ -- 104
+duplicate$ -- 4033
+empty$ -- 4270
+format.name$ -- 237
+if$ -- 9151
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 521
-newline$ -- 263
-num.names$ -- 49
-pop$ -- 603
+int.to.str$ -- 52
+missing$ -- 541
+newline$ -- 279
+num.names$ -- 52
+pop$ -- 643
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 365
+skip$ -- 390
 stack$ -- 0
-substring$ -- 5626
-swap$ -- 1033
+substring$ -- 5751
+swap$ -- 1067
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 327
-width$ -- 51
-write$ -- 548
-(There was 1 warning)
+while$ -- 335
+width$ -- 54
+write$ -- 577
+(There were 3 warnings)

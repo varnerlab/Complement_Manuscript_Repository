@@ -595,9 +595,18 @@ concentration (denoted by $\mathcal{M}^{\prime}_{ij}$) was compared with the lar
 In this study, we minimized two training objectives, the total C3a and C5a residual w/o zymosan (O$_{1}$) and the total C3a and C5a residual for 1 mg/ml zymosan (O$_{2}$).
 JuPOETs identified an ensemble of N $\simeq$ 2100 parameter sets which were used for model simulations and uncertainty quantification subsequently.
 JuPOETs is open source, available under an MIT software license.
-The JuPOETs source code is freely available from the JuPOETs GitHub repository at https://github.com/varnerlab/POETs.jl.
-The objective functions used in this study are available in the GitHub model repository available from http://varnerlab.org.
+The JuPOETs source code is freely available from the JuPOETs GitHub repository \cite{JuPOETS-GitHub}.
+The objective functions used in this study are available in the GitHub model repository \cite{Varnerlab}.
 
+The simulation and prediction performance of the complement model was measured using the Akaike information criterion (AIC) \cite{Akaike1974}.
+In this study, we implemented the AIC as:
+\begin{equation}\label{eq:AIC}
+	AIC = 2N_{p}+N_{m}\ln\left(\frac{1}{\norm{\mathcal{M}}}\sum_{\tau}\left(x_{\tau}-y_{\tau}\right)^2\right)
+\end{equation}where $N_{p}, N_{m}$ denotes the number of parameters, and the number of experimental measurements, respectively.
+The summation term in Eq. \eqref{eq:AIC} denotes the residual between the model simulation ($x$) and experimental measurements ($y$),
+where the residual is normalized by the scale of the experimental data ($\norm{\mathcal{M}}$).
+We compared the AIC for the model parameters estimated in this study, with a random parameter control generated to have a similar order of magnitude.
+The mean and standard deviation of the AIC was calculated over the parameter ensemble and the random parameter control were reported in this study.
 
 % \subsubsection*{Dynamic Optimization with Particle Swarms (DOPS).}
 % DOPS minimized the residual between simulations and experimental C3a and C5a measurements using Dynamic Optimization with Particle Swarms (DOPS).
@@ -680,7 +689,7 @@ Here, $t_o$ and $t_f$ denote the initial and final simulation time, while $i$ an
 A value of $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)>0$, indicates increased marker abundance, while $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)<0$ indicates decreased marker abundance following perturbation $j$.
 If $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)\sim{0}$, perturbation $j$ did not influence the abundance of marker $i$.
 In this study, we perturbed the initial condition of C3 or C5 or a combination of C3 and C5 by 50\%, 90\% and 99\% and measured the area under the curve (AUC)
-of C3a or C5a with and without lectin initiator. We computed the robustness coefficients for a subset of the parameter ensemble (N = 65) and reported the mean robustness value. 
+of C3a or C5a with and without lectin initiator. We computed the robustness coefficients for a subset of the parameter ensemble (N = 65) and reported the mean robustness value.
 
 %Need to talk more about biochemical benefits and importance for of biochemical problems
 

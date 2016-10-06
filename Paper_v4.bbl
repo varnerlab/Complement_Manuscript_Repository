@@ -294,6 +294,23 @@ Bassen D, Vilkhovoy M, Minot M, Butcher JT, Varner JD (2016) {JuPOETs: A
 \newblock bioRxiv 10.1101/056044.
 \bibAnnoteFile{JuPOETs-BioArXiv}
 
+\bibitem{JuPOETS-GitHub}
+Varnerlab.
+\newblock {JuPOETs: A Constrained Multiobjective Optimization Approach to
+  Estimate Biochemical Model Ensembles in the Julia Programming Language}.
+\newblock \urlprefix\url{https://github.com/varnerlab/POETs.jl}.
+\bibAnnoteFile{JuPOETS-GitHub}
+
+\bibitem{Varnerlab}
+Varnerlab.
+\newblock http://www.varnerlab.org.
+\bibAnnoteFile{Varnerlab}
+
+\bibitem{Akaike1974}
+Akaike H (1974) {A new look at the statistical model identification}.
+\newblock IEEE Trans Auto Cont 19: 716 - 723.
+\bibAnnoteFile{Akaike1974}
+
 \bibitem{SOBOL_METHOD}
 Sobol I (2001) {Global sensitivity indices for nonlinear mathematical models
   and their Monte Carlo estimates.}
