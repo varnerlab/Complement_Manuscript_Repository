@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 OCT 2016 13:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 OCT 2016 13:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,24 +917,24 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure2_Fits_final_v2.pdf, id=104, 753.81625pt x 542.025pt>
+<./figs/Figure2_Fits_final_v2.pdf, id=104, 794.97pt x 598.235pt>
 File: ./figs/Figure2_Fits_final_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure2_Fits_final_v2.pdf>
 Package pdftex.def Info: ./figs/Figure2_Fits_final_v2.pdf used on input line 72
 8.
-(pdftex.def)             Requested size: 469.75502pt x 337.77231pt.
+(pdftex.def)             Requested size: 469.75502pt x 353.51242pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/Figure3_predictions_final_v3.pdf, id=105, 780.9175pt x 436.63126pt>
+<./figs/Figure3_predictions_final_v3.pdf, id=105, 794.97pt x 598.235pt>
 File: ./figs/Figure3_predictions_final_v3.pdf Graphic file (type pdf)
 
 <use ./figs/Figure3_predictions_final_v3.pdf>
 Package pdftex.def Info: ./figs/Figure3_predictions_final_v3.pdf used on input 
 line 740.
-(pdftex.def)             Requested size: 469.75502pt x 262.65367pt.
+(pdftex.def)             Requested size: 469.75502pt x 353.51242pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -996,7 +996,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (32 pages, 1177280 bytes).
+Output written on Paper_v4.pdf (32 pages, 1180770 bytes).
 PDF statistics:
  3860 PDF objects out of 4296 (max. 8388607)
  2568 compressed objects within 26 object streams

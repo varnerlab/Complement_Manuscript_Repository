@@ -304,11 +304,11 @@ We believe the C3a time scale was related to our choice of training data, how we
 We trained the model using either no or 1 mg/ml zymosan, but predicted cases in a different initiator range;
 comparing training to prediction, the model performance e.g., the shape of the C3a trajectory was biased towards either high or very low initiator doses.
 Next, tickover was modeled as a first-order generation processes where C3wBb formation and activity was lumped into the AP C3 convertase.
-Thus, we skipped an important upstream step which could strongly influence AP C3 convertase formation by slowing down the rate C3 cleavage into C3a and C3b.
+Thus, we skipped an important upstream step which could influence AP C3 convertase formation by attenuating the rate C3 cleavage into C3a and C3b.
 We also assumed both factor B and factor D were not limiting, thereby artificially accelerating the rate of AP C3 convertase formation.
 The C5a predictions followed a similar trend as C3a; we captured the long-time C5a behavior but over predicted the time scale of C5 cleavage.
 However, because the C5a time scale depends strongly upon C3 convertase formation, we can likely correct the C5 issues by fixing the rate of C3 cleavage.
-Despite these shortcomings, we qualitatively predicted unseen experimental measurements typically within the 99\% confidence of the ensemble, for three inducer levels.
+Despite these shortcomings, we qualitatively predicted experimental measurements not used for model training typically within the 99\% confidence of the ensemble, for three inducer levels.
 Next, we used global sensitivity and robustness analysis to determine which parameters and species controlled the performance of the complement model.
 
 %This gives us new insight in which of the parameters play a role in complement activation. Even though AP~C3~convertase is also responsible in the conversion of C3 and the production of C3a, the kinetic parameters that govern the equation was not sensitive at all. This elucidated that the activation of
@@ -319,7 +319,7 @@ Next, we used global sensitivity and robustness analysis to determine which para
 We conducted sensitivity analysis to estimate which parameters controlled the performance of the reduced order complement model.
 We calculated the total sensitivity of the C3a and C5a residual to changes in model parameters with and without zymosan (Fig. \ref{fig-SA}).
 In the absence of zymosan (where only the alternative pathway is active), the most sensitive parameter was the rate constant governing the assembly of the AP C3 convertase, as
-well as the rate constant controlling basal C3b formation. The C5a trajectory was sensitive to the AP C5 convertase kinetic parameters (Fig. \ref{fig-SA}A).
+well as the rate constant controlling basal C3b formation via the tickover mechanism. The C5a trajectory was sensitive to the AP C5 convertase kinetic parameters (Fig. \ref{fig-SA}A).
 Interestingly, neither the rate nor the saturation constant governing AP C3 convertase activity were sensitive in the absence of zymosan.
 Thus, C3a formation in the alternative pathway was more heavily influenced by the spontaneous hydrolysis of C3, rather than AP C3 convertase activity, in the absence of zymosan.
 In the presence of zymosan, the C3a residual was controlled by the formation and activity of the CP C3 convertase, as well as tickover and degradation parameters.
@@ -331,7 +331,7 @@ Next, we compared the sensitivity results to current therapeutic approaches;
 pathways involving sensitive parameters have been targeted for clinical intervention (Fig. \ref{fig-SA}C).
 In particular, the sensitivity analysis suggested AP/CP C5 convertase inhibitors, or interventions aimed at attenuating C3 or C5 would most strongly influence complement performance.
 Thus, there was at least a qualitative overlap between sensitivity and the potential of biochemical efficacy.
-However, sensitivity coefficients are only a local measure of how small changes in parameters affect model performance.
+However, sensitivity coefficients quantify how changes in parameters e.g., rate or saturation constants affect model performance.
 To more closely simulate a clinical intervention e.g., administration of an anti-complement inhibitor, we performed
 robustness analysis.
 
@@ -672,15 +672,15 @@ The variance-based sensitivity analysis was conducted using the SALib module enc
 
 Robustness coefficients quantify the response of a marker to a structural or operational perturbation to the network architecture.
 Robustness coefficients were calculated as shown previously \cite{Tasseff:2011aa}.
-Log-transformed robustness coefficients denoted by $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)$ are defined as:
+Log-transformed robustness coefficients denoted by $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)$ were defined as:
 \begin{equation}
 \hat{\alpha}\left(i,j,t_{o},t_{f}\right)=\log_{10}\left[\left(\displaystyle\int_{t_{o}}^{t_{f}}x_{i}\left(t\right)dt\right)^{-1}\left(\displaystyle\int_{t_{o}}^{t_{f}}x^{(j)}_{i}\left(t\right)dt\right)\right]
 \end{equation}
-Here $t_o$ and $t_f$ denote the initial and final simulation time, while $i$ and $j$ denote the indices for the marker and the perturbation, respectively.
+Here, $t_o$ and $t_f$ denote the initial and final simulation time, while $i$ and $j$ denote the indices for the marker and the perturbation, respectively.
 A value of $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)>0$, indicates increased marker abundance, while $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)<0$ indicates decreased marker abundance following perturbation $j$.
 If $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)\sim{0}$, perturbation $j$ did not influence the abundance of marker $i$.
 In this study, we perturbed the initial condition of C3 or C5 or a combination of C3 and C5 by 50\%, 90\% and 99\% and measured the area under the curve (AUC)
-of C3a or C5a with and without lectin initiator. We computed the robustness coefficients for a subset of the parameter ensemble.
+of C3a or C5a with and without lectin initiator. We computed the robustness coefficients for a subset of the parameter ensemble (N = 65) and reported the mean robustness value. 
 
 %Need to talk more about biochemical benefits and importance for of biochemical problems
 
