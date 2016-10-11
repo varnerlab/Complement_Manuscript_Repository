@@ -274,6 +274,11 @@ Hindmarsh AC, Brown PN, Grant KE, Lee SL, Serban R, et~al. (2005) Sundials:
 \newblock ACM Trans Math Softw 31: 363--396.
 \bibAnnoteFile{Sundials}
 
+\bibitem{Varnerlab}
+Varnerlab.
+\newblock http://www.varnerlab.org.
+\bibAnnoteFile{Varnerlab}
+
 \bibitem{DOPS2016}
 Sagar A, Shoemaker CA, Varner J (2016) {Dynamic Optimization with Particle
   Swarms (DOPS): A meta- heuristic for parameter estimation in biochemical
@@ -300,11 +305,6 @@ Varnerlab.
   Estimate Biochemical Model Ensembles in the Julia Programming Language}.
 \newblock \urlprefix\url{https://github.com/varnerlab/POETs.jl}.
 \bibAnnoteFile{JuPOETS-GitHub}
-
-\bibitem{Varnerlab}
-Varnerlab.
-\newblock http://www.varnerlab.org.
-\bibAnnoteFile{Varnerlab}
 
 \bibitem{Akaike1974}
 Akaike H (1974) {A new look at the statistical model identification}.

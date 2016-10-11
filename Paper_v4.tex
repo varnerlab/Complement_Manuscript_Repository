@@ -566,15 +566,12 @@ If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
 $v_{j}=\mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
 where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a regulatory transfer function quantifying the influence of factor $i$ on rate $j$.
 The function $\mathcal{I}_{j}\left(\cdot\right)$ is an integration rule which maps the output of regulatory transfer functions into a control
-variable. Each regulatory transfer function took the form:
-\begin{equation}\label{eqn:control-factor}
-	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right)=k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
-\end{equation}where $\mathcal{Z}_{i}$ denotes the abundance of factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
+variable. Each regulatory transfer function was modeled using a Hill function.
 In this study, we used $\mathcal{I}_{j}\in\left\{min,max\right\}$ \cite{pr3010178}. If a process has no modifying factors, $v_{j}=1$.
 The model equations were implemented in Julia and solved using the \texttt{CVODE} routine of the Sundials package \cite{Julia,Sundials}.
-The model code and parameter ensemble is freely available under an MIT software license and can be downloaded from http://www.varnerlab.org.
+The model code and parameter ensemble is freely available under an MIT software license and can be downloaded from the Varnerlab website \cite{Varnerlab}.
 
-\subsection*{Estimating an ensemble of complement model parameters.}
+\subsection*{Estimating complement model parameters.}
 We estimated a single initial parameter set using the Dynamic Optimization with Particle Swarms (DOPS) technique \cite{DOPS2016}.
 DOPS is a novel hybrid meta-heuristic which combines a multi-swarm particle swarm method with the dynamically dimensioned search approach of Shoemaker and colleagues \cite{Tolson2007}.
 DOPS minimized the squared residual between simulated and C3a and C5a measurements with and without zymosan as a single objective.
@@ -776,7 +773,18 @@ Current complement therapeutics were taken from the review of Morgan and Harris 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure5_RobustnessAnalysis_v4.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure5_PairwiseSensitivity_v1.pdf}
+\caption{Pairwise sensitivity and clustering of complement model parameters.
+The response of the complement model was calculated for each parameter combination following a 10\% increase in a model parameter in the presence of 1 mg/ml zymosan.
+The model response was clustered into high (black), medium (gray) and low (white) response based upon the euclidian distance. The blue group of parameters are the most sensitive while
+the parameters in the green cluster are the least sensitive.
+}\label{fig-pairwise-analysis}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{./figs/Figure6_RobustnessAnalysis_v4.pdf}
 \caption{Robustness analysis of the complement model.
 Robustness coefficients were calculated for a 50\%, 90\% and 99\% reduction in C3, C5, or C3 and C5 initial conditions.
 \textbf{A}: Mean robustness index for C3a and C5a generated from the alternate pathway (w/o zymosan).
