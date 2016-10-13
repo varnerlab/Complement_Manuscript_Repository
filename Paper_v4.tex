@@ -335,16 +335,26 @@ Thus, there was at least a qualitative overlap between sensitivity and the poten
 However, total sensitivity coefficients quantify how simultaneous changes in many parameters e.g., rate or saturation constants affect model performance (in this case model fit).
 To better understand the role of each parameter, and parameter combination, we explored how finite changes in parameter combinations influenced model performance.
 
-Pairwise parameter perturbations identified critical modes of crosstalk which controlled fibrinolysis model performance (Fig. \ref{fig-pairwise-analysis}).
-We perturbed each pairwise parameter combination by 10\%, and calculated the distance between the perturbed system state, and the nominal state for each parameter set in the ensemble.
-We clustered the mean response of each parameter combination based upon the euclidian distance between the perturbed and nominal cases into low (green), medium (red) and high (blue) response clusters.
-Four of the 28 parameters (or approximately 14\% of the overall parameters) were clustered in the high response cluster (Fig. \ref{fig-pairwise-analysis}, blue cluster).
-Approximately, 36\%, or 10 of the 28 model parameters, were clustered in the medium impact cluster (Fig. \ref{fig-pairwise-analysis}, red cluster). [Finish me].
+Pairwise parameter perturbations identified modes of crosstalk which controlled fibrinolysis model performance (Fig. \ref{fig-pairwise-analysis}).
+We perturbed each pairwise parameter combination by 10\%, and calculated the distance between the perturbed and nominal state for each parameter set in the ensemble.
+We then clustered the mean response of each parameter combination based upon the euclidian distance between the perturbed and nominal states into low (green), medium (red) and high (blue) response clusters.
+Four of the 28 parameters (or approximately 14\% of the overall model parameters) were in the high response cluster (Fig. \ref{fig-pairwise-analysis}, blue cluster).
+These parameters included the rate constant controlling the basal formation of C3b (\#12), C3a degradation (\#26) as well as the catalytic rate constant governing CP C3 convertase activity (\#22).
+The only C5 related parameter in the high response group was the rate constant controlling the formation of CP C5 convertase (\#15).
+Approximately, 36\%, or 10 of the 28 model parameters, were clustered in the medium impact cluster (Fig. \ref{fig-pairwise-analysis}, red cluster).
+Three parameters (\#10,~\#1,~\#27) were especially important in the medium impact cluster.
+The reaction order governing CP C3 convertase activity was important (\#10),
+along with the catalytic rate constant controlling the formation of C4a and C4b in the lectin initiation pathway (\#1), and the constant controlling the inhibitory action of C4BP (\#27).
 Lastly,  50\% of the model parameters were clustered in the low response cluster (Fig. \ref{fig-pairwise-analysis}, green cluster).
+Many of these parameters influenced complement activation; for example, parameter \#23 (the K$_M$ of CP C3 convertase) was important, just not to the extent of the other parameters.
+The pairwise perturbation study also identified synergistic crosstalk between parameters.
+For example, in the high impact cluster, three synergistic relationships were identified, a single positive and two negative cases.
+Parameters \#12 (rate constant governing basal C3b formation) and \#15 (formation of CP C5 conevertase) acted synergistically to increase the system response.
+On the other hand, simultaneous changes in parameters \#12 and \#22 or \#15 and \#26 decreased the system response relative to a single perturbation.
 However, sensitivity coefficients quantify how changes in parameters e.g., rate or saturation constants affect model performance.
-To more closely simulate a clinical intervention e.g., administration of an anti-complement inhibitor, we performed robustness analysis.
+To more closely simulate a clinical intervention e.g., administration of anti-complement inhibitors, we performed robustness analysis.
 
-Robustness analysis suggested there was no single intervention that inhibited complement activation in the presence of both initiation pathways (Fig. \ref{fig-robustness-analysis}).
+Robustness analysis in the absence of flow suggested there was no single intervention that inhibited complement activation in the presence of both initiation pathways (Fig. \ref{fig-robustness-analysis}).
 Robustness coefficients quantify the response of a protein to a macroscopic structural or operational perturbation to a biochemical network.
 Here, we computed how the C3a and C5a trajectories responded to a decrease in the initial abundance of C3 and/or C5 with and without lectin initiator.
 We simulated the addition of different doses of anti-complement inhibitor cocktails by decreasing the initial concentration of C3, C5 or the combination of C3 and C5 by 50\%, 90\% and 99\%.
