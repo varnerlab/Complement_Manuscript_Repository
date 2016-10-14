@@ -600,6 +600,24 @@ In this study, we used $\mathcal{I}_{j}\in\left\{min,max\right\}$ \cite{pr301017
 The model equations were implemented in Julia and solved using the \texttt{CVODE} routine of the Sundials package \cite{Julia,Sundials}.
 The model code and parameter ensemble is freely available under an MIT software license and can be downloaded from the Varnerlab website \cite{Varnerlab}.
 
+\subsubsection*{Complement activation under flow conditions.}
+We estimated the dynamics of complement activation under flow using a two-compartment model, with variable compartment volumes.
+We considered a main compartment (m), and a wound compartment (w), where complement was activated in the wound compartment by the addition of a pathogenic surface.
+In the main compartment, the balance for species $i$ ($x_{m,i}$) was given by:
+\begin{equation}
+	\frac{V_{m}}{\tau_{i}}\frac{dx_{m,i}}{dt} = \left(\sum_{j = 1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x}_{m},\mathbf{\epsilon},\mathbf{k}\right)\right)V_{m}-k_{m,w,i}x_{m,i}+k_{w,m,i}x_{w,i}-Cx_{m,i}
+\end{equation}where $V_{m}$ denotes the volume of the main compartment, $k_{p,q,i}$ denotes transfer constant governing the transfer of species $i$ from compartment $p$ to compartment $q$,
+and $C$ denotes the clearance constant from the main compartment. We assumed complement factors were synthesized in the main compartment.
+The balance governing species $i$ in the wound compartment was given by:
+\begin{equation}
+	\frac{V_{w}}{\tau_{i}}\frac{dx_{w,i}}{dt} = \left(\sum_{j = 1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x}_{w},\mathbf{\epsilon},\mathbf{k}\right)\right)V_{w}-k_{w,m,i}x_{w,i}+k_{m,w,i}x_{m,i}-Bx_{w,i}
+\end{equation}where $V_{w}$ denotes the volume of the wound compartment, and $B$ denotes the rate of blood loss from the wound compartment.
+Lastly, because of the volume loss through clearance in the main compartment, and bleeding from the wound compartment, the volumes of each compartment were dynamic modeled:
+\begin{eqnarray}
+	\frac{dV_{m}}{dt} &=& I_{m}+F_{w,m} - F_{m,w} - C\\
+	\frac{dV_{w}}{dt} &=& I_{w}+F_{m,w} - F_{w,m} - B
+\end{eqnarray}where $I_{m},~I_{w}$ denote the rate of liquid input into the main and wound compartment.
+
 \subsection*{Estimating complement model parameters.}
 We estimated a single initial parameter set using the Dynamic Optimization with Particle Swarms (DOPS) technique \cite{DOPS2016}.
 DOPS is a novel hybrid meta-heuristic which combines a multi-swarm particle swarm method with the dynamically dimensioned search approach of Shoemaker and colleagues \cite{Tolson2007}.
@@ -620,7 +638,7 @@ Under this scaling, the lowest measured concentration become zero while the high
 The second-term in the objective function quantified the absolute error in the estimated concentration scale, where the absolute measured
 concentration (denoted by $\mathcal{M}^{\prime}_{ij}$) was compared with the largest simulated value.
 In this study, we minimized two training objectives, the total C3a and C5a residual w/o zymosan (O$_{1}$) and the total C3a and C5a residual for 1 mg/ml zymosan (O$_{2}$).
-JuPOETs identified an ensemble of N $\simeq$ 2100 parameter sets which were used for model simulations and uncertainty quantification subsequently.
+JuPOETs identified an ensemble of N = 2100 parameter sets which were used for model simulations and uncertainty quantification subsequently.
 JuPOETs is open source, available under an MIT software license.
 The JuPOETs source code is freely available from the JuPOETs GitHub repository \cite{JuPOETS-GitHub}.
 The objective functions used in this study are available in the GitHub model repository \cite{Varnerlab}.
@@ -696,16 +714,24 @@ The mean and standard deviation of the AIC was calculated over the parameter ens
 %$\mathcal{G}$ denotes the best solution found over the entire population of particles. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
 %parameters \linebreak($\mathcal{K}\times{1}$). In thus study, we used $\left(\theta_{1},\theta_{2},\theta_{3}\right) = \left(1.0, 0.05564, 0.02886\right)$.
 
-\subsection*{Sensitivity and robustness analysis.}
-We conducted global sensitivity and robustness analysis to estimate which parameters and species controlled the performance of the reduced order model.
+\subsection*{Complement model analysis.}
+\subsubsection*{Global sensitivity analysis.}
+We conducted global sensitivity analysis to estimate which parameters and species controlled the performance of the reduced order model.
 We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a/C5a alternate and C3a/C5a lectin objectives
 using the Sobol method \cite{SOBOL_METHOD}.
-sThe sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
+The sampling bounds for each parameter were established from the minimum and maximum value for that parameter in the parameter ensemble.
 We used the sampling method of Saltelli \textit{et al.} to compute a family of $N\left(2d+2\right)$ parameter sets which obeyed our parameter ranges,
 where $N$ was the number of trials per parameters, and $d$ was the number of parameters in the model \cite{saltelli2010variance}.
 In our case, $N$ = 400 and $d$ = 28, so the total sensitivity indices were computed using 23,200 model evaluations.
 The variance-based sensitivity analysis was conducted using the SALib module encoded in the Python programming language \cite{SALIB}.
 
+\subsubsection*{Pairwise sensitivity analysis and clustering.}
+We perturbed each pair of model parameters by 10\% of their nominal value, and then calculated the euclidian distance between the perturbed and nominal system states for
+physiological conditions. We repeated this calculation for each member of the parameter ensemble, and calculated the mean differences between the perturbed and nominal states.
+We then clustered the resulting \texttt{log10} transformed mean distances using the \texttt{Clustergram} routine in MATLAB (The Mathworks, Natick MA).
+We considered three clusters, high, medium and low displacement.
+
+\subsubsection*{Robustness analysis.}
 Robustness coefficients quantify the response of a marker to a structural or operational perturbation to the network architecture.
 Robustness coefficients were calculated as shown previously \cite{Tasseff:2011aa}.
 Log-transformed robustness coefficients denoted by $\hat{\alpha}\left(i,j,t_{o},t_{f}\right)$ were defined as:
@@ -727,8 +753,8 @@ The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
 J.V directed the study. A.S developed the reduced order complement model and the parameter ensemble.
-A.S, W.D and M.M analyzed the model ensemble, and generated figures for the manuscript.
-The manuscript was prepared and edited for publication by A.S, W.D, M.M and J.V.
+A.S, W.D, R.L and M.M analyzed the model ensemble, and generated figures for the manuscript.
+The manuscript was prepared and edited for publication by A.S, W.D, M.M, R.L and J.V.
 
 \section*{Acknowledgements}
 We gratefully acknowledge the suggestions from the anonymous reviewers to improve this manuscript.
