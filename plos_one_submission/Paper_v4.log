@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2016 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2016 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -876,337 +876,16 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 124.
- [1]
+ [1] [1] [2] [3]
+[4] [5
 
-Package natbib Warning: Citation `Walport:2001ab' on page 1 undefined on input 
-line 175.
+] [6] [7] [8] [9] [10] [11] [12] [13
 
+] [14] [15] [16] [17
 
-Package natbib Warning: Citation `Walport:2001aa' on page 1 undefined on input 
-line 175.
-
-
-Package natbib Warning: Citation `pangburn1984alternative' on page 1 undefined 
-on input line 191.
-
-
-Package natbib Warning: Citation `Walport:2001ab' on page 1 undefined on input 
-line 199.
-
-
-Package natbib Warning: Citation `Walport:2001aa' on page 1 undefined on input 
-line 199.
-
-[1] [2]
-
-Package natbib Warning: Citation `walker1995complement' on page 3 undefined on 
-input line 206.
-
-
-Package natbib Warning: Citation `blom2001structural' on page 3 undefined on in
-put line 207.
-
-
-Package natbib Warning: Citation `riley2004cd46' on page 3 undefined on input l
-ine 209.
-
-
-Package natbib Warning: Citation `lukacik2004complement' on page 3 undefined on
- input line 210.
-
-
-Package natbib Warning: Citation `liszewski1995control' on page 3 undefined on 
-input line 211.
-
-
-Package natbib Warning: Citation `chauhan2006presence' on page 3 undefined on i
-nput line 213.
-
-
-Package natbib Warning: Citation `zewde2016quantitative' on page 3 undefined on
- input line 213.
-
-
-Package natbib Warning: Citation `hirayama1996linear' on page 3 undefined on in
-put line 218.
-
-
-Package natbib Warning: Citation `korotaevskiy2009non' on page 3 undefined on i
-nput line 219.
-
-
-Package natbib Warning: Citation `liu2011computational' on page 3 undefined on 
-input line 221.
-
-
-Package natbib Warning: Citation `zewde2016quantitative' on page 3 undefined on
- input line 223.
-
-[3] [4]
-
-LaTeX Warning: Reference `fig-schematic' on page 5 undefined on input line 256.
-
-
-[5
-
-]
-
-Package natbib Warning: Citation `morad2015time' on page 6 undefined on input l
-ine 277.
-
-
-Package natbib Warning: Citation `JuPOETs-BioArXiv' on page 6 undefined on inpu
-t line 278.
-
-
-LaTeX Warning: Reference `fig-fit' on page 6 undefined on input line 284.
-
-
-LaTeX Warning: Reference `fig-fit' on page 6 undefined on input line 285.
-
-
-LaTeX Warning: Reference `fig-fit' on page 6 undefined on input line 286.
-
-[6]
-
-LaTeX Warning: Reference `fig-prediction' on page 7 undefined on input line 296
-.
-
-
-LaTeX Warning: Reference `fig-prediction' on page 7 undefined on input line 300
-.
-
-
-LaTeX Warning: Reference `fig-prediction' on page 7 undefined on input line 301
-.
-
-[7]
-
-LaTeX Warning: Reference `fig-SA' on page 8 undefined on input line 324.
-
-
-LaTeX Warning: Reference `fig-SA' on page 8 undefined on input line 326.
-
-
-LaTeX Warning: Reference `fig-SA' on page 8 undefined on input line 330.
-
-
-LaTeX Warning: Reference `fig-SA' on page 8 undefined on input line 335.
-
-[8]
-
-LaTeX Warning: Reference `fig-pairwise-analysis' on page 9 undefined on input l
-ine 341.
-
-
-LaTeX Warning: Reference `fig-pairwise-analysis' on page 9 undefined on input l
-ine 345.
-
-
-LaTeX Warning: Reference `fig-pairwise-analysis' on page 9 undefined on input l
-ine 349.
-
-
-LaTeX Warning: Reference `fig-pairwise-analysis' on page 9 undefined on input l
-ine 353.
-
-[9] [10]
-
-LaTeX Warning: Reference `fig-robustness-analysis' on page 11 undefined on inpu
-t line 368.
-
-
-LaTeX Warning: Reference `fig-SA' on page 11 undefined on input line 372.
-
-
-LaTeX Warning: Reference `fig-robustness-analysis' on page 11 undefined on inpu
-t line 374.
-
-
-LaTeX Warning: Reference `fig-robustness-analysis' on page 11 undefined on inpu
-t line 375.
-
-
-LaTeX Warning: Reference `fig-robustness-analysis' on page 11 undefined on inpu
-t line 376.
-
-
-LaTeX Warning: Reference `fig-robustness-analysis' on page 11 undefined on inpu
-t line 379.
-
-
-LaTeX Warning: Reference `fig-robustness-analysis' on page 11 undefined on inpu
-t line 383.
-
-[11] [12]
-
-Package natbib Warning: Citation `liu2011computational' on page 13 undefined on
- input line 442.
-
-
-Package natbib Warning: Citation `zewde2016quantitative' on page 13 undefined o
-n input line 447.
-
-
-Package natbib Warning: Citation `morad2015time' on page 13 undefined on input 
-line 449.
-
-
-Package natbib Warning: Citation `zewde2016quantitative' on page 13 undefined o
-n input line 450.
-
-
-Package natbib Warning: Citation `korotaevskiy2009non' on page 13 undefined on 
-input line 453.
-
-[13
-
-]
-
-Package natbib Warning: Citation `morgan2015complement' on page 14 undefined on
- input line 458.
-
-
-Package natbib Warning: Citation `Luan:2007aa' on page 14 undefined on input li
-ne 459.
-
-
-Package natbib Warning: Citation `Nayak:2008aa' on page 14 undefined on input l
-ine 459.
-
-
-Package natbib Warning: Citation `Tasseff:2010aa' on page 14 undefined on input
- line 459.
-
-
-Package natbib Warning: Citation `Rice:2016aa' on page 14 undefined on input li
-ne 459.
-
-
-Package natbib Warning: Citation `schwaeble2011methods' on page 14 undefined on
- input line 463.
-
-
-Package natbib Warning: Citation `vogel2004recombinant' on page 14 undefined on
- input line 464.
-
-
-Package natbib Warning: Citation `katschke2012inhibiting' on page 14 undefined 
-on input line 464.
-
-
-Package natbib Warning: Citation `hu2013therapeutic' on page 14 undefined on in
-put line 464.
-
-
-Package natbib Warning: Citation `bansal2014humanized' on page 14 undefined on 
-input line 466.
-
-
-Package natbib Warning: Citation `morgan2015complement' on page 14 undefined on
- input line 469.
-
-
-Package natbib Warning: Citation `roguska2014generation' on page 14 undefined o
-n input line 470.
-
-
-Package natbib Warning: Citation `melis2015complement' on page 14 undefined on 
-input line 471.
-
-
-Package natbib Warning: Citation `weston2014clinical' on page 14 undefined on i
-nput line 472.
-
-
-Package natbib Warning: Citation `epstein2007complement' on page 14 undefined o
-n input line 472.
-
-
-Package natbib Warning: Citation `Mastellos:2015aa' on page 14 undefined on inp
-ut line 473.
-
-
-Package natbib Warning: Citation `sissons1977metabolism' on page 14 undefined o
-n input line 474.
-
-
-Package natbib Warning: Citation `swaak1982determination' on page 14 undefined 
-on input line 474.
-
-
-Package natbib Warning: Citation `noris2014dynamics' on page 14 undefined on in
-put line 475.
-
-[14]
-
-Package natbib Warning: Citation `liu2011computational' on page 15 undefined on
- input line 510.
-
-[15] [16] [17
-
-]
-
-Package natbib Warning: Citation `pr3010178' on page 18 undefined on input line
- 601.
-
-
-Package natbib Warning: Citation `Julia' on page 18 undefined on input line 602
-.
-
-
-Package natbib Warning: Citation `Sundials' on page 18 undefined on input line 
-602.
-
-
-Package natbib Warning: Citation `Varnerlab' on page 18 undefined on input line
- 603.
-
-
-Package natbib Warning: Citation `DOPS2016' on page 18 undefined on input line 
-624.
-
-
-Package natbib Warning: Citation `Tolson2007' on page 18 undefined on input lin
-e 625.
-
-
-Package natbib Warning: Citation `JuPOETs-BioArXiv' on page 18 undefined on inp
-ut line 627.
-
-[18]
-
-Package natbib Warning: Citation `JuPOETS-GitHub' on page 19 undefined on input
- line 645.
-
-
-Package natbib Warning: Citation `Varnerlab' on page 19 undefined on input line
- 646.
-
-
-Package natbib Warning: Citation `Akaike1974' on page 19 undefined on input lin
-e 648.
-
-[19]
-
-Package natbib Warning: Citation `SOBOL_METHOD' on page 20 undefined on input l
-ine 723.
-
-
-Package natbib Warning: Citation `saltelli2010variance' on page 20 undefined on
- input line 726.
-
-
-Package natbib Warning: Citation `SALIB' on page 20 undefined on input line 728
-.
-
-[20]
-
-Package natbib Warning: Citation `Tasseff:2011aa' on page 21 undefined on input
- line 738.
-
-[21]
-Overfull \hbox (7.56403pt too wide) in paragraph at lines 765--766
+] [18] [19]
+[20] [21]
+Overfull \hbox (7.56403pt too wide) in paragraph at lines 764--765
 \OT1/phv/m/n/12 o-ra-tory and the U. S. Army Re-search Of-fice un-der con-tract
 /grant num-ber W911NF1020114. 
  []
@@ -1214,190 +893,73 @@ Overfull \hbox (7.56403pt too wide) in paragraph at lines 765--766
 [22
 
 ] (./Paper_v4.bbl
-Underfull \hbox (badness 1377) in paragraph at lines 15--18
+Underfull \hbox (badness 1377) in paragraph at lines 15--19
 []\OT1/phv/m/n/12 Ricklin D, Lam-bris JD.  Complement-targeted ther-a-peu-tics.
   Nat Biotech-nol.
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.39 \newblock doi:{10.1007/978-1-4614-4118-2_
-                                              1}.
-? r
-OK, entering \nonstopmode...
-! Extra }, or forgotten $.
-l.39 \newblock doi:{10.1007/978-1-4614-4118-2_1}
-                                                .
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.40 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.40 
-     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
 [23
 
 ] [24]
-Underfull \hbox (badness 1275) in paragraph at lines 149--154
+Underfull \hbox (badness 1275) in paragraph at lines 150--155
 []\OT1/phv/m/n/12 Tasseff R, Nayak S, Salim S, Kaushik P, Rizvi N, Varner JD.  
 Anal-y-sis of
  []
 
 
-Underfull \hbox (badness 2521) in paragraph at lines 149--154
+Underfull \hbox (badness 2521) in paragraph at lines 150--155
 \OT1/phv/m/n/12 cer re-vealed frag-ile and ro-bust sub-sys-tems.  PLoS One. 201
 0;5(1):e8864.
  []
 
 [25] [26]
-Underfull \hbox (badness 2150) in paragraph at lines 240--245
+Underfull \hbox (badness 2150) in paragraph at lines 241--246
 []\OT1/phv/m/n/12 Sagar A, Varner JD.  Dy-namic Mod-el-ing of the Hu-man Co-ag-
 u-la-tion Cas-
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 268--273
+Underfull \hbox (badness 1810) in paragraph at lines 269--274
 []\OT1/phv/m/n/12 Tolson BA, Shoe-maker CA.  Dy-nam-i-cally di-men-sioned searc
 h al-go-rithm for
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 268--273
+Underfull \hbox (badness 1533) in paragraph at lines 269--274
 \OT1/phv/m/n/12 com-pu-ta-tion-ally ef-fi-cient wa-ter-shed model cal-i-bra-tio
 n.  Wa-ter Res Re-search.
  []
 
 [27]
-Underfull \hbox (badness 4673) in paragraph at lines 298--301
+Underfull \hbox (badness 4673) in paragraph at lines 299--302
 []\OT1/phv/m/n/12 Herman J. SALib: Sen-si-tiv-ity Anal-y-sis Li-brary in Python
  (Numpy). Con-
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 298--301
+Underfull \hbox (badness 1062) in paragraph at lines 299--302
 \OT1/phv/m/n/12 tains Sobol, Mor-ris, Frac-tional Fac-to-rial and FAST meth-ods
 . Avail-able on-line:
  []
 
-) [28] <./figs/Fig1_Schematic_v2.pdf, id=112, 1626.075pt x 1748.5325pt>
-File: ./figs/Fig1_Schematic_v2.pdf Graphic file (type pdf)
-
-<use ./figs/Fig1_Schematic_v2.pdf>
-Package pdftex.def Info: ./figs/Fig1_Schematic_v2.pdf used on input line 784.
-(pdftex.def)             Requested size: 469.75502pt x 505.11377pt.
+) [28]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 787.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 786.
+ [29
 
-<./figs/Figure2_Fits_final_v2.pdf, id=113, 794.97pt x 598.235pt>
-File: ./figs/Figure2_Fits_final_v2.pdf Graphic file (type pdf)
-
-<use ./figs/Figure2_Fits_final_v2.pdf>
-Package pdftex.def Info: ./figs/Figure2_Fits_final_v2.pdf used on input line 79
-2.
-(pdftex.def)             Requested size: 469.75502pt x 353.51242pt.
-
-
-Package natbib Warning: Citation `morad2015time' on page 29 undefined on input 
-line 799.
-
-
-Package natbib Warning: Citation `morad2015time' on page 29 undefined on input 
-line 799.
-
-<./figs/Figure3_predictions_final_v3.pdf, id=114, 794.97pt x 598.235pt>
-File: ./figs/Figure3_predictions_final_v3.pdf Graphic file (type pdf)
-
-<use ./figs/Figure3_predictions_final_v3.pdf>
-Package pdftex.def Info: ./figs/Figure3_predictions_final_v3.pdf used on input 
-line 804.
-(pdftex.def)             Requested size: 469.75502pt x 353.51242pt.
-
-<./figs/Figure4_Sensitivity_v3.pdf, id=115, 773.89125pt x 550.055pt>
-File: ./figs/Figure4_Sensitivity_v3.pdf Graphic file (type pdf)
-
-<use ./figs/Figure4_Sensitivity_v3.pdf>
-Package pdftex.def Info: ./figs/Figure4_Sensitivity_v3.pdf used on input line 8
-21.
-(pdftex.def)             Requested size: 516.73338pt x 367.27596pt.
-
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 821--829
- [][] 
- []
-
-
-Package natbib Warning: Citation `morgan2015complement' on page 29 undefined on
- input line 829.
-
-
-Package natbib Warning: Citation `morgan2015complement' on page 29 undefined on
- input line 829.
-
-<./figs/Figure5_PairwiseSensitivity_v1.pdf, id=116, 741.77126pt x 413.545pt>
-File: ./figs/Figure5_PairwiseSensitivity_v1.pdf Graphic file (type pdf)
-
-<use ./figs/Figure5_PairwiseSensitivity_v1.pdf>
-Package pdftex.def Info: ./figs/Figure5_PairwiseSensitivity_v1.pdf used on inpu
-t line 834.
-(pdftex.def)             Requested size: 469.75502pt x 261.89772pt.
-
-<./figs/Figure6_RobustnessAnalysis_v4.pdf, id=117, 489.83pt x 416.55624pt>
-File: ./figs/Figure6_RobustnessAnalysis_v4.pdf Graphic file (type pdf)
-
-<use ./figs/Figure6_RobustnessAnalysis_v4.pdf>
-Package pdftex.def Info: ./figs/Figure6_RobustnessAnalysis_v4.pdf used on input
- line 844.
-(pdftex.def)             Requested size: 469.75502pt x 399.49536pt.
- [29 <./figs/Fig1_Schematic_v2.pdf>] [30 <./figs/Figure2_Fits_final_v2.pdf>] [3
-1 <./figs/Figure3_predictions_final_v3.pdf>] [32 <./figs/Figure4_Sensitivity_v3
-.pdf>] [33 <./figs/Figure5_PairwiseSensitivity_v1.pdf>] [34 <./figs/Figure6_Rob
-ustnessAnalysis_v4.pdf>]
-
-Package natbib Warning: There were undefined citations.
-
-(./Paper_v4.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+] [30] (./Paper_v4.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 50 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7530 strings out of 493089
- 110599 string characters out of 6134842
- 201010 words of memory out of 5000000
- 10847 multiletter control sequences out of 15000+600000
+ 7499 strings out of 493089
+ 109434 string characters out of 6134842
+ 201782 words of memory out of 5000000
+ 10823 multiletter control sequences out of 15000+600000
  27439 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,6n,39p,3488b,1065s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,6n,41p,3488b,1099s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1414,10 +976,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v4.pdf (36 pages, 1246345 bytes).
+Output written on Paper_v4.pdf (32 pages, 195990 bytes).
 PDF statistics:
- 3903 PDF objects out of 4296 (max. 8388607)
- 2593 compressed objects within 26 object streams
+ 169 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

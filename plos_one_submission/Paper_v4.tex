@@ -146,11 +146,6 @@ The model described experimental data, and predicted the need for multiple point
 
 \pagebreak
 
-\section*{Author~summary}
-
-
-\pagebreak
-
 
 \setcounter{page}{1}
 
@@ -159,8 +154,6 @@ The model described experimental data, and predicted the need for multiple point
 
 
 \section*{Introduction}
-
-
 
 %Complement is a central part of innate immunity and plays a very significant role in regulating the inflammatory response. It was first discovered in the 1890s where it was found to 'complement' the bactericidal activity of natural antibodies. Complement is mediated through a set of approximately 30-35 soluble and cell surface proteases \cite{}. The central process in complement activation involves the formation of Membrane Attack Complex (MAC) and a protein called C5a. Complement activation takes places through three different pathways: the alternate, the classical and the lectin. Each of these pathways involves a different initiator signal that leads to the formation of a serine protease called C5 convertase which cleaves an inactive protein called C5 to form C5a and C5b. The classical pathway is triggered when antibodies form complexes with foreign antigens or other pathogens. A multimeric protein complex C1 binds to the antigen-antibody complex and undergoes a conformational change. This activated complex cleaves proteins C4 and C2 to C4a, C4b, C2a and C2b respectively. C4a and C2b combine to form a protease C4bC2a also known as the classical C3 convertase. The lectin pathway is initiated through the binding of L-ficolin or Mannose Binding Lectin (MBL) to the carbohydrates on the surfaces of bacterial pathogens. This bound complex in turn cleaves C4 and C2 and leads to the production of C4bC2a. The alternate pathway involves a 'tickover' mechanism in which a protein called C3 is hydrolyzed to form C3b. In presence of foreign pathogens C3b binds to these surfaces and recruits  additional factors called factor B and factor D that lead to the formation of alternate C3 convertase - C3bBb. The formation of classical and alternate C3 convertases on bacterial surfaces is followed by the formation of proteases called C5 convertases. The classical and alternate C3 convertases recruit C3, Factor B and Factor D to form classical C5 convertase (C4bC2aC3b) and alternate C5 convertase (C3bBbc3B) respectively. The C5 convertases then cleave C5 to form C5a and C5b respectively. 	The cleavage of C5 is followed by a series of sequential cleavages of proteins C6, C7, C8 and C9 that combine with C5b to form the MAC complex. The activation of complement and formation of C5a and MAC complex is regulated at different points through a number of plasma and host cell proteins. The initiation of the classical pathway through the attachment of C1 to an antibody is controlled by the C1 Inhibitor (C1-Inh), a protease inhibitor belonging to the serpin superfamily. C1-Inh irreversibly binds to and deactivates the active subunits of component C1 to prevent spontaneous fluid phase and chronic activation of complement \cite{walker1995complement}. The serum and host-tissue regulation of the upstream elements of the complement system is also achieved through the binding of C4 binding protein (C4BP) to C4b and through the binding of factor H to C3b \cite{blom2001structural}. These proteins are also capable of binding their respective components in the convertase form. Membrane cofactor protein (MCP or CD46) possesses a cofactor activity for C4b and C3b, which protects the host from self-activation of complement \cite{riley2004cd46}.  Decay accelerating factor (DAF or CD55) is able to recognize and dissociate both convertases \cite{lukacik2004complement}. MAC is inhibited by vitronectin and clusterin in the plasma and CD59 at the host surface.
 %Proteins C3a, C4a, and C5a are inactivated or reduced in activity by carboxypeptidase-N \cite{liszewski1995control}.
@@ -171,7 +164,7 @@ Complement is an important pathway in innate immunity. It plays a significant ro
 Complement was discovered in the late 1880s where it was found to 'complement' the bactericidal activity of natural antibodies \cite{OG_COMPLEMENT_REF}.
 However, research over the past decade has suggested the importance of complement extends beyond innate immunity.
 For example, complement contributes to tissue homeostasis \cite{ricklin2010complement}.
-It has also has been linked with several diseases including Alzheimers, Parkinson's, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{ricklin2007complement, rittirsch2008harmful}.
+It has also has been linked with several diseases including Alzheimers, Parkinson's, multiple sclerosis, schizophrenia, rheumatoid arthritis and sepsis \cite{Ricklin:2007aa, rittirsch2008harmful}.
 Complement also plays positive and negative roles in cancer; attacking tumor cells with altered surface proteins in some cases, while potentially contributing to tumor growth in others \cite{sarma2011complement, ricklin2013complement}.
 Lastly, several other important biochemical systems are integrated with complement including the coagulation cascade, the autonomous nervous system and inflammation \cite{ricklin2013complement}.
 Thus, complement is important in a variety of beneficial and potentially harmful functions in the body.
@@ -387,6 +380,7 @@ even 1\% of the nominal C3 was able to generate enough AP/CP C5 convertase to ma
 Thus, the only reliable intervention that consistently reduced both C3a and C5a formation for all cases was a knockdown of both C3 and C5.
 For example, a 90\% decrease of both C3 and C5 reduced the formation of C5a by an order of magnitude,
 while C3a was reduced to a lesser extent (Fig. \ref{fig-robustness-analysis}B).
+Taken together, these results suggested that both C3 and C5 inhibitors must be administered in the presence of both intiation pathways.
 
 % These results agree with the current push for complement therapeutics targeting both C3 and C5.
 % Conversely, the significance of the convertases identified by the sensitivity analysis indicate that they may also be effective targets for therapeutic intervention, however, these results require experimental validation before any definitive conclusions can be reached.
@@ -461,7 +455,7 @@ Thus, the reduced order complement model performed at least as well as existing 
 
 Global analysis of the complement model suggested potentially important therapeutic targets.
 Complement malfunctions are implicated in a spectrum of diseases, however the
-development of complement specific therapeutics has been challenging \cite{ricklin2007complement,morgan2015complement}.
+development of complement specific therapeutics has been challenging \cite{Ricklin:2007aa,morgan2015complement}.
 Previously, we have shown that mathematical modeling and analysis can be useful tools to estimate therapeutically important mechanisms \cite{Luan:2007aa,Nayak:2008aa,Tasseff:2010aa,Rice:2016aa}.
 In this study, we analyzed a validated ensemble of reduced order complement models to better understand the strengths and weaknesses of the cascade.
 In the presence of an initiator, C3a and C5a formation was sensitive to CP C3/C5 convertase assembly and activity, and to a lesser extent lectin initiation parameters.
@@ -722,7 +716,6 @@ The mean and standard deviation of the AIC was calculated over the parameter ens
 %$\mathcal{G}$ denotes the best solution found over the entire population of particles. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
 %parameters \linebreak($\mathcal{K}\times{1}$). In thus study, we used $\left(\theta_{1},\theta_{2},\theta_{3}\right) = \left(1.0, 0.05564, 0.02886\right)$.
 
-\subsection*{Complement model analysis.}
 \subsubsection*{Global sensitivity analysis.}
 We conducted global sensitivity analysis to estimate which parameters and species controlled the performance of the reduced order model.
 We computed the total variance-based sensitivity index of each parameter relative to the training residual for the C3a/C5a alternate and C3a/C5a lectin objectives
@@ -787,7 +780,7 @@ This material is based upon work supported by, or in part by, the U. S. Army Res
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Fig1_Schematic_v2.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Fig-1_Schematic_v2.pdf}
 \caption{Simplified schematic of the human complement system. The complement cascade is activated through three pathways:  the classical, the lectin, and the alternate pathways.
 Complement initiation results in the formation of classical or alternative C3 convertases, which amplify the initial complement response and signal to the adaptive immune system by cleaving C3 into C3a and C3b. C3 convertases further react to form C5 convertases which catalyze the cleavage of the C5 complement protein to C5a and C5b.
 C5b is critical to the formation of the membrane attack complex (MAC), while C5a recruits an adaptive immune response.}\label{fig-schematic}
@@ -795,7 +788,7 @@ C5b is critical to the formation of the membrane attack complex (MAC), while C5a
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure2_Fits_final_v2.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Fig-2_Fits_final_v2.pdf}
 \caption{Reduced order complement model training.
 An ensemble of model parameters were estimated using multiobjective optimization from C3a and C5a measurements with and without zymosan \cite{morad2015time}.
 The model was trained using C3a and C5a data generated from the alternative pathway (\textbf{A}--\textbf{B}) and lectin pathway initiated with 1 mg/ml zymosan (\textbf{C}--\textbf{D}).
@@ -807,7 +800,7 @@ All initial conditions were assumed to be at their physiological serum levels un
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure3_predictions_final_v3.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Fig-3_predictions_final_v3.pdf}
 \caption{Reduced order complement model predictions.
 Simulations of C3a and C5a generated in the lectin pathway using 0.1 mg/ml, 0.01 mg/ml, and 0.001 mg/ml zymosan were compared with the corresponding experimental measurements.
 The solid black lines show the simulated mean value of C3a or C5a for the ensemble, while the dark shaded region denotes the 99\% confidence interval of mean.
@@ -824,7 +817,7 @@ All initial conditions were assumed to be at their physiological serum levels un
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.1\textwidth]{./figs/Figure4_Sensitivity_v3.pdf}
+%\includegraphics[width=1.1\textwidth]{./figs/Fig-4_Sensitivity_v3.pdf}
 \caption{Global sensitivity analysis of the reduced order complement model.
 Sensitivity analysis was conducted on the two objectives used for model training.
 \textbf{A}: Sensitivity of the C3a and C5a residual w/o zymosan.
@@ -837,7 +830,7 @@ Current complement therapeutics were taken from the review of Morgan and Harris 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure5_PairwiseSensitivity_v1.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Fig-5_PairwiseSensitivity_v1.pdf}
 \caption{Pairwise sensitivity and clustering of complement model parameters in the presence of 1 mg/ml zymosan.
 The response of the complement model was calculated for each parameter combination following a 10\% increase in parameter combinations in the presence of 1 mg/ml zymosan.
 The model parameters were clustered into high (blue), medium (red) and low (green) response clusters based upon the euclidian distance between the perturbed and nominal system state.
@@ -847,7 +840,7 @@ The model parameters were clustered into high (blue), medium (red) and low (gree
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure6_RobustnessAnalysis_v4.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Fig-6_RobustnessAnalysis_v4.pdf}
 \caption{Robustness analysis of the complement model.
 Robustness coefficients were calculated for a 50\%, 90\% and 99\% reduction in C3, C5, or C3 and C5 initial conditions.
 \textbf{A}: Mean robustness index for C3a and C5a generated from the alternate pathway (w/o zymosan).
